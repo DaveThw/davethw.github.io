@@ -7,6 +7,8 @@ So, if I am potentially going to host my [remote app for the Ion](https://github
 
 Following a combination of instructions from here (http://industrialinternet.co.uk/node-red/adding-https-ssl-to-node-red/), and Tip 5 here (http://blog.httpwatch.com/2013/12/12/five-tips-for-using-self-signed-ssl-certificates-with-ios/), and here (https://www.hardill.me.uk/wordpress/2015/05/11/securing-node-red/).
 
+My Chromebook seemed happy to install a self-signed certificate as an Authority, but when I tried that on Safari on an iPad it didn't seem to recognise the website as being signed by the same certificate, and I couldn't work out how to tell the iPad to trust that certificate to authenticate websites - so it looks worth while going through the (very slightly) longer process of creating your own personal Certificate Authority certificate.  My Chromebook would only recognise this CA certificate with the .pem extension, not the .cer one I initially gave it...
+
 ```shell
 ~ $ cd .node-red
 ~/.node-red $ mkdir public
@@ -20,7 +22,7 @@ Generate a Certificate Authority certificate:
 ```shell
 ~/.node-red/public $ openssl req -x509 -sha256 -new -key myCA.key -out myCA.cer -days 365 -subj /CN="Dave Thwaites CA"
 ```
-note: with the `-subj /CN=` parameters, we don't get asked for details for the certificate)
+*(note: with the `-subj /CN=` parameters, we don't get asked for details for the certificate)*
 
 Generate a priate key:
 ```shell
@@ -30,13 +32,13 @@ Create a Client Signing Request:
 ```shell
 ~/.node-red/public $ openssl req -new -key privatekey.pem -out private-csr.req
 ```
-(this will ask for some details for the certificate - the Common Name might need to be set to the address of the server...)
+*(this will ask for some details for the certificate - the Common Name might need to be set to the address of the server...)*
 
-Finally create the certificate (self-signed(?)):
+~~Finally create the certificate (self-signed(?)):~~
 ```shell
 ~/.node-red/public $ openssl x509 -req -sha256 -days 365 -in private-csr.req -signkey privatekey.pem -out certificate.pem
 ```
-Or create the certificate, signed by my personal CA:
+Finally create the certificate, signed by my personal CA:
 ```shell
 ~/.node-red/public $ openssl x509 -req -sha256 -in private-csr.req -out certificate.pem -CAkey myCA.key -CA myCA.cer -days 365 -CAcreateserial -CAserial serial
 ```
@@ -54,7 +56,7 @@ About two-thirds of the way down, uncomment and modify:
 ```
 (note: I can't work out where Node-RED is looking for these files - without a full path it seems that Node-RED can't find them when starting up...)
 
-Then finally re-start Node-RED:
+Then re-start Node-RED:
 ```shell
 ~ $ node-red-stop
 ~ $ node-red-start
@@ -89,3 +91,5 @@ For Hudl:
 2. Download the CA Certificate
 3. Should install automatically, I think...
 4. Then everything seems to work!
+
+I've got two probelms with the set u pon the Hudl: 1) With the Hudl on the lighting network, we get security errors because the certificate doesn't match the server address, and 2) it's going to get annoying having the pin code to unlock the Hudl regularly...  So, I might find some other way to serve the control over http for the lighting network only - maybe possible with http notes in node-red (although will they be https nodes now..?)
