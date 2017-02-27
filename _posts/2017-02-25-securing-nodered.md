@@ -9,17 +9,17 @@ Following a combination of [instructions from here](http://industrialinternet.co
 
 My Chromebook seemed happy to install a self-signed certificate as an Authority, but when I tried that on Safari on an iPad it didn't seem to recognise the website as being signed by the same certificate, and I couldn't work out how to tell the iPad to trust that certificate to authenticate websites - so it looks worth while going through the (very slightly) longer process of creating your own personal Certificate Authority certificate.  My Chromebook would only recognise this CA certificate with the .pem extension, not the .cer one I initially gave it...
 
-```shell
+```terminal
 ~ $ cd .node-red
 ~/.node-red $ mkdir public
 ~/.node-red $ cd public
 ```
 Generate a key for my personal Certificate Authority:
-```shell
+```shell_session
 ~/.node-red/public $ openssl genrsa -out myCA.key 2048
 ```
 Generate a Certificate Authority certificate:
-```shell
+```console
 ~/.node-red/public $ openssl req -x509 -sha256 -new -key myCA.key -out myCA.cer -days 365 -subj /CN="Dave Thwaites CA"
 ```
 *(note: with the `-subj /CN=` parameters, we don't get asked for details for the certificate)*
