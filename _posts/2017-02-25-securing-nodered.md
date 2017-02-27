@@ -72,7 +72,7 @@ Then re-start Node-RED:
 
 Now we should have Node-RED serving its pages over HTTPS, and WebSockets over WSS.  Next we need to install a copy of our CA Certificate onto our browsers / devices.  Maybe place a copy of it in the www folder for easy downloading - or on GitHub...
 
-###For Chrome
+### For Chrome
 (based on instructions [from here](https://www.hardill.me.uk/wordpress/2015/05/11/securing-node-red/#attachment_2086)):
 
 1. Download the certificate from Node-RED (ignoring any security warnings) - needs to have the extension .pem
@@ -87,7 +87,7 @@ Now we should have Node-RED serving its pages over HTTPS, and WebSockets over WS
 
 Which works...  But Chrome is still unhappy with pages served from the Raspberry Pi, because (I think) the Common Name on the sertificate doesn't match the server's address...  I could put one in, but which address (LX or sound network?).  However, it seems to work well for the webpage server from GitHub!  **Update:** Now with the Common Name set to 192.168.1.2 looks fine from the sound network!
 
-###For Safari on iPad
+### For Safari on iPad
 (following tips from [here](http://blog.httpwatch.com/2013/12/12/five-tips-for-using-self-signed-ssl-certificates-with-ios/)):
 
 1. Download the CA certificate
@@ -95,7 +95,7 @@ Which works...  But Chrome is still unhappy with pages served from the Raspberry
 3. Then... it just seems to work!
 4. Well, works fine on the sound network, but gives a security error on the LX network (because the server name doesn't match the CN on the certificate)
 
-###For Hudl:
+### For Hudl:
 
 1. Need to set a screen lock PIN or pattern to store an user CA certificate...
 2. Download the CA Certificate
