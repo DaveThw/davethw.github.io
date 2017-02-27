@@ -15,32 +15,32 @@ My Chromebook seemed happy to install a self-signed certificate as an Authority,
 ~/.node-red$ cd public
 ```
 Generate a key for my personal Certificate Authority:
-```shell_session
-~/.node-red/public $ openssl genrsa -out myCA.key 2048
+```shell
+~/.node-red/public$ openssl genrsa -out myCA.key 2048
 ```
 Generate a Certificate Authority certificate:
-```console
-~/.node-red/public $ openssl req -x509 -sha256 -new -key myCA.key -out myCA.cer -days 365 -subj /CN="Dave Thwaites CA"
+```shell
+~/.node-red/public$ openssl req -x509 -sha256 -new -key myCA.key -out myCA.cer -days 365 -subj /CN="Dave Thwaites CA"
 ```
 *(note: with the `-subj /CN=` parameters, we don't get asked for details for the certificate)*
 
 Generate a priate key:
 ```shell
-~/.node-red/public $ openssl genrsa -out privatekey.pem 1024
+~/.node-red/public$ openssl genrsa -out privatekey.pem 1024
 ```
 Create a Client Signing Request:
 ```shell
-~/.node-red/public $ openssl req -new -key privatekey.pem -out private-csr.req
+~/.node-red/public$ openssl req -new -key privatekey.pem -out private-csr.req
 ```
 *(this will ask for some details for the certificate - the Common Name might need to be set to the address of the server...)*
 
 ~~Finally create the certificate (self-signed(?)):~~
 ```shell
-~/.node-red/public $ openssl x509 -req -sha256 -days 365 -in private-csr.req -signkey privatekey.pem -out certificate.pem
+~/.node-red/public$ openssl x509 -req -sha256 -days 365 -in private-csr.req -signkey privatekey.pem -out certificate.pem
 ```
 Finally create the certificate, signed by my personal CA:
 ```shell
-~/.node-red/public $ openssl x509 -req -sha256 -in private-csr.req -out certificate.pem -CAkey myCA.key -CA myCA.cer -days 365 -CAcreateserial -CAserial serial
+~/.node-red/public$ openssl x509 -req -sha256 -in private-csr.req -out certificate.pem -CAkey myCA.key -CA myCA.cer -days 365 -CAcreateserial -CAserial serial
 ```
 
 Then we need to make some changes to `~/.node-red/settings.js` - near the top, uncomment the line:
@@ -58,8 +58,8 @@ About two-thirds of the way down, uncomment and modify:
 
 Then re-start Node-RED:
 ```shell
-~ $ node-red-stop
-~ $ node-red-start
+~$ node-red-stop
+~$ node-red-start
 ```
 
 Now we should have Node-RED serving its pages over HTTPS, and WebSockets over WSS.  Next we need to install a copy of our CA Certificate onto our browsers / devices.  Maybe place a copy of it in the www folder for easy downloading - or on GitHub...
