@@ -1,5 +1,5 @@
 ---
-layout: post
+# layout: post
 title:  "Network Metrics (on a Raspberry Pi)"
 tags: raspberrypi network
 ---
