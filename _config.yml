@@ -7,11 +7,11 @@
 
 # Site Settings
 locale                   : "en"
-title                    : "Dave's Blog"
+title                    : "dave.thwaites.org.uk"
 title_separator          : "-"
 name                     : "Dave Thwaites"
 description              : "My meandering adventures with technology."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://davethw.github.io/ # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
