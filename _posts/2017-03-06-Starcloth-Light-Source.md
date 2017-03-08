@@ -3,10 +3,15 @@ title: Starcloth Light Source
 category: "TheatreRoyal"
 tags: dmx
 ---
+
 ## DMX address
-1-255 via dip switches - doesn't work with a base address of 256 or above!
+
+Can be set to DMX 1-255 via dip switches 1-8 - doesn't work with a base address of 256 or above!
+
+(I'm not sure what the other dip switches do - they might offer some kind of manual control options, maybe..?)
 
 ## ch. 1
+
 | Value   | Colour           |
 |:-------:|:-----------------|
 | 0-8%    | open white       |
@@ -18,13 +23,20 @@ tags: dmx
 | 50%     | open white       |
 | 51-100% | colour cycle, fast-slow (order as above) |
 
-## Ch. 2
-Nothing..??
+## ch. 2
 
-## Ch. 3
-0-51% brightness, off-full
-52- 100% strobe, fast-slow (full brightness)
+Does nothing..??
 
-## Ch. 4
-0 no twinkle
-1-100% twinkle, fast-slow
+## ch. 3
+
+| Value   | Intensity           |
+|:-------:|:--------------------|
+| 0-51%   | intensity, off-full |
+| 52-100% | strobe, fast-slow (full brightness) |
+
+## ch. 4
+
+| Value   | Twinkle             |
+|:-------:|:--------------------|
+| 0       | no twinkle          |
+| 1-100%  | twinkle, fast-slow  |
