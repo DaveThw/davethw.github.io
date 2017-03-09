@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en"
-title                    : "dave.thwaites.org.uk"
+title                    : "davethw.github.io" # "dave.thwaites.org.uk"
 title_separator          : "-"
 name                     : "Dave Thwaites"
 description              : "My meandering adventures with technology."
@@ -15,7 +15,7 @@ url                      : https://davethw.github.io/ # the base hostname & prot
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-# breadcrumbs            : false # true, false (default)
+breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
@@ -171,7 +171,9 @@ sass:
 
 
 # Outputting
-permalink: /:categories/:title/
+#permalink: /:categories/:year/:month/:day/:title.html
+permalink: /:categories/:title.html
+#permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -205,8 +207,10 @@ whitelist:
 #  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
 #  - <base_path/my-awesome-category/index.html ~> path: /
 category_archive:
-  type: liquid
-  path: /categories/
+#  type: liquid
+#  path: /categories/
+  type: jekyll-archives
+  path: /
 tag_archive:
   type: liquid
   path: /tags/
@@ -231,6 +235,11 @@ compress_html:
     envs: development
 
 
+collections:
+  notes:
+    output: true
+    permalink: /:path:output_ext
+
 # Defaults
 defaults:
   # _posts
@@ -244,3 +253,22 @@ defaults:
       comments: # true
       share: true
       related: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  # _notes
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: single
+      read_time: false
+      author_profile: true
+      share: false
+      comments: false
+      # sidebar:
+      #   nav: "docs"

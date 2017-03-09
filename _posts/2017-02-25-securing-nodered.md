@@ -1,10 +1,10 @@
 ---
 # layout: post
 title: Securing Node-RED connections (HTTPS / WSS)
-tags: raspberrypi nodered
+categories: Theatre-Royal EOS-Remote
+tags: RaspberryPi Node-RED
+excerpt: Step-by-step notes going through the process of enabling secure connections for Node-RED
 ---
-{::options auto_ids="true" /}
-
 So, if I am potentially going to host developemnt of my [remote app for the Ion](https://github.com/DaveThw/EOSRemote) on GitHub it'll be very useful to preview new features as I'm working on it, but GitHub Pages [serves it over HTTPS](https://davethw.github.io/EOSRemote/).  And you can't open a standard websocket connection (ws://...) from an HTTPS page (probably wise!), only a secure one (wss://...).  Therefore I need to enable secure connections on Node-RED.
 
 Following a combination of [instructions from here](http://industrialinternet.co.uk/node-red/adding-https-ssl-to-node-red/), and [5 tips from here](http://blog.httpwatch.com/2013/12/12/five-tips-for-using-self-signed-ssl-certificates-with-ios/), and [more instructions from here](https://www.hardill.me.uk/wordpress/2015/05/11/securing-node-red/)...
