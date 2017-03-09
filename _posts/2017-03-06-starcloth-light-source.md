@@ -1,6 +1,6 @@
 ---
 title: Starcloth Light Source
-categories: TheatreRoyal
+categories: Theatre-Royal
 tags: DMX
 excerpt: DMX Control details for our LED Starcloth Light Sources
 ---

@@ -1,7 +1,7 @@
 ---
 # layout: post
 title:  "Network Metrics (on a Raspberry Pi)"
-categories: TheatreRoyal EOSRemote
+categories: Theatre-Royal EOS-Remote
 tags: RaspberryPi Network
 excerpt: Step-by-step notes on how to adjust the network metrics when working multiple ports
 ---
