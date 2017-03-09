@@ -1,0 +1,50 @@
+---
+layout: archive
+title: "Theatre Royal"
+permalink: /theatreroyal/
+categories: TheatreRoyal
+author_profile: false
+---
+
+{% include base_path %}
+
+<!--
+
+site = {{ site }}
+
+site.collections = {{ site.collections }}
+
+site.collections.notes = {{ site.collections.notes }}
+
+site.collections.notes.docs = {{ site.collections.notes.docs }}
+
+site.categories = {{ site.categories }}
+
+site.theatreroyal = {{ site.theatreroyal  }}
+
+-->
+
+<div class="grid__wrapper">
+  {% for post in site.posts %}
+    <!-- post.categories = '{{ post.categories | join: "', '" }}' -->
+    <!-- post.categories[0] = '{{ post.categories[0] }}' -->
+    <!-- post.categories[1] = '{{ post.categories[1] }}' -->
+    <!-- post.categories[2] = '{{ post.categories[2] }}' -->
+    {% assign do = true %}
+    {% assign i = 0 %}
+    {% for category in page.categories %}
+      <!-- i = '{{ i }}'; category = '{{ category }}'; post.categories[i] = '{{ post.categories[i] }}' -->
+      {% if category != post.categories[i] %}
+        {% assign do = false %}
+      {% endif %}
+      {% assign i = i | plus: 1 %}
+    {% endfor %}
+    <!-- do = '{{ do }}' -->
+    {% if do %}
+      {% include archive-single.html type="grid" %}
+    {% endif %}
+  {% endfor %}
+  {% for post in site.notes %}
+    {% include archive-single.html type="grid" %}
+  {% endfor %}
+</div>
