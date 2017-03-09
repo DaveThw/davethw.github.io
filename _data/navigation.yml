@@ -10,3 +10,13 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+
+sidebar:
+  - title: "Theatre Royal"
+    url: /theatre-royal/
+    children:
+    - title: "EOS Remote"
+      url: /theatre-royal/eos-remote/
+  - title: "Website"
+    url: /website/
+    

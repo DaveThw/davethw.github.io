@@ -209,8 +209,10 @@ whitelist:
 category_archive:
 #  type: liquid
 #  path: /categories/
-  type: jekyll-archives
-  path: /
+#  type: jekyll-archives
+#  path: /
+  type: manual
+  path: 
 tag_archive:
   type: liquid
   path: /tags/
@@ -239,6 +241,9 @@ collections:
   notes:
     output: true
     permalink: /:path:output_ext
+  breadcrumbs:
+    output: true
+    permalink: /:categories/
 
 # Defaults
 defaults:
@@ -253,6 +258,8 @@ defaults:
       comments: # true
       share: true
       related: true
+      sidebar:
+        nav: "sidebar"
   # _pages
   - scope:
       path: ""
@@ -260,6 +267,8 @@ defaults:
     values:
       layout: single
       author_profile: true
+      sidebar:
+        nav: "sidebar"
   # _notes
   - scope:
       path: ""
@@ -272,3 +281,16 @@ defaults:
       comments: false
       # sidebar:
       #   nav: "docs"
+  # _breadcrumbs
+  - scope:
+      path: ""
+      type: breadcrumbs
+    values:
+      layout: breadcrumb
+      author_profile: true
+      read_time: false
+      comments: false
+      share: false
+      related: false
+      sidebar:
+        nav: "sidebar"
