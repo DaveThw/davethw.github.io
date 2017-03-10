@@ -175,4 +175,7 @@ Username for 'https://github.com': DaveThw
 Password for 'https://DaveThw@github.com': 
 To https://github.com/DaveThw/davethw.github.io.git
    46eab5e..f8fd50c  master -> master
+~/.../blog/davethw.github.io $ git status
+# On branch master
+nothing to commit (working directory clean)
 ```
