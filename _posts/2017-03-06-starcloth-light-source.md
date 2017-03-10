@@ -3,6 +3,7 @@ title: Starcloth Light Source
 categories: Theatre-Royal
 tags: DMX
 excerpt: DMX Control details for our LED Starcloth Light Sources
+read_time: false
 ---
 
 ## DMX address

@@ -3,6 +3,8 @@ title: "AnchorJS links"
 categories: Website
 # tags: 
 excerpt: Links to a couple of pages about AnchorJS - might be useful/nice to use?
+date: 2017-03-09 23:30
+read_time: false
 ---
 
 [Github: minimal-mistakes: Comment about AnchorJS, in a separate Pull Request!..](https://github.com/mmistakes/minimal-mistakes/pull/868#issuecomment-282398786)

@@ -3,6 +3,8 @@ title: "Blogging links"
 categories: Website
 # tags: 
 excerpt: Links to some useful resources for blogging
+date: 2017-03-09 18:30
+read_time: false
 ---
 
 ## Minimal Mistakes

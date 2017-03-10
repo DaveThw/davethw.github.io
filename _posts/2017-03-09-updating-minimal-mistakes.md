@@ -3,6 +3,7 @@ title: "Updating minimal-mistakes"
 categories: Website
 # tags: 
 excerpt: Step-by-step through updating minimal-mistakes from GitHub
+date: 2017-03-09 21:00
 ---
 
 Following steps from the [Upgrading guide](https://mmistakes.github.io/minimal-mistakes/docs/upgrading/#use-git):
