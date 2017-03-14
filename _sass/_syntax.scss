@@ -144,3 +144,27 @@ figure.highlight {
 .highlight .vg { color: #22b3eb } /* Name.Variable.Global */
 .highlight .vi { color: #22b3eb } /* Name.Variable.Instance */
 .highlight .il { color: #2aa198 } /* Literal.Number.Integer.Long */
+
+
+div.language-shell, div.language-shell:before {
+  background-color: #111;
+  color: #ddd;
+}
+
+div.language-shell ::selection {
+  background-color: #ddd;
+  color: #111;
+}
+
+.language-shell .highlight .gp {
+  color: #77F;
+  font-weight: bold;
+}
+
+/* inspired by this idea: http://stackoverflow.com/questions/15441742/change-last-letter-color#answer-36676429 */
+.language-shell .highlight .gp:after {
+  color: #0F0;
+  background-color: #111;
+  content: " $ ";
+  margin-left: -2ch;
+}

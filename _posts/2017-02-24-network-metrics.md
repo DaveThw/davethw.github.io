@@ -8,7 +8,7 @@ excerpt: Step-by-step notes on how to adjust the network metrics when working mu
 So... With my Raspberry Pi now connected to two networks - one with the LAN port, on a closed network, and one via a wifi dongle, with internet access, both with gateways configured (because I can't work out how to tell the router on the closed network that it doesn't actually have internet access!..) - the Raspberry Pi prefers to use the LAN port for internet access.  But, of course, this doesn't work.
 
 ```shell
-~ $ route
+~$ route
 Kernel IP routing table
 Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 default         10.101.1.1      0.0.0.0         UG    202    0        0 eth0
@@ -29,8 +29,8 @@ Note: in the answer on stackexchange, each line is terminated with a `;` - this 
 
 Having made the change, restart dhcpcd (the DHCP Client Daemon) and check the results:
 ```shell
-~ $ sudo service dhcpcd restart
-~ $ route
+~$ sudo service dhcpcd restart
+~$ route
 Kernel IP routing table
 Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 default         www.routerlogin 0.0.0.0         UG    303    0        0 wlan0
