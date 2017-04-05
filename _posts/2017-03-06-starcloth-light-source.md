@@ -15,7 +15,7 @@ Manual: [http://www.wiedamark.com/10wattDMX.pdf](http://www.wiedamark.com/10watt
 
 - 1-9: DMX address (note: can therefore only be DMX 1-255), or Program Number
 - 10:  Radio Remote Control enable - leave off for DMX control
-- 11:  Master / Slave - leave off for DMX control, or to be a slave, turn on to be master for non-DMX control (may also need to be on for radio remote control to work..?)
+- 11:  Master / Slave - leave off for DMX control, or to be a slave; turn on to be master for non-DMX control (may also need to be on for radio remote control to work..?)
 - 12:  Not used (described as 'optional' in the manual!)
 
 
@@ -52,7 +52,7 @@ Does nothing..??
 | Value   | DMX     | Twinkle             |
 |:-------:|:-------:|:--------------------|
 | 0       | 0       | no twinkle          |
-| 1-100%  | 1?-255  | twinkle, fast-slow  |
+| 1-100%  | 1-255   | twinkle, fast-slow  |
 
 ## Radio Remote Control
 
