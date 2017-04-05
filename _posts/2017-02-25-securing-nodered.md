@@ -112,12 +112,13 @@ However... I've got two probelms with the set up on the Hudl: 1) With the Hudl o
 1. Download the CA certificate
 2. Click on Install
 3. Gives two warnings:
-  - Unmanaged Root Certificate: "Installing the certificate "Dave Thwaites CA" will add it to the list of trusted certificates on your iPhone. This Certificate will not be trusted for websites until you enable it in Certificate Trust Settings"
-  - Unverified Profile: "The authenticity on "Dave Thwaites CA" cannot be verified"
+  - Unmanaged Root Certificate: Installing the certificate "Dave Thwaites CA" will add it to the list of trusted certificates on your iPhone. This Certificate will not be trusted for websites until you enable it in Certificate Trust Settings
+  - Unverified Profile: The authenticity on "Dave Thwaites CA" cannot be verified
 4. Click install
 5. Then install again!..
-6. Then... it doesn't seem to work...
-6. Ah-ha! - you need to enable it on Certificate Trust Settings:
-7. So, go to: Settings -> General -> About -> Certificate Trust Settings - > Turn on toggle button next to "Dave Thwaites CA"
-8. Gives a warning: "Enabling this certificates for websites will allow third parties to view any private data sent to websites" -> click Continue
-9. And... it works!!
+6. Then... it doesn't seem to work...  My https web page still gives a "Cannot Verify Server Identity" error.
+7. Ah-ha! - as stated in the Unmanaged Root Certificate warning, you need to enable it on Certificate Trust Settings:
+   1. So, go to: Settings -> General -> About -> Certificate Trust Settings - > Turn on toggle button next to "Dave Thwaites CA"
+   2. Gives a warning: "Enabling this certificates for websites will allow third parties to view any private data sent to websites"
+   3. click Continue
+8. And... it works!!
