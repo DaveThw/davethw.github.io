@@ -52,6 +52,8 @@
 {% comment %}
           <a href="{{ crumb | downcase | replace: '%20', '-' | prepend: path_type | prepend: crumb_path | absolute_url }}" itemprop="item"><span itemprop="name">{{ crumb | replace: '-', ' ' | replace: '%20', ' ' | capitalize }}</span></a>
 {% endcomment %}
+          <!-- crumb_path = '{{ crumb_path }}' -->
+          <!-- crumb_path | absolute_url = '{{ crumb_path | absolute_url }}' -->
           <a href="{{ crumb_path | absolute_url }}" itemprop="item"><span itemprop="name">{{ crumb | replace: '-', ' ' | replace: '%20', ' ' }}</span></a>
           <meta itemprop="position" content="{{ i }}" />
         </li>
