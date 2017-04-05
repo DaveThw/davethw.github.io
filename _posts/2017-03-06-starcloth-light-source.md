@@ -7,8 +7,8 @@ read_time: false
 modified: 2017-04-05
 ---
 
-Model: LEE-1001DMX
-Description: 10W LED DMX Illuminator / LED Light Engine
+Model: LEE-1001DMX  
+Description: 10W LED DMX Illuminator / LED Light Engine  
 Manual: [http://www.wiedamark.com/10wattDMX.pdf](http://www.wiedamark.com/10wattDMX.pdf)
 
 ## Dip Switches
@@ -58,12 +58,32 @@ Does nothing..??
 
 Set Dip Switch 10 and 11 on, and turn all the rest off.
 
-On the remote control, press the Clear or Cancel key to clear any previous programs.  Then choose program from chart below and press corresponding number, then press enter key.  If the program number is larger than the keys on remote:
-- Example: You want program 7. Press cancel then key 6 key 1 then enter. (6 + 1 = 7)
-- Example 2: You want program 9. Press cancel then key 4 key 5 or key 3 key 6 then enter (4 + 5 = 9) or (3
-+ 6 = 9)
-- Example 3: You want program 18. Press cancel then key 6,6,6 then enter. (6 + 6 + 6 = 18) Or push key 1 18 times(!) then enter
+On the remote control, press the Clear or Cancel key to clear any previous programs.  Then choose program from chart below and press corresponding number, then press enter key.  If the program number is larger than the keys on remote, then press multiple numbers to make up the program nuber you want - for example:
+- You want program 7. Press cancel then key 6 key 1 then enter. (6 + 1 = 7)
+- You want program 9. Press cancel then key 4 key 5, or key 3 key 6, then enter (4 + 5 = 9) or (3 + 6 = 9)
+- You want program 18. Press cancel then key 6, 6, 6 then enter. (6 + 6 + 6 = 18) Or push key 1 18 times(!) then enter
 
-## Manual Control
+## Manual Control / Program Numbers
 
 Set Dip Switch 11 on, 6-10 and 12 off, and 1-5 as follows:
+
+| Prog. No | 5 | 4 | 3 | 2 | 1 | Description                                               |
+|:--------:|:-:|:-:|:-:|:-:|:-:|:----------------------------------------------------------|
+| 1        | 0 | 0 | 0 | 0 | 1 | White                                                     |
+| 2        | 0 | 0 | 0 | 1 | 0 | 'Sky' Blue                                                |
+| 3        | 0 | 0 | 0 | 1 | 1 | Green                                                     |
+| 4        | 0 | 0 | 1 | 0 | 0 | Yellow                                                    |
+| 5        | 0 | 0 | 1 | 0 | 1 | Dark Blue                                                 |
+| 6        | 0 | 0 | 1 | 1 | 0 | Purple                                                    |
+| 7        | 0 | 0 | 1 | 1 | 1 | Colour cycle(?) (2s)                                      |
+| 8        | 0 | 1 | 0 | 0 | 0 | Colour cycle(?) (5s)                                      |
+| 9        | 0 | 1 | 0 | 0 | 1 | Colour cycle(?) (10s)                                     |
+| 10       | 0 | 1 | 0 | 1 | 0 | Slow Colour cycle (0.5 RPM) + Slow(?) Twinkle (1.5 RPM)   |
+| 11       | 0 | 1 | 0 | 1 | 1 | Slow Colour cycle (1.5 RPM) + Slow(?) Twinkle (1.5 RPM)   |
+| 12       | 0 | 1 | 1 | 0 | 0 | Slow Colour cycle (2.5 RPM) + Slow(?) Twinkle (1.5 RPM)   |
+| 13       | 0 | 1 | 1 | 0 | 1 | Slow Colour cycle (0.5 RPM) + Medium(?) Twinkle (2.5 RPM) |
+| 14       | 0 | 1 | 1 | 1 | 0 | Slow Colour cycle (1.5 RPM) + Medium(?) Twinkle (2.5 RPM) |
+| 15       | 0 | 1 | 1 | 1 | 1 | Slow Colour cycle (2.5 RPM) + Medium(?) Twinkle (2.5 RPM) |
+| 16       | 1 | 0 | 0 | 0 | 0 | Slow Colour cycle (0.5 RPM) + Fast(?) Twinkle (5 RPM)     |
+| 17       | 1 | 0 | 0 | 0 | 1 | Slow Colour cycle (1.5 RPM) + Fast(?) Twinkle (5 RPM)     |
+| 18       | 1 | 0 | 0 | 1 | 0 | Slow Colour cycle (2.5 RPM) + Fast(?) Twinkle (5 RPM)     |
