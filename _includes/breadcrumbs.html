@@ -21,11 +21,13 @@
 <!-- path_type = '{{ path_type }}' -->
 <!-- crumb_path = '{{ crumb_path }}' -->
 
-{% assign path_type = '/' %}
-{% assign crumb_path = '' %}
+{% comment %}
+  {% assign path_type = '/' %}
+  {% assign crumb_path = '' %}
 
-<!-- path_type = '{{ path_type }}' -->
-<!-- crumb_path = '{{ crumb_path }}' -->
+  <!-- path_type = '{{ path_type }}' -->
+  <!-- crumb_path = '{{ crumb_path }}' -->
+{% endcomment %}
 
 <nav class="breadcrumbs">
   <ol itemscope itemtype="http://schema.org/BreadcrumbList">
@@ -34,10 +36,12 @@
     <!-- crumbs = '{{ crumbs | join: "', '" }}' -->
     {% assign i = 1 %}
     {% comment %}
-    { for crumb in crumbs offset: 1 }
+      { for crumb in crumbs offset: 1 }
     {% endcomment %}
     <!-- page.categories = '{{ page.categories | join: "', '" }}' -->
-    <!-- crumb_path = '{{ crumb_path }}' -->
+    {% comment %}
+      <!-- crumb_path = '{{ crumb_path }}' -->
+    {% endcomment %}
     {% assign crumb_path = crumb_path | prepend: site.baseurl | prepend: site.url %}
     <!-- crumb_path = '{{ crumb_path }}' -->
     {% for crumb in page.categories %}
@@ -55,12 +59,10 @@
         {% assign i = i | plus: 1 %}
         {% assign crumb_path = crumb | downcase | replace: '%20', '-' | append: path_type | prepend: crumb_path %}
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-{% comment %}
+         {% comment %}
           <a href="{{ crumb | downcase | replace: '%20', '-' | prepend: path_type | prepend: crumb_path | absolute_url }}" itemprop="item"><span itemprop="name">{{ crumb | replace: '-', ' ' | replace: '%20', ' ' | capitalize }}</span></a>
-{% endcomment %}
           <!-- crumb_path = '{{ crumb_path }}' -->
           <!-- crumb_path | absolute_url = '{{ crumb_path | absolute_url }}' -->
-         {% comment %}
           <a href="{{ crumb_path | absolute_url }}" itemprop="item"><span itemprop="name">{{ crumb | replace: '-', ' ' | replace: '%20', ' ' }}</span></a>
          {% endcomment %}
           <a href="{{ crumb_path }}" itemprop="item"><span itemprop="name">{{ crumb | replace: '-', ' ' | replace: '%20', ' ' }}</span></a>
