@@ -15,4 +15,11 @@
   .page__footer {
     display: none;
   }
+
+  .page__taxonomy,
+  .pagination,
+  .sidebar,
+  .breadcrumbs {
+    display: none;
+  }
 }
