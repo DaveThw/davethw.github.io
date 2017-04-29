@@ -76,7 +76,7 @@ On the remote control, press the Clear or Cancel key to clear any previous progr
 
 Set Dip Switch 11 on, 6-10 and 12 off, and 1-6 as follows:
 
-| Prog. No | 6 | 5 | 4 | 3 | 2 | 1 | Description                                                                     |
+| Prog. No | 6 | 5 | 4 | 3 | 2 | 1 | Static Colour                                                                   |
 |:--------:|:-:|:-:|:-:|:-:|:-:|:-:|:--------------------------------------------------------------------------------|
 | 1        | 0 | 0 | 0 | 0 | 0 | 1 | White                                                                           |
 | 2        | 0 | 0 | 0 | 0 | 1 | 0 | 'Sky' Blue                                                                      |
@@ -84,54 +84,59 @@ Set Dip Switch 11 on, 6-10 and 12 off, and 1-6 as follows:
 | 4        | 0 | 0 | 0 | 1 | 0 | 0 | Yellow                                                                          |
 | 5        | 0 | 0 | 0 | 1 | 0 | 1 | Dark Blue                                                                       |
 | 6        | 0 | 0 | 0 | 1 | 1 | 0 | Purple                                                                          |
-| 7        | 0 | 0 | 0 | 1 | 1 | 1 | Colour flash change (Wh->SB->Gr->Ye->DB->Pu->DB->Ye->Gr->SB->Wh) (2s per step)  |
-| 8        | 0 | 0 | 1 | 0 | 0 | 0 | Colour flash change (Wh->SB->Gr->Ye->DB->Pu->DB->Ye->Gr->SB->Wh) (5s per step)  |
-| 9        | 0 | 0 | 1 | 0 | 0 | 1 | Colour flash change (Wh->SB->Gr->Ye->DB->Pu->DB->Ye->Gr->SB->Wh) (10s per step) |
-| 10       | 0 | 0 | 1 | 0 | 1 | 0 | V.Slow Colour cycle (0.88 RPM) + Slow Twinkle (1.54 RPM)                        |
-| 11       | 0 | 0 | 1 | 0 | 1 | 1 | Slow Colour cycle (1.5 RPM) + Slow Twinkle (1.54 RPM)                           |
-| 12       | 0 | 0 | 1 | 1 | 0 | 0 | Medium Colour cycle (2.65 RPM) + Slow Twinkle (1.54 RPM)                        |
-| 13       | 0 | 0 | 1 | 1 | 0 | 1 | V.Slow Colour cycle (0.88 RPM) + Medium Twinkle (2.65 RPM)                      |
-| 14       | 0 | 0 | 1 | 1 | 1 | 0 | Slow Colour cycle (1.5 RPM) + Medium Twinkle (2.65 RPM)                         |
-| 15       | 0 | 0 | 1 | 1 | 1 | 1 | Medium Colour cycle (2.65 RPM) + Medium Twinkle (2.65 RPM)                      |
-| 16       | 0 | 1 | 0 | 0 | 0 | 0 | V.Slow Colour cycle (0.88 RPM) + Fast Twinkle (5.1 RPM)                         |
-| 17       | 0 | 1 | 0 | 0 | 0 | 1 | Slow Colour cycle (1.5 RPM) + Fast Twinkle (5.1 RPM)                            |
-| 18       | 0 | 1 | 0 | 0 | 1 | 0 | Medium Colour cycle (2.65 RPM) + Fast Twinkle (5.1 RPM)                         |
-| 19       | 0 | 1 | 0 | 0 | 1 | 1 | V.V.Slow Colour cycle (0.1 RPM) + V.V.Slow Twinkle (0.1 RPM)                    |
-| 20       | 0 | 1 | 0 | 1 | 0 | 0 | V.V.Slow Colour cycle (0.1 RPM) + V.Slow Twinkle (0.9 RPM)                      |
-| 21       | 0 | 1 | 0 | 1 | 0 | 1 | V.V.Slow Colour cycle (0.1 RPM) + Slow Twinkle (1.54 RPM)                       |
-| 22       | 0 | 1 | 0 | 1 | 1 | 0 | V.V.Slow Colour cycle (0.1 RPM) + Medium Twinkle (2.65 RPM)                     |
-| 23       | 0 | 1 | 0 | 1 | 1 | 1 | V.V.Slow Colour cycle (0.1 RPM) + Fast Twinkle (5.1 RPM)                        |
-| 24       | 0 | 1 | 1 | 0 | 0 | 0 | Fast Colour cycle (5.1 RPM) + Fast Twinkle (5.1 RPM)                            |
-| 25       | 0 | 1 | 1 | 0 | 0 | 1 | V.Fast Colour cycle (9.5 RPM) + V.Fast Twinkle (9.5 RPM)                        |
-| 26       | 0 | 1 | 1 | 0 | 1 | 0 | Slow-Medium Colour cycle (1.78 RPM) + V.Fast Twinkle (9.5 RPM)                  |
-| 27       | 0 | 1 | 1 | 0 | 1 | 1 | Medium-Slow Colour cycle (2.1 RPM) + V.Fast Twinkle (9.5 RPM)                   |
-| 28       | 0 | 1 | 1 | 1 | 0 | 0 | Medium Colour cycle (2.65 RPM) + V.Fast Twinkle (9.5 RPM)                       |
-| 29       | 0 | 1 | 1 | 1 | 0 | 1 | Medium-Fast Colour cycle (3.5 RPM) + V.Fast Twinkle (9.5 RPM)                   |
-| 30       | 0 | 1 | 1 | 1 | 1 | 0 | Fast Colour cycle (5.1 RPM) + V.Fast Twinkle (9.5 RPM)                          |
-| 31       | 0 | 1 | 1 | 1 | 1 | 1 | V.Fast Colour cycle (9.5 RPM) + V.Fast Twinkle (9.5 RPM)                        |
-| 32       | 1 | 0 | 0 | 0 | 0 | 0 | Fast Colour cycle (5.1 RPM) + V.Fast Twinkle (9.5 RPM)                          |
-| 33       | 1 | 0 | 0 | 0 | 0 | 1 | Medium-Fast Colour cycle (3.5 RPM) + Fast Twinkle (5.1 RPM)                     |
-| 34       | 1 | 0 | 0 | 0 | 1 | 0 | Medium Colour cycle (2.65 RPM) + Fast Twinkle (5.1 RPM)                         |
-| 35       | 1 | 0 | 0 | 0 | 1 | 1 | V.Fast Colour cycle (9.5 RPM) + Medium-Fast Twinkle (3.5 RPM)                   |
-| 36       | 1 | 0 | 0 | 1 | 0 | 0 | Fast Colour cycle (5.1 RPM) + Medium-Fast Twinkle (3.5 RPM)                     |
-| 37       | 1 | 0 | 0 | 1 | 0 | 1 | Medium-Fast Colour cycle (3.5 RPM) + Medium-Fast Twinkle (3.5 RPM)              |
-| 38       | 1 | 0 | 0 | 1 | 1 | 0 | Medium Colour cycle (2.65 RPM) + Medium-Fast Twinkle (3.5 RPM)                  |
-| 39       | 1 | 0 | 0 | 1 | 1 | 1 | V.Fast Colour cycle (9.5 RPM) + Medium Twinkle (2.65 RPM)                       |
-| 40       | 1 | 0 | 1 | 0 | 0 | 0 | Fast Colour cycle (5.1 RPM) + Medium Twinkle (2.65 RPM)                         |
-| 41       | 1 | 0 | 1 | 0 | 0 | 1 | Medium-Fast Colour cycle (3.5 RPM) + Medium Twinkle (2.65 RPM)                  |
-| 42       | 1 | 0 | 1 | 0 | 1 | 0 | Medium Colour cycle (2.65 RPM) + Medium Twinkle (2.65 RPM)                      |
-| 43       | 1 | 0 | 1 | 0 | 1 | 1 | V.Fast Colour cycle (9.5 RPM) + Slow-Medium Twinkle (1.78 RPM)                  |
-| 44       | 1 | 0 | 1 | 1 | 0 | 0 | Fast Colour cycle (5.1 RPM) + Slow-Medium Twinkle (1.78 RPM)                    |
-| 45       | 1 | 0 | 1 | 1 | 0 | 1 | Medium-Fast Colour cycle (3.5 RPM) + Slow-Medium Twinkle (1.78 RPM)             |
-| 46       | 1 | 0 | 1 | 1 | 1 | 0 | Medium Colour cycle (2.65 RPM) + Slow-Medium Twinkle (1.78 RPM)                 |
-| 47       | 1 | 0 | 1 | 1 | 1 | 1 | V.Fast Colour cycle (9.5 RPM) + V.Fast Twinkle (9.5 RPM) + Strobe (0.65Hz)      |
-| 48       | 1 | 1 | 0 | 0 | 0 | 0 | Fast Colour cycle (5.1 RPM) + V.Fast Twinkle (9.5 RPM) + Strobe (0.65Hz)        |
-| 49       | 1 | 1 | 0 | 0 | 0 | 1 | Medium-Fast Colour cycle (3.5 RPM) + V.Fast Twinkle (9.5 RPM) + Strobe (0.65Hz) |
-| 50       | 1 | 1 | 0 | 0 | 1 | 0 | Medium Colour cycle (2.65 RPM) + V.Fast Twinkle (9.5 RPM) + Strobe (0.65Hz)     |
+
+| Prog. No | 6 | 5 | 4 | 3 | 2 | 1 | Colour flash change (Wh->SB->Gr->Ye->DB->Pu->DB->Ye->Gr->SB->Wh)                |
+|:--------:|:-:|:-:|:-:|:-:|:-:|:-:|:--------------------------------------------------------------------------------|
+| 7        | 0 | 0 | 0 | 1 | 1 | 1 | 2s per step                                                                     |
+| 8        | 0 | 0 | 1 | 0 | 0 | 0 | 5s per step                                                                     |
+| 9        | 0 | 0 | 1 | 0 | 0 | 1 | 10s per step                                                                    |
+
+| Prog. No | 6 | 5 | 4 | 3 | 2 | 1 | Colour cycle             | speed    | Twinkle             | speed    | Strobe          |
+|:--------:|:-:|:-:|:-:|:-:|:-:|:-:|:------------------------:|:--------:|:-------------------:|:--------:|:---------------:|
+| 10       | 0 | 0 | 1 | 0 | 1 | 0 | V.Slow Colour cycle      | 0.88 RPM | Slow Twinkle        | 1.54 RPM |                 |
+| 11       | 0 | 0 | 1 | 0 | 1 | 1 | Slow Colour cycle        | 1.5 RPM  | Slow Twinkle        | 1.54 RPM |                 |
+| 12       | 0 | 0 | 1 | 1 | 0 | 0 | Medium Colour cycle      | 2.65 RPM | Slow Twinkle        | 1.54 RPM |                 |
+| 13       | 0 | 0 | 1 | 1 | 0 | 1 | V.Slow Colour cycle      | 0.88 RPM | Medium Twinkle      | 2.65 RPM |                 |
+| 14       | 0 | 0 | 1 | 1 | 1 | 0 | Slow Colour cycle        | 1.5 RPM  | Medium Twinkle      | 2.65 RPM |                 |
+| 15       | 0 | 0 | 1 | 1 | 1 | 1 | Medium Colour cycle      | 2.65 RPM | Medium Twinkle      | 2.65 RPM |                 |
+| 16       | 0 | 1 | 0 | 0 | 0 | 0 | V.Slow Colour cycle      | 0.88 RPM | Fast Twinkle        | 5.1 RPM  |                 |
+| 17       | 0 | 1 | 0 | 0 | 0 | 1 | Slow Colour cycle        | 1.5 RPM  | Fast Twinkle        | 5.1 RPM  |                 |
+| 18       | 0 | 1 | 0 | 0 | 1 | 0 | Medium Colour cycle      | 2.65 RPM | Fast Twinkle        | 5.1 RPM  |                 |
+| 19       | 0 | 1 | 0 | 0 | 1 | 1 | V.V.Slow Colour cycle    | 0.1 RPM  | V.V.Slow Twinkle    | 0.1 RPM  |                 |
+| 20       | 0 | 1 | 0 | 1 | 0 | 0 | V.V.Slow Colour cycle    | 0.1 RPM  | V.Slow Twinkle      | 0.9 RPM  |                 |
+| 21       | 0 | 1 | 0 | 1 | 0 | 1 | V.V.Slow Colour cycle    | 0.1 RPM  | Slow Twinkle        | 1.54 RPM |                 |
+| 22       | 0 | 1 | 0 | 1 | 1 | 0 | V.V.Slow Colour cycle    | 0.1 RPM  | Medium Twinkle      | 2.65 RPM |                 |
+| 23       | 0 | 1 | 0 | 1 | 1 | 1 | V.V.Slow Colour cycle    | 0.1 RPM  | Fast Twinkle        | 5.1 RPM  |                 |
+| 24       | 0 | 1 | 1 | 0 | 0 | 0 | Fast Colour cycle        | 5.1 RPM  | Fast Twinkle        | 5.1 RPM  |                 |
+| 25       | 0 | 1 | 1 | 0 | 0 | 1 | V.Fast Colour cycle      | 9.5 RPM  | V.Fast Twinkle      | 9.5 RPM  |                 |
+| 26       | 0 | 1 | 1 | 0 | 1 | 0 | Slow-Medium Colour cycle | 1.78 RPM | V.Fast Twinkle      | 9.5 RPM  |                 |
+| 27       | 0 | 1 | 1 | 0 | 1 | 1 | Medium-Slow Colour cycle | 2.1 RPM  | V.Fast Twinkle      | 9.5 RPM  |                 |
+| 28       | 0 | 1 | 1 | 1 | 0 | 0 | Medium Colour cycle      | 2.65 RPM | V.Fast Twinkle      | 9.5 RPM  |                 |
+| 29       | 0 | 1 | 1 | 1 | 0 | 1 | Medium-Fast Colour cycle | 3.5 RPM  | V.Fast Twinkle      | 9.5 RPM  |                 |
+| 30       | 0 | 1 | 1 | 1 | 1 | 0 | Fast Colour cycle        | 5.1 RPM  | V.Fast Twinkle      | 9.5 RPM  |                 |
+| 31       | 0 | 1 | 1 | 1 | 1 | 1 | V.Fast Colour cycle      | 9.5 RPM  | V.Fast Twinkle      | 9.5 RPM  |                 |
+| 32       | 1 | 0 | 0 | 0 | 0 | 0 | Fast Colour cycle        | 5.1 RPM  | V.Fast Twinkle      | 9.5 RPM  |                 |
+| 33       | 1 | 0 | 0 | 0 | 0 | 1 | Medium-Fast Colour cycle | 3.5 RPM  | Fast Twinkle        | 5.1 RPM  |                 |
+| 34       | 1 | 0 | 0 | 0 | 1 | 0 | Medium Colour cycle      | 2.65 RPM | Fast Twinkle        | 5.1 RPM  |                 |
+| 35       | 1 | 0 | 0 | 0 | 1 | 1 | V.Fast Colour cycle      | 9.5 RPM  | Medium-Fast Twinkle | 3.5 RPM  |                 |
+| 36       | 1 | 0 | 0 | 1 | 0 | 0 | Fast Colour cycle        | 5.1 RPM  | Medium-Fast Twinkle | 3.5 RPM  |                 |
+| 37       | 1 | 0 | 0 | 1 | 0 | 1 | Medium-Fast Colour cycle | 3.5 RPM  | Medium-Fast Twinkle | 3.5 RPM  |                 |
+| 38       | 1 | 0 | 0 | 1 | 1 | 0 | Medium Colour cycle      | 2.65 RPM | Medium-Fast Twinkle | 3.5 RPM  |                 |
+| 39       | 1 | 0 | 0 | 1 | 1 | 1 | V.Fast Colour cycle      | 9.5 RPM  | Medium Twinkle      | 2.65 RPM |                 |
+| 40       | 1 | 0 | 1 | 0 | 0 | 0 | Fast Colour cycle        | 5.1 RPM  | Medium Twinkle      | 2.65 RPM |                 |
+| 41       | 1 | 0 | 1 | 0 | 0 | 1 | Medium-Fast Colour cycle | 3.5 RPM  | Medium Twinkle      | 2.65 RPM |                 |
+| 42       | 1 | 0 | 1 | 0 | 1 | 0 | Medium Colour cycle      | 2.65 RPM | Medium Twinkle      | 2.65 RPM |                 |
+| 43       | 1 | 0 | 1 | 0 | 1 | 1 | V.Fast Colour cycle      | 9.5 RPM  | Slow-Medium Twinkle | 1.78 RPM |                 |
+| 44       | 1 | 0 | 1 | 1 | 0 | 0 | Fast Colour cycle        | 5.1 RPM  | Slow-Medium Twinkle | 1.78 RPM |                 |
+| 45       | 1 | 0 | 1 | 1 | 0 | 1 | Medium-Fast Colour cycle | 3.5 RPM  | Slow-Medium Twinkle | 1.78 RPM |                 |
+| 46       | 1 | 0 | 1 | 1 | 1 | 0 | Medium Colour cycle      | 2.65 RPM | Slow-Medium Twinkle | 1.78 RPM |                 |
+| 47       | 1 | 0 | 1 | 1 | 1 | 1 | V.Fast Colour cycle      | 9.5 RPM  | V.Fast Twinkle      | 9.5 RPM  | Strobe (0.65Hz) |
+| 48       | 1 | 1 | 0 | 0 | 0 | 0 | Fast Colour cycle        | 5.1 RPM  | V.Fast Twinkle      | 9.5 RPM  | Strobe (0.65Hz) |
+| 49       | 1 | 1 | 0 | 0 | 0 | 1 | Medium-Fast Colour cycle | 3.5 RPM  | V.Fast Twinkle      | 9.5 RPM  | Strobe (0.65Hz) |
+| 50       | 1 | 1 | 0 | 0 | 1 | 0 | Medium Colour cycle      | 2.65 RPM | V.Fast Twinkle      | 9.5 RPM  | Strobe (0.65Hz) |
 
 
 |             |         | Colour:   | V.V.Slow  | V.Slow    | Slow      | Slow-Medium | Medium-Slow | Medium    | Medium-Fast | Fast       | V.Fast   |
-|:-----------:|:-------:|:---------:|:---------:|:---------:|:---------:|:-----------:|:-----------:|:---------:|:-----------:|:----------:|:--------:|
 |             |         |           | 0.1RPM    | 0.88RPM   | 1.5RPM    | 1.78RPM     | 2.1RPM      | 2.65RPM   | 3.5RPM      | 5.1RPM     | 9.5RPM   |
 |             |         |           | 10:10/rev | 68s/rev   | ~40s/rev  | 33.7s/rev   | 28.4s/rev   | 22.7s/rev | 17.14s/rev  | 11.75s/rev | 6.3s/rev |
 | Twinkle:    |         |           | 1:42/col  | 11.3s/col | ~6.7s/col | 5.6s/col    | 4.7s/col    | 3.8s/col  | 2.9s/col    | 2.0s/col   | 1.0s/col |
