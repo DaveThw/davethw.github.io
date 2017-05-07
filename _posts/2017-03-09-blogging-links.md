@@ -4,6 +4,7 @@ categories: Website
 # tags: 
 excerpt: Links to some useful resources for blogging
 date: 2017-03-09 18:30
+modified: 2017-03-29 09:30
 read_time: false
 ---
 
@@ -27,3 +28,8 @@ read_time: false
 ## Liquid
 
 - [Reference](http://shopify.github.io/liquid/)
+
+## 'Contact Me' forms
+
+- [You do not need a database for your contact form](http://sebastien.saunier.me/blog/2014/04/15/you-do-not-need-a-database-for-your-contact-form.html)
+- [Formspreee.io](https://formspree.io/)
