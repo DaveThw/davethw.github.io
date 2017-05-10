@@ -1,0 +1,49 @@
+/* ==========================================================================
+   USER STYLES
+   ========================================================================== */
+
+@media print {
+
+  /* Give tables black borders all around (MM seems to under do bottom-border) */
+  table {
+    border: 1px solid #000;
+  }
+
+  th,
+  td {
+    border-right: 1px solid #000;
+  }
+
+  thead {
+    border-bottom: 1px solid #000;
+  }
+
+  /* But remove the bottom border if there are multiple header rows... */
+  th {
+    border-bottom: none;
+  }
+
+  /* Allow tables to split across pages */
+  table {
+    page-break-inside: auto;
+  }
+
+  /* Hide link addresses in breadcrumbs and tags */
+  .breadcrumbs a:after,
+  .page__taxonomy a:after {
+    content: none;
+  }
+
+  /* Reduce margin at the top of the page */
+  #main {
+    margin-top: 0.5em;
+  }
+
+/* Hide the following elements on print
+   ========================================================================== */
+
+  /* Totally hide the sidebar - MM already hides most (all?) sections contained in it */
+  .sidebar {
+    display: none !important;
+  }
+}
