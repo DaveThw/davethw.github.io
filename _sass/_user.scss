@@ -28,6 +28,12 @@
     page-break-inside: auto;
   }
 
+
+  /* Allow blocks of code to split across pages */
+  code, pre.highlight {
+    page-break-inside: auto;
+  }
+
   /* Hide link addresses in breadcrumbs and tags */
   .breadcrumbs a:after,
   .page__taxonomy a:after {
