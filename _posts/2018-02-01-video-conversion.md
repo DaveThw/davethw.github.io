@@ -35,10 +35,10 @@ Finally, convert MPG files to mp4 files with:
 C:\Users\Dave>cd Downloads\ffmpeg-3.4.1-win64-static\bin
 C:\Users\Dave\Downloads\ffmpeg-3.4.1-win64-static\bin>ffmpeg.exe -i "C:\Users\Dave\Desktop\Birdsong\1st Dress\First Half.MPG" "C:\Users\Dave\Desktop\Birdsong\1st Dress\First Half.mp4"
 ```
-Note: ffmpeg will guess file types from the extensions, and the default settings for outputting mp4 are: video stream as h264 (High), audio stream as AAC - which generally works well!  Video conversion seems to run at about 3x speed on my work desktop.
+Note: ffmpeg will guess file types from the extensions, and the [default settings for outputting mp4](http://www.bugcodemaster.com/article/convert-videos-mp4-format-using-ffmpeg) are: video stream as h264 (High), audio stream as AAC - which generally works well!  Video conversion seems to run at about 3x speed on my work desktop.
 
 
-If it looks like the vides might need de-interlacing (our camera does), try this instead (found in the [ffmpeg FAQ, here](http://www.ffmpeg.org/faq.html#Interlaced-video-looks-very-bad-when-encoded-with-ffmpeg_002c-what-is-wrong_003f)) - note the additional flags between the input and output file names:
+If it looks like the videos might need de-interlacing (our camera does!), try this instead (found in the [ffmpeg FAQ, here](http://www.ffmpeg.org/faq.html#Interlaced-video-looks-very-bad-when-encoded-with-ffmpeg_002c-what-is-wrong_003f)) - note the additional flags between the input and output file names:
 ```terminal
 C:\Users\Dave\Downloads\ffmpeg-3.4.1-win64-static\bin>ffmpeg.exe -i "C:\Users\Dave\Desktop\Birdsong\1st Dress\First Half.MPG" -flags +ilme+ildct "C:\Users\Dave\Desktop\Birdsong\1st Dress\First Half.mp4"
 ```
