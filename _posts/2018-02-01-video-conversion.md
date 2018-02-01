@@ -1,6 +1,6 @@
 ---
 title: "Video conversion using ffmpeg on Windows"
-categories: TheatreRoyal
+categories: Theatre-Royal
 tags: ffmpeg
 excerpt: Step-by-step through using ffmpeg to convert video files (from our video camera) to mp4's
 date: 2018-02-01 11:00
@@ -20,6 +20,9 @@ C:\Users\Dave\Downloads\ffmpeg-3.4.1-win64-static\bin>ffprobe -hide_banner -show
 In the `[FORMAT]` section, look for `format_long_name`.
 
 
+Note: complete filenames can be easily inserted into the Command Prompt by dragging the file from a Directory window and dropping on the Command window!..
+
+
 If necessary, concatenate files with:
 ```shell
 C:\Users\Dave>copy /b "C:\Users\Dave\Desktop\Birdsong\1st Dress\M2U00032.MPG" + "C:\Users\Dave\Desktop\Birdsong\1st Dress\M2U00033.MPG" "C:\Users\Dave\Desktop\Birdsong\1st Dress\First Half.MPG"
@@ -33,3 +36,9 @@ C:\Users\Dave>cd Downloads\ffmpeg-3.4.1-win64-static\bin
 C:\Users\Dave\Downloads\ffmpeg-3.4.1-win64-static\bin>ffmpeg.exe -i "C:\Users\Dave\Desktop\Birdsong\1st Dress\First Half.MPG" "C:\Users\Dave\Desktop\Birdsong\1st Dress\First Half.mp4"
 ```
 Note: ffmpeg will guess file types from the extensions, and the default settings for outputting mp4 are: video stream as h264 (High), audio stream as AAC - which generally works well!  Video conversion seems to run at about 3x speed on my work desktop.
+
+
+If it looks like the vides might need de-interlacing (our camera does), try this instead:
+```shell
+C:\Users\Dave\Downloads\ffmpeg-3.4.1-win64-static\bin>ffmpeg.exe -i "C:\Users\Dave\Desktop\Birdsong\1st Dress\First Half.MPG" -flags +ilme+ildct "C:\Users\Dave\Desktop\Birdsong\1st Dress\First Half.mp4"
+```
