@@ -13,7 +13,7 @@ Our camera records as MPEG-2 Program Stream files, which are a little bulky and 
 
 
 If you want to, confirm that an MPG file is indeed MPEG-PS with:
-```shell
+```shell_session
 C:\Users\Dave>cd Downloads\ffmpeg-3.4.1-win64-static\bin
 C:\Users\Dave\Downloads\ffmpeg-3.4.1-win64-static\bin>ffprobe -hide_banner -show_format "C:\Users\Dave\Desktop\Birdsong\1st Dress\M2U00032.MPG"
 ```
@@ -31,7 +31,7 @@ Note the `+` between the files that should be concatenated together - more that 
 
 
 Finally, convert MPG files to mp4 files with:
-```shell
+```terminal
 C:\Users\Dave>cd Downloads\ffmpeg-3.4.1-win64-static\bin
 C:\Users\Dave\Downloads\ffmpeg-3.4.1-win64-static\bin>ffmpeg.exe -i "C:\Users\Dave\Desktop\Birdsong\1st Dress\First Half.MPG" "C:\Users\Dave\Desktop\Birdsong\1st Dress\First Half.mp4"
 ```
@@ -39,6 +39,6 @@ Note: ffmpeg will guess file types from the extensions, and the default settings
 
 
 If it looks like the vides might need de-interlacing (our camera does), try this instead:
-```shell
+```console
 C:\Users\Dave\Downloads\ffmpeg-3.4.1-win64-static\bin>ffmpeg.exe -i "C:\Users\Dave\Desktop\Birdsong\1st Dress\First Half.MPG" -flags +ilme+ildct "C:\Users\Dave\Desktop\Birdsong\1st Dress\First Half.mp4"
 ```
