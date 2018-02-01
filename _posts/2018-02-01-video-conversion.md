@@ -13,7 +13,7 @@ Our camera records as MPEG-2 Program Stream files, which are a little bulky and 
 
 
 If you want to, confirm that an MPG file is indeed MPEG-PS with:
-```shell_session
+```terminal
 C:\Users\Dave>cd Downloads\ffmpeg-3.4.1-win64-static\bin
 C:\Users\Dave\Downloads\ffmpeg-3.4.1-win64-static\bin>ffprobe -hide_banner -show_format "C:\Users\Dave\Desktop\Birdsong\1st Dress\M2U00032.MPG"
 ```
@@ -24,7 +24,7 @@ Note: complete filenames can be easily inserted into the Command Prompt by dragg
 
 
 If necessary, concatenate files with:
-```shell
+```terminal
 C:\Users\Dave>copy /b "C:\Users\Dave\Desktop\Birdsong\1st Dress\M2U00032.MPG" + "C:\Users\Dave\Desktop\Birdsong\1st Dress\M2U00033.MPG" "C:\Users\Dave\Desktop\Birdsong\1st Dress\First Half.MPG"
 ```
 Note the `+` between the files that should be concatenated together - more that two files is possible at once - the last parameter is the output file name.  And note the /b at the beginning - this tells `copy` that its copying binary files, and therefore shouldn't stop when it finds a CTRL-Z character (which `copy` considers an end-of-file character in an ASCII file - [see here](https://technet.microsoft.com/en-gb/library/bb490886.aspx#ECAA))
@@ -39,6 +39,6 @@ Note: ffmpeg will guess file types from the extensions, and the default settings
 
 
 If it looks like the vides might need de-interlacing (our camera does), try this instead:
-```console
+```terminal
 C:\Users\Dave\Downloads\ffmpeg-3.4.1-win64-static\bin>ffmpeg.exe -i "C:\Users\Dave\Desktop\Birdsong\1st Dress\First Half.MPG" -flags +ilme+ildct "C:\Users\Dave\Desktop\Birdsong\1st Dress\First Half.mp4"
 ```
