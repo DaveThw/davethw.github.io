@@ -3,7 +3,8 @@ title: "Video conversion using ffmpeg on Windows"
 categories: Theatre-Royal
 tags: ffmpeg
 excerpt: Step-by-step through using ffmpeg to convert video files (from our video camera) to mp4's
-date: 2018-02-01 11:00
+# date: 2018-02-01 11:00
+modified: 2018-02-20 12:00
 ---
 
 First, if not yet done, [download ffmpeg](https://ffmpeg.zeranoe.com/builds/) - I went for the latest Release Build (3.4.1), Windows 64-bit, Static.  Once the zip files has downloaded, extract the contents somewhere (Downloads folder works) - note the zip folder contains a directory, which contains everything else, so it's less confusing if you extract directly into Downloads, rather than the subdirectory that the extractor will suggest!..
@@ -11,6 +12,8 @@ First, if not yet done, [download ffmpeg](https://ffmpeg.zeranoe.com/builds/) - 
 
 Our camera records as MPEG-2 Program Stream files, which are a little bulky and are capped at just under 2GB (about 49mins long) - longer recordings are therefore split into multiple files.  Fortunately, according to the [ffmpeg faq](http://www.ffmpeg.org/faq.html#Concatenating-using-the-concat-protocol-_0028file-level_0029), MPEG-2 PS files can just be concatenated together using the huble `copy` command!..
 
+
+## Format Check
 
 If you want to, confirm that an MPG file is indeed MPEG-PS with:
 ```terminal
@@ -22,6 +25,7 @@ In the `[FORMAT]` section, look for `format_long_name`.
 
 Note: complete filenames can be easily inserted into the Command Prompt by dragging the file from a Directory window and dropping on the Command window!..
 
+## Concatenate Files
 
 If necessary, concatenate files with:
 ```terminal
@@ -29,6 +33,7 @@ C:\Users\Dave>copy /b "C:\Users\Dave\Desktop\Birdsong\1st Dress\M2U00032.MPG" + 
 ```
 Note the `+` between the files that should be concatenated together - more that two files is possible at once - the last parameter is the output file name.  And note the /b at the beginning - this tells `copy` that its copying binary files, and therefore shouldn't stop when it finds a CTRL-Z character (which `copy` considers an end-of-file character in an ASCII file - [see here](https://technet.microsoft.com/en-gb/library/bb490886.aspx#ECAA))
 
+## Basic Conversion
 
 Finally, convert MPG files to mp4 files with:
 ```terminal
@@ -37,8 +42,23 @@ C:\Users\Dave\Downloads\ffmpeg-3.4.1-win64-static\bin>ffmpeg.exe -i "C:\Users\Da
 ```
 Note: ffmpeg will guess file types from the extensions, and the [default settings for outputting mp4](http://www.bugcodemaster.com/article/convert-videos-mp4-format-using-ffmpeg) are: video stream as h264 (High), audio stream as AAC - which generally works well!  Video conversion seems to run at about 3x speed on my work desktop.
 
+## De-Interlacing
 
 If it looks like the videos might need de-interlacing (our camera does!), try this instead (found in the [ffmpeg FAQ, here](http://www.ffmpeg.org/faq.html#Interlaced-video-looks-very-bad-when-encoded-with-ffmpeg_002c-what-is-wrong_003f)) - note the additional flags between the input and output file names:
 ```terminal
 C:\Users\Dave\Downloads\ffmpeg-3.4.1-win64-static\bin>ffmpeg.exe -i "C:\Users\Dave\Desktop\Birdsong\1st Dress\First Half.MPG" -flags +ilme+ildct "C:\Users\Dave\Desktop\Birdsong\1st Dress\First Half.mp4"
+```
+
+## Trimming
+
+You can set a start time and a duration with the `-ss` and `-t` flags, before the `-i` input file, like so:
+```terminal
+C:\Users\Dave\Downloads\ffmpeg-3.4.1-win64-static\bin>ffmpeg.exe -ss 0:01:00 -t 1:06:00 -i "C:\Users\Dave\Videos\2018-02 Teddy\Original MPGs\First Night.mpg" -flags +ilme+ildct "C:\Users\Dave\Videos\2018-02 Teddy\First Night - First Half.mp4"
+```
+
+## Multiple Conversions
+
+The command prompt will let you run multiple commands on one line using `&` to link them together (or `&&` if you only want to do the second command if the first one exits sucessfully) - [see here](https://stackoverflow.com/questions/8055371/how-do-i-run-two-commands-in-one-line-in-windows-cmd#answer-8055390) - like this: 
+```terminal
+C:\Users\Dave\Downloads\ffmpeg-3.4.1-win64-static\bin>ffmpeg.exe -ss 0:01:00 -t 1:06:00 -i "C:\Users\Dave\Videos\2018-02 Teddy\Original MPGs\First Night.mpg" -flags +ilme+ildct "C:\Users\Dave\Videos\2018-02 Teddy\First Night - First Half.mp4" & ffmpeg.exe -ss 1:27:00 -t 0:48:00 -i "C:\Users\Dave\Videos\2018-02 Teddy\Original MPGs\First Night.mpg" -flags +ilme+ildct "C:\Users\Dave\Videos\2018-02 Teddy\First Night - Second Half.mp4"
 ```
