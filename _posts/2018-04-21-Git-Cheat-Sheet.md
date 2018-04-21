@@ -77,3 +77,4 @@ If you omit `-m "message"` then a text editor will launch with a default commit 
 Based on various other Git Cheat Sheets, and other resources around the web!..
 - https://www.git-tower.com/blog/git-cheat-sheet/
 - https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet
+- https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf
