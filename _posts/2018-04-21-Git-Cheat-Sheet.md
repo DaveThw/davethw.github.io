@@ -35,7 +35,7 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Set
 ~/project $ git config --global user.email "you@example.com"
 ~/project $ git config --global user.name "Your Name"
 ```
-*Omit `--global` to set the identity only in this repository.*
+*Omit* `--global` *to set the identity only in this repository.*
 *__Note:__ If you don't set these options, git will ask you to do so the first time you try to commit anything!*  
 Ref: [Git Pro](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_your_identity)
 
