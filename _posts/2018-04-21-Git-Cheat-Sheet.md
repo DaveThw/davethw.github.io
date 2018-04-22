@@ -25,7 +25,7 @@ or
 ```shell
 ~ $ git clone https://github.com/User/project.git
 ```
-(can also be done with SSH, or from elsewhere on local filesystem)
+*__Note:__ can also be done with SSH, or from elsewhere on local filesystem*
 
 
 ### Set user details for git:
@@ -33,23 +33,33 @@ or
 ~/project $ git config --global user.email "you@example.com"
 ~/project $ git config --global user.name "Your Name"
 ```
-Omit `--global` to set the identity only in this repository.  If you don't set these options, git will ask you to do so the first time you try to commit anything!  
+*Omit `--global` to set the identity only in this repository.*
+*__Note:__ If you don't set these options, git will ask you to do so the first time you try to commit anything!*  
 Refs: [GitHub](#ref_github_gcs) | [Atlassian](#ref_atlassian_gcs) | [Git Pro](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_your_identity)
+
+
+## Check your settings:
+```shell
+~/project $ git config --list
+~/project $ git config user.name
+```
+Ref: [Git Pro](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_checking_your_settings)
+
 
 ## Basic use
 
 ### Show status of project:
-Which branch you are on and which files are ready to commit, unstaged yet, or untracked:
 ```shell
 ~/project $ git status
 ```
+*This shows you which branch you are on and which files are ready to commit, unstaged yet, or untracked*
 
 
 ### Stage changes in file / directory ready for the next commit:
 ```shell
 ~/project $ git add <file|directory>
 ```
-ie. this will add all changed files (run from the root of the project!):
+ie. this will add all changed files in the current directory:
 ```shell
 ~/project $ git add .
 ```
@@ -59,7 +69,8 @@ ie. this will add all changed files (run from the root of the project!):
 ```shell
 ~/project $ git rm file
 ```
-Note: as well as removing the file from git's list of files, this will also delete the file.  If you just want remove the file from version control, but not actually delete the file, use:
+*__Note:__ as well as removing the file from git's index of tracked files, this will also delete the file.*  
+If you just want remove the file from version control, but not actually delete the file, use:
 ```shell
 ~/project $ git rm --cached file
 ```
@@ -69,7 +80,7 @@ Note: as well as removing the file from git's list of files, this will also dele
 ```shell
 ~/project $ git commit -m "<message - try to keep to less than 50 chars!..>"
 ```
-If you omit `-m "message"` then a text editor will launch with a default commit message - this gives you the chance to add more lines of detail after the main commit message (I think...)
+*If you omit `-m "message"` then a text editor will launch with a default commit message - this gives you the chance to add more lines of detail after the main commit message (I think...)*
 
 
 ## References
