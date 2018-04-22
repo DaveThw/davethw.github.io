@@ -19,7 +19,7 @@ or
 ~ $ cd project
 ~/project $ git init
 ```
-Ref: [Git Pro](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_initializing_a_repository_in_an_existing_directory)
+Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository#_initializing_a_repository_in_an_existing_directory)
 
 
 ### Clone a repo from GitHub (or elsewhere):
@@ -27,7 +27,7 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Set
 ~ $ git clone https://github.com/User/project.git
 ```
 *__Note:__ can also be done with SSH, or from elsewhere on local filesystem*
-<br>Ref: [Git Pro](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_git_cloning)
+<br>Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository#_git_cloning)
 
 
 ### Set user details for git:
