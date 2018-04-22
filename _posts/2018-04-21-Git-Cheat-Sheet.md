@@ -48,7 +48,7 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repositor
 ~/project $ git config user.name
 ```
 Ref: [Git Pro](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_checking_your_settings)
-
+<br>See also: [Git Configuration](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration)
 
 ## Basic use
 
@@ -83,12 +83,27 @@ Refs: Git Pro - [Tracking new files](https://git-scm.com/book/en/v2/Git-Basics-R
 Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_removing_files)
 
 
+### Rename a file:
+```shell
+~/project $ git mv file_from file_to
+```
+*__Note:__ if you move a file manually, git should work out that you've moved it - although you'll have to run* `git rm file_from` *and* `git add file_to`*, so therefore* `git mv` *saves one or two commands!*
+<br>Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_git_mv)
+
+
 ### Commit the staged files:
 ```shell
 ~/project $ git commit -m "<message - try to keep to less than 50 chars!..>"
 ```
 *If you omit* `-m "message"` *then a text editor will launch with a default commit message - this gives you the chance to add more lines of detail after the main commit message (I think...)*
 <br>Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_committing_changes)
+
+
+### Commit all modified, tracked files, without needing to stage them first:
+```shell
+~/project $ git commit -a -m "<message>"
+```
+Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_skipping_the_staging_area)
 
 
 ## References
