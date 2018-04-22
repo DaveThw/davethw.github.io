@@ -4,6 +4,8 @@ title:  "Git Cheat Sheet"
 categories: Programming
 tags: git
 excerpt: Various reminders of how to do things in git!
+date: 2018-04-21 21:00
+modified: 2018-04-22 21:00
 ---
 
 ## Setting up
