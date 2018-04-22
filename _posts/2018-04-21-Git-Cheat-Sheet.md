@@ -19,7 +19,7 @@ or
 ~ $ cd project
 ~/project $ git init
 ```
-Refs: [GitHub](#ref_github_gcs) | [Atlassian](#ref_atlassian_gcs) | [Tower](#ref_tower_gcs) | [Git Pro](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_initializing_a_repository_in_an_existing_directory)
+Ref: [Git Pro](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_initializing_a_repository_in_an_existing_directory)
 
 
 ### Clone a repo from GitHub (or elsewhere):
@@ -36,7 +36,7 @@ Refs: [GitHub](#ref_github_gcs) | [Atlassian](#ref_atlassian_gcs) | [Tower](#ref
 ```
 *Omit `--global` to set the identity only in this repository.*
 *__Note:__ If you don't set these options, git will ask you to do so the first time you try to commit anything!*  
-Refs: [GitHub](#ref_github_gcs) | [Atlassian](#ref_atlassian_gcs) | [Git Pro](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_your_identity)
+Ref: [Git Pro](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_your_identity)
 
 
 ## Check your settings:
