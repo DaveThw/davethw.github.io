@@ -85,7 +85,7 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-th
 ```shell
 ~/project $ git commit -m "<message - try to keep to less than 50 chars!..>"
 ```
-*If you omit `-m "message"` then a text editor will launch with a default commit message - this gives you the chance to add more lines of detail after the main commit message (I think...)*  
+*If you omit* `-m "message"` *then a text editor will launch with a default commit message - this gives you the chance to add more lines of detail after the main commit message (I think...)*  
 Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_committing_changes)
 
 
