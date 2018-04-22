@@ -75,7 +75,11 @@ If you omit `-m "message"` then a text editor will launch with a default commit 
 ## References
 
 Based on various other Git Cheat Sheets, and other resources around the web!..
-- {:#ref_gitpro} Git Pro book: https://git-scm.com/book/en/v2
-- {:#ref_github_gcs} GitHub's Git Cheat Sheet: https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf
-- {:#ref_atlassian_gcs} Atlassian's Git Cheat Sheet: https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet
-- {:#ref_tower_gcs} Tower's Git Cheat Sheet: https://www.git-tower.com/blog/git-cheat-sheet/
+- {:#ref_gitpro} Git Pro book:  
+  https://git-scm.com/book/en/v2
+- {:#ref_github_gcs} GitHub's Git Cheat Sheet:  
+  https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf
+- {:#ref_atlassian_gcs} Atlassian's Git Cheat Sheet:  
+  https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet
+- {:#ref_tower_gcs} Tower's Git Cheat Sheet:  
+  https://www.git-tower.com/blog/git-cheat-sheet/
