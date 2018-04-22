@@ -2,7 +2,7 @@
 # layout: post
 title:  "Git Cheat Sheet"
 categories: Programming
-tags: Git
+tags: git
 excerpt: Various reminders of how to do things in git!
 ---
 
@@ -19,9 +19,10 @@ or
 ~ $ cd project
 ~/project $ git init
 ```
+Refs: [GitHub](#ref_github_gcs) | [Atlassian](#ref_atlassian_gcs) | [Tower](#ref_tower_gcs) | [Git Pro](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_initializing_a_repository_in_an_existing_directory)
 
 
-### Clone a repo from gitHub (or elsewhere):
+### Clone a repo from GitHub (or elsewhere):
 ```shell
 ~ $ git clone https://github.com/User/project.git
 ```
