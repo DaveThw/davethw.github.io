@@ -42,7 +42,7 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repositor
 <br>Ref: [Git Pro](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_your_identity)
 
 
-## Check your settings:
+### Check your settings:
 ```shell
 ~/project $ git config --list
 ~/project $ git config user.name
