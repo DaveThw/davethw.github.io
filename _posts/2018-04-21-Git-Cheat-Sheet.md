@@ -26,7 +26,7 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Set
 ```shell
 ~ $ git clone https://github.com/User/project.git
 ```
-*__Note:__ can also be done with SSH, or from elsewhere on local filesystem*
+*__Note:__ can also be done with SSH, or from elsewhere on local filesystem*\
 Ref: [Git Pro](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_git_cloning)
 
 
