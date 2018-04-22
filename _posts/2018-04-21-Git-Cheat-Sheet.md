@@ -50,6 +50,8 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repositor
 Ref: [Git Pro](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_checking_your_settings)
 <br>See also: [Git Configuration](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration)
 
+
+
 ## Basic use
 
 ### Show status of project:
@@ -104,6 +106,27 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-th
 ~/project $ git commit -a -m "<message>"
 ```
 Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_skipping_the_staging_area)
+
+
+
+## View Commit History
+
+### History for current branch:
+```shell
+~/project $ git log
+```
+Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
+
+
+### Condense, graphed history:
+```shell
+~/project $ git log --oneline --graph --decorate
+```
+`--oneline` shows each commit on a single line
+<br>`--graph` draws an ASCII graph of the branch and merge history
+<br>`--decorate` add names of branches or tags to the commits shown
+<br>Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History#log_options)
+
 
 
 ## References
