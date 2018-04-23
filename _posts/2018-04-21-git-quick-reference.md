@@ -130,6 +130,87 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-Hist
 
 
 
+## Remote Branches
+
+See: [Git Pro: Git Branching - Remote Branches](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches)
+
+### List all remote repositoriy references:
+```shell
+~/project $ git remote show
+```
+
+
+### Show details of remote repository:
+```shell
+~/project $ git remote show origin
+```
+*Change* `origin` *for the reference name of the remote repositiory!*
+<br>Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches#_remote_branches)
+
+
+### List local branches, with details of what remote branches they are tracking:
+```shell
+~/project $ git branch -vv
+```
+
+
+### Merge a remote branch with the current local branch:
+```shell
+~/project $ git fetch origin
+~/project $ git merge origin/remote-branch
+```
+
+
+### Add an existing remote branch to local repository:
+```shell
+~/project $ git checkout -b new-branch origin/new-branch
+```
+or
+```shell
+~/project $ git checkout --track origin/new-branch
+```
+or
+```shell
+~/project $ git checkout new-branch
+```
+Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches#_tracking_branches)
+
+
+### Push a local branch up to a remote server (first time):
+```shell
+~/project $ git push origin new-branch
+```
+*__Note:__ you don't have to have* `new-branch` *currently checked out for this to work.*
+<br>This will push the named local branch up to the remote repository, and configure it to do so again, along with other branches, when you do a simple `git push` - but not to pull back with a simple `git pull`.
+<br>Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches#_pushing_branches)
+
+
+### Set current local branch to track a remote branch:
+```shell
+~/project $ git branch --set-upstream-to origin/new-branch
+```
+or
+```shell
+~/project $ git branch -u origin/new-branch
+```
+This will configure the current local branch to pull from the remote repository when you do a simple `git pull`.
+
+
+### Stop current branch from tracking a remote branch:
+```shell
+~/project $ git branch --unset-upstream
+```
+This will stop the current local branch from pulling from the remote repositoriy when you do a simple `git pull`, but it will continue to push to the remote repository, along with other branches, when you do a simple `git push`.
+
+
+### Delete a remote branch (from the remote repository):
+```shell
+~/project $ git push origin --delete old-branch
+```
+Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches#_delete_branches)
+
+
+
 ## References
 
 Based on various other Git Cheat Sheets, and other resources around the web!..
