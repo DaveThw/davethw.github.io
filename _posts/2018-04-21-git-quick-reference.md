@@ -44,6 +44,15 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repositor
 <br>Ref: [Git Pro](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_your_identity)
 
 
+### Tell git to cache (HTTPS) credentials:
+```shell
+~/project $ git config --global credential.helper cache
+```
+*Omit* `--global` *to set the credential helper only in this repository.*
+*__Note:__ Defaults to caching your credentials for 15 minutes*
+<br>Refs: [Git Reference](https://git-scm.com/docs/git-credential-cache#_examples) | [Git Pro](https://git-scm.com/book/en/v2/Git-Tools-Credential-Storage#_credential_caching)
+
+
 ### Check your settings:
 ```shell
 ~/project $ git config --list
