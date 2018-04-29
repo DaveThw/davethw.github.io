@@ -252,7 +252,7 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches#_del
 
 ## References
 
-Based on various other Git Cheat Sheets, and other resources around the web!..
+Based on various Git References and Git Cheat Sheets, and other resources around the web!..
 - {:#ref_gitref} Git Reference / Man Pages:
   <https://git-scm.com/docs>
 - {:#ref_gitpro} Git Pro book:  
