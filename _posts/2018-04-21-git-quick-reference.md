@@ -62,6 +62,8 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Set
 <br>See also: [Git Configuration](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration)
 
 
+--------------------------------------------------------------------------------
+
 
 ## Basic use
 
@@ -119,6 +121,8 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-th
 Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_skipping_the_staging_area)
 
 
+--------------------------------------------------------------------------------
+
 
 ## View Commit History
 
@@ -138,6 +142,8 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-Hist
 <br>`--decorate` add names of branches or tags to the commits shown
 <br>Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History#log_options)
 
+
+--------------------------------------------------------------------------------
 
 
 ## Remote Branches
@@ -257,6 +263,8 @@ or
 ```
 Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches#_delete_branches)
 
+
+--------------------------------------------------------------------------------
 
 
 ## References
