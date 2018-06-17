@@ -12,7 +12,7 @@ modified: 2018-04-29 21:00
 
 {:center: style="text-align: center"}
 
-##Setting up
+## Setting up
 {: center}
 
 ### Initialise a new project:
@@ -67,7 +67,8 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Set
 
 
 
-<h2 style="text-align: center">Basic use</h2>
+## Basic use
+{: center}
 
 ### Show status of project:
 ```shell
@@ -125,7 +126,8 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-th
 
 
 
-<h2 style="text-align: center">View Commit History</h2>
+## View Commit History
+{: center}
 
 ### History for current branch:
 ```shell
@@ -156,7 +158,8 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-Hist
 
 
 
-<h2 style="text-align: center">Remote Branches</h2>
+## Remote Branches
+{: center}
 
 See: [Git Pro: Git Branching - Remote Branches](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches)
 
@@ -276,7 +279,8 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches#_del
 
 
 
-<h2 style="text-align: center">References</h2>
+## References
+{: center}
 
 Based on various Git References and Git Cheat Sheets, and other resources around the web!..
 - {:#ref_gitref} Git Reference / Man Pages:
