@@ -7,7 +7,8 @@ excerpt: Various reminders of how to do things in git!
 date: 2018-04-21 21:00
 #modified: 2018-04-22 21:00
 #modified: 2018-04-23 21:00
-modified: 2018-04-29 21:00
+#modified: 2018-04-29 21:00
+modified: 2018-06-17 22:00
 ---
 
 {:center: style="text-align: center"}
@@ -136,7 +137,7 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-th
 Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
 
 
-### Condense, graphed history:
+### Condense, graphed history of current commit:
 ```shell
 ~/project $ git log --oneline --graph --decorate
 ```
@@ -152,7 +153,7 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-Hist
 ```
 `--stat` *gives you a summary of which files were changed in a specific commit (*`44e07a3`*), and by how much (a 'diffstat') - omit the option to see the full diff for the commit*
 <br>Ref: [Git Reference - git log --stat](https://git-scm.com/docs/git-log#git-log---statltwidthgtltname-widthgtltcountgt)
-<br>*__Note:__* `<commit-ref>^!` *means that specific commit, referenced as a range (if you just pass a simple commit* `<commit-ref>` *to* `git log` *then it'll return that commit and all its ancenstors - see [Git Reference - Specifying Ranges](https://git-scm.com/docs/gitrevisions#_specifying_ranges))*
+<br>*__Note:__* `<commit-ref>^!` *means the range that starts and ends with the specified commit (if you just pass a simple commit* `<commit-ref>` *to* `git log` *then it'll return that commit and all its ancenstors - see [Git Reference - Specifying Ranges](https://git-scm.com/docs/gitrevisions#_specifying_ranges))*
 <br>Ref: [Git Reference - Parent Shorthand Notations](https://git-scm.com/docs/gitrevisions#_other_rev_parent_shorthand_notations)
 
 
