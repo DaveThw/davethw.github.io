@@ -10,7 +10,9 @@ date: 2018-04-21 21:00
 modified: 2018-04-29 21:00
 ---
 
-<h2 style="text-align: center">Setting up</h2>
+{:center: style="text-align: center"}
+
+##Setting up{: center}
 
 ### Initialise a new project:
 ```shell
@@ -139,6 +141,16 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-Hist
 <br>`--graph` draws an ASCII graph of the branch and merge history
 <br>`--decorate` add names of branches or tags to the commits shown
 <br>Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History#log_options)
+
+
+### Summary details of one specific commit:
+```shell
+~/project $ git log --stat 44e07a3^!
+```
+`--stat` *gives you a summary of which files were changed in a specific commit (*`44e07a3`*), and by how much (a 'diffstat') - omit the option to see the full diff for the commit*
+<br>Ref: [Git Reference - git log --stat](https://git-scm.com/docs/git-log#git-log---statltwidthgtltname-widthgtltcountgt)
+<br>*__Note:__* `<commit-ref>^!` *means that specific commit, referenced as a range (if you just pass a simple commit* `<commit-ref>` *to* `git log` *then it'll return that commit and all its ancenstors - see [Git Reference - Specifying Ranges](https://git-scm.com/docs/gitrevisions#_specifying_ranges))*
+<br>Ref: [Git Reference - Parent Shorthand Notations](https://git-scm.com/docs/gitrevisions#_other_rev_parent_shorthand_notations)
 
 
 
