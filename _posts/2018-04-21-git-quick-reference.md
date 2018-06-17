@@ -12,7 +12,8 @@ modified: 2018-04-29 21:00
 
 {:center: style="text-align: center"}
 
-##Setting up{: center}
+##Setting up
+{: center}
 
 ### Initialise a new project:
 ```shell
