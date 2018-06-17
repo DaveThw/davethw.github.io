@@ -157,6 +157,20 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-Hist
 <br>Ref: [Git Reference - Parent Shorthand Notations](https://git-scm.com/docs/gitrevisions#_other_rev_parent_shorthand_notations)
 
 
+### Condense, graphed history for specific branch:
+```shell
+~/project $ git log --oneline --graph --decorate branch-name
+```
+Ref: [Git Reference](https://git-scm.com/docs/gitrevisions#gitrevisions-emltrefnamegtemegemmasterememheadsmasterememrefsheadsmasterem)
+
+
+### Condense, graphed history for specific branch, for files in a specific directory:
+```shell
+~/project $ git log --oneline --graph --decorate branch-name -- dir-name
+```
+Ref: [Git Reference](https://git-scm.com/docs/git-log#git-log---ltpathgt82308203)
+
+
 
 
 ## Remote Branches
