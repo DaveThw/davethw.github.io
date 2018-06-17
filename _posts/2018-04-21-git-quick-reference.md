@@ -10,7 +10,7 @@ date: 2018-04-21 21:00
 modified: 2018-04-29 21:00
 ---
 
-## Setting up
+<h2 style="text-align: center">Setting up</h2>
 
 #### Initialise a new project:
 ```shell
