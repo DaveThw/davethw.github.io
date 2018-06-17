@@ -12,7 +12,7 @@ modified: 2018-04-29 21:00
 
 <h2 style="text-align: center">Setting up</h2>
 
-#### Initialise a new project:
+### Initialise a new project:
 ```shell
 ~ $ git init project
 ~ $ cd project
@@ -26,7 +26,7 @@ or
 Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository#_initializing_a_repository_in_an_existing_directory)
 
 
-#### Clone a repo from GitHub (or elsewhere):
+### Clone a repo from GitHub (or elsewhere):
 ```shell
 ~ $ git clone https://github.com/User/project.git
 ```
@@ -34,7 +34,7 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repositor
 <br>Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository#_git_cloning)
 
 
-#### Set user details for git:
+### Set user details for git:
 ```shell
 ~/project $ git config --global user.email "you@example.com"
 ~/project $ git config --global user.name "Your Name"
@@ -44,7 +44,7 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repositor
 <br>Ref: [Git Pro](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_your_identity)
 
 
-#### Tell git to cache (HTTPS) credentials:
+### Tell git to cache (HTTPS) credentials:
 ```shell
 ~/project $ git config --global credential.helper cache
 ```
@@ -53,7 +53,7 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repositor
 <br>Refs: [Git Reference](https://git-scm.com/docs/git-credential-cache#_examples) | [Git Pro](https://git-scm.com/book/en/v2/Git-Tools-Credential-Storage#_credential_caching)
 
 
-#### Check your settings:
+### Check your settings:
 ```shell
 ~/project $ git config --list
 ~/project $ git config user.name
@@ -62,12 +62,11 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Set
 <br>See also: [Git Configuration](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration)
 
 
---------------------------------------------------------------------------------
 
 
-## Basic use
+<h2 style="text-align: center">Basic use</h2>
 
-#### Show status of project:
+### Show status of project:
 ```shell
 ~/project $ git status
 ```
@@ -75,7 +74,7 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Set
 <br>Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_checking_status)
 
 
-#### Stage changes in file / directory ready for the next commit:
+### Stage changes in file / directory ready for the next commit:
 ```shell
 ~/project $ git add <file|directory>
 ```
@@ -86,7 +85,7 @@ ie. this will add all changed files in the current directory:
 Refs: Git Pro - [Tracking new files](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_tracking_files) | [Staging modified files](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_staging_modified_files)
 
 
-#### Remove a file:
+### Remove a file:
 ```shell
 ~/project $ git rm file
 ```
@@ -98,7 +97,7 @@ Refs: Git Pro - [Tracking new files](https://git-scm.com/book/en/v2/Git-Basics-R
 Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_removing_files)
 
 
-#### Rename a file:
+### Rename a file:
 ```shell
 ~/project $ git mv file_from file_to
 ```
@@ -106,7 +105,7 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-th
 <br>Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_git_mv)
 
 
-#### Commit the staged files:
+### Commit the staged files:
 ```shell
 ~/project $ git commit -m "<message - try to keep to less than 50 chars!..>"
 ```
@@ -114,26 +113,25 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-th
 <br>Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_committing_changes)
 
 
-#### Commit all modified, tracked files, without needing to stage them first:
+### Commit all modified, tracked files, without needing to stage them first:
 ```shell
 ~/project $ git commit -a -m "<message>"
 ```
 Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_skipping_the_staging_area)
 
 
---------------------------------------------------------------------------------
 
 
-## View Commit History
+<h2 style="text-align: center">View Commit History</h2>
 
-#### History for current branch:
+### History for current branch:
 ```shell
 ~/project $ git log
 ```
 Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
 
 
-#### Condense, graphed history:
+### Condense, graphed history:
 ```shell
 ~/project $ git log --oneline --graph --decorate
 ```
@@ -143,20 +141,19 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-Hist
 <br>Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History#log_options)
 
 
---------------------------------------------------------------------------------
 
 
-## Remote Branches
+<h2 style="text-align: center">Remote Branches</h2>
 
 See: [Git Pro: Git Branching - Remote Branches](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches)
 
-#### List all remote repositoriy references:
+### List all remote repositoriy references:
 ```shell
 ~/project $ git remote show
 ```
 
 
-#### Show details of remote repository:
+### Show details of remote repository:
 ```shell
 ~/project $ git remote show origin
 ```
@@ -164,19 +161,19 @@ See: [Git Pro: Git Branching - Remote Branches](https://git-scm.com/book/en/v2/G
 <br>Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches#_remote_branches)
 
 
-#### List local branches, with details of what remote branches they are tracking:
+### List local branches, with details of what remote branches they are tracking:
 ```shell
 ~/project $ git branch -vv
 ```
 
 
-#### Fetch status and contents of remote branches (but don't merge with any local branches):
+### Fetch status and contents of remote branches (but don't merge with any local branches):
 ```shell
 ~/project $ git fetch origin
 ```
 
 
-#### Merge a remote branch with the current local branch:
+### Merge a remote branch with the current local branch:
 ```shell
 ~/project $ git fetch origin
 ~/project $ git merge origin/remote-branch
@@ -187,7 +184,7 @@ or
 ```
 
 
-#### Add an existing remote branch to local repository:
+### Add an existing remote branch to local repository:
 ```shell
 ~/project $ git checkout -b new-branch origin/new-branch
 ```
@@ -202,7 +199,7 @@ or
 Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches#_tracking_branches)
 
 
-#### Push a local branch up to a remote server (first time):
+### Push a local branch up to a remote server (first time):
 ```shell
 ~/project $ git push origin new-branch
 ```
@@ -211,7 +208,7 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches#_tra
 <br>Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches#_pushing_branches)
 
 
-#### Push current local branch up to a remote server:
+### Push current local branch up to a remote server:
 ```shell
 ~/project $ git push
 ```
@@ -219,14 +216,14 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches#_tra
 <br>*If the current branch doesn't have a remote repository configured for pushing, it will push to* `origin` *(and configure it to do so again when you do a* `git push --all`*..?).*
 <br>Ref: [Git Reference](https://git-scm.com/docs/git-push#git-push-codegitpushcode)
 
-#### Push all local branches up to remote server:
+### Push all local branches up to remote server:
 ```shell
 ~/project $ git push --all
 ```
 *This will push all the local branches (that are configured to do so?) up to their respective remote repositories.*
 <br>Ref: [Git Reference](https://git-scm.com/docs/git-push#git-push---all)
 
-#### Set current local branch to track a remote branch:
+### Set current local branch to track a remote branch:
 ```shell
 ~/project $ git branch --set-upstream-to origin/new-branch
 ```
@@ -237,7 +234,7 @@ or
 *This will configure the current local branch to pull from the remote repository when you do a simple* `git pull`.
 
 
-#### Pull branches from the remote server:
+### Pull branches from the remote server:
 ```shell
 ~/project $ git pull
 ```
@@ -250,24 +247,23 @@ or
 <br>Refs: [Git Reference](https://git-scm.com/docs/git-pull#_default_behaviour) | [Git Pro](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches#_pulling)
 
 
-#### Stop current branch from tracking a remote branch:
+### Stop current branch from tracking a remote branch:
 ```shell
 ~/project $ git branch --unset-upstream
 ```
 *This will stop the current local branch from pulling from the remote repositoriy when you do a simple* `git pull`*, but it will continue to push to the remote repository, along with other branches, when you do a* `git push --all`.
 
 
-#### Delete a remote branch (from the remote repository):
+### Delete a remote branch (from the remote repository):
 ```shell
 ~/project $ git push origin --delete old-branch
 ```
 Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches#_delete_branches)
 
 
---------------------------------------------------------------------------------
 
 
-## References
+<h2 style="text-align: center">References</h2>
 
 Based on various Git References and Git Cheat Sheets, and other resources around the web!..
 - {:#ref_gitref} Git Reference / Man Pages:
