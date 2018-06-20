@@ -189,7 +189,7 @@ See: [Git Pro: Git Branching - Remote Branches](https://git-scm.com/book/en/v2/G
 ```shell
 ~/project $ git remote add upstream https://github.com/User/project.git
 ```
-<br>Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes#_adding_remote_repositories)
+Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes#_adding_remote_repositories)
 
 
 ### Show details of remote repository:
