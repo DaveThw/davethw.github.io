@@ -128,6 +128,39 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-th
 
 
 
+## Working with Branches
+{: center}
+
+### Create a new branch (at the current HEAD):
+```shell
+~/project $ git branch new-branch
+```
+*__Note:__  This will create the new branch, but it will not switch the working tree to it; use* `git checkout new-branch` *to switch to the new branch.*
+
+
+### Create and checkout a new branch (at the current HEAD):
+```shell
+~/project $ git checkout -b new-branch
+```
+
+
+### Switch to ('checkout') a branch:
+```shell
+~/project $ git checkout branch-name
+```
+
+
+### Move a branch to point to a different commit:
+```shell
+~/project $ git branch -f branch-name new-target
+```
+`new-target` can be another branch name, or a commit ref.
+<br>*__Note:__  This will update the branch, but it will not switch the working tree to it; use* `git checkout branch-name` *to switch to the branch.*
+<br>Ref: [Git Reference](https://git-scm.com/docs/git-branch#git-branch--f)
+
+
+
+
 ## View Commit History
 {: center}
 
@@ -298,6 +331,68 @@ or
 ~/project $ git push origin --delete old-branch
 ```
 Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches#_delete_branches)
+
+
+
+
+## Modify your history
+{: center}
+
+See: [Git Pro: Git Tools - Rewriting History](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History)
+
+**Note:**  Be very cautious of doing any of this if you have already pushed your project up to a remote server (eg GitHub) - and you should probably **never** do it if there's a chance someone else has already pulled your work down from the remote server to their own computer!..
+
+**Note:**  Amending a commit kinda of forgets about the previous version of the commit, and creates a new one to replace it in the history / log.  If anything refers to that previous version (you've branched off it, or you've pushed up to a server and someone else has branched off it) then those commits will effectivley be orphaned and its potentially a (big) headache to sort it out again.
+
+### Amend the previous commit:
+*If you need to tweak any files, do that first, then* `git add` *the relevant files*
+```shell
+~/project $ git commit --amend
+```
+*You'll then be dropped into a text editor to update the commit message*
+<br>Ref: [Git Reference](https://git-scm.com/docs/git-commit#git-commit---amend) | [Git Pro](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History#_git_amend)
+
+
+### Amend the previous commit, without editing the commit message:
+```shell
+~/project $ git commit --amend --no-edit
+```
+
+
+### Amend the date of the previous commit:
+```shell
+~/project $ git commit --amend --date="Wed, 18 Apr 2018 13:00:00 +0100"
+```
+Ref: [Git Reference - Date Formats](https://git-scm.com/docs/git-commit#_date_formats)
+
+
+### Amend the previous three commits - interactive rebase:
+See: [Git Pro: Changing Multiple Commit Messages](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History#_changing_multiple)
+```shell
+~/project $ git rebase -i HEAD~3
+```
+*__Note:__ The commit ref that you pass will be the one that everything is rebased onto - that specific commit will not get changed.
+
+
+### Amend all commits on this branch:
+```shell
+~/project $ git rebase -i --root
+```
+*__Note:__ If you modify any commit then it and all of its decendents will get new SHA-1s - so if you modify the initial commit then all the commits will get re-written.  If there are any branches off any of the decendents then they won't get updated and will still refer to the original commit history.
+
+
+### Remove a file from all commits:
+```shell
+~/project $ git filter-branch --tree-filter 'rm -f passwords.txt' HEAD
+```
+Ref: [Git Reference](https://git-scm.com/docs/git-filter-branch#git-filter-branch---tree-filterltcommandgt) | [Git Pro](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History#_removing_file_every_commit)
+
+
+### Make a subdirectory the new root:
+```shell
+~/project $ git filter-branch --subdirectory-filter subdirname HEAD
+```
+Ref: [Git Reference](https://git-scm.com/docs/git-filter-branch#git-filter-branch---subdirectory-filterltdirectorygt) | [Git Pro](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History#_making_a_subdirectory_the_new_root)
 
 
 
