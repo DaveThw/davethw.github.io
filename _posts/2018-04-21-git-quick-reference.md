@@ -131,6 +131,18 @@ Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-th
 ## Working with Branches
 {: center}
 
+### List all local branches:
+```shell
+~/project $ git branch
+```
+Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Branching-Branch-Management#_branch_management)
+
+### List the last commit on all local branches:
+```shell
+~/project $ git branch -v
+```
+Ref: [Git Pro](https://git-scm.com/book/en/v2/Git-Branching-Branch-Management#_branch_management)
+
 ### Create a new branch (at the current HEAD):
 ```shell
 ~/project $ git branch new-branch
