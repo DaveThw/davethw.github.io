@@ -4,10 +4,11 @@ categories: Website
 tags: Jekyll GitHub GitHub-Pages RaspberryPi
 excerpt: Step-by-step through installing Jekyll, for local GitHub Pages, on a Raspberry Pi
 date: 2019-03-04 10:00
-updated: 2019-03-04 20:35
+modified: 2019-03-04 20:35
 ---
 
 Mainly following (some of) the steps from [Setting up your GitHub Pages site locally with Jekyll](https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll):
+
 
 ## Install Ruby
 
@@ -36,6 +37,7 @@ Then:
 ruby 2.6.1p33 (2019-01-30 revision 66950) [armv7l-linux-eabihf]
 ```
 
+
 ## Install Bundler
 
 Back to the [GitHub guide](https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll#requirements) - next step is to install `bundler`:
@@ -43,6 +45,7 @@ Back to the [GitHub guide](https://help.github.com/en/articles/setting-up-your-g
 ~/websites $ gem install bundler
 ```
 *(took about 10s!)*
+
 
 ## Set up local repository
 
@@ -56,6 +59,7 @@ If the repository doesn't yet have a `Gemfile`, then create one in the root dire
 source 'https://rubygems.org'
 gem 'github-pages', group: :jekyll_plugins
 ```
+
 
 ## Install Jekyll and other dependencies
 
@@ -101,6 +105,7 @@ https://github.com/jch/html-pipeline#dependencies
 ```
 *(took about 19 mins)*
 
+
 ## Run Jekyll
 
 Now you should be able to run your Jekyll site locally with:
@@ -113,7 +118,6 @@ However: this will only be available on the local computer - the Raspberry Pi in
 ```
 ~~Seems to work nicely, magic!~~
 
------
 
 ## Run Jekyll better
 
@@ -127,7 +131,6 @@ Therefore your options seem to be: Either to run Jekyll with something like:
 ```
 Or set up a 'development' config file, as suggested as [a solution to the issue on minimal-mistakes](https://github.com/mmistakes/minimal-mistakes/issues/1588#issuecomment-373937514), and pass that to Jekyll on the command line (see also the info box at the bottom of the [Jekyll page about environments](https://jekyllrb.com/docs/configuration/environments/), and/or the [Jekyll Build Command options list](https://jekyllrb.com/docs/configuration/options/#build-command-options) (note: `jekyll serve` [can accept any of the](https://jekyllrb.com/docs/configuration/options/#serve-command-options) `build` options)).
 
------
 
 ## Keeping up-to-date
 
