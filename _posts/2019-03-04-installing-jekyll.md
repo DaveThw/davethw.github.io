@@ -4,9 +4,12 @@ categories: Website
 tags: Jekyll GitHub GitHub-Pages RaspberryPi
 excerpt: Step-by-step through installing Jekyll, for local GitHub Pages, on a Raspberry Pi
 date: 2019-03-04 10:00
+updated: 2019-03-04 20:35
 ---
 
 Mainly following (some of) the steps from [Setting up your GitHub Pages site locally with Jekyll](https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll):
+
+## Install Ruby
 
 Check which version of Ruby is installed:
 ```shell
@@ -33,6 +36,7 @@ Then:
 ruby 2.6.1p33 (2019-01-30 revision 66950) [armv7l-linux-eabihf]
 ```
 
+## Install Bundler
 
 Back to the [GitHub guide](https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll#requirements) - next step is to install `bundler`:
 ```shell
@@ -40,8 +44,9 @@ Back to the [GitHub guide](https://help.github.com/en/articles/setting-up-your-g
 ```
 *(took about 10s!)*
 
+## Set up local repository
 
-Then set up a local repository to work from - if you already have a (basic) website repository on GitHub, then:
+Next we need to set up a local repository to work from - if you already have a (basic) website repository on GitHub, then:
 ```shell
 ~/websites $ git clone https://github.com/DaveThw/davethw.github.io.git
 ```
@@ -52,7 +57,9 @@ source 'https://rubygems.org'
 gem 'github-pages', group: :jekyll_plugins
 ```
 
-Then install Jekyll and other dependencies from the GitHub Pages gem:
+## Install Jekyll and other dependencies
+
+Install Jekyll and other dependencies from the GitHub Pages gem:
 ```shell
 ~/websites/davethw.github.io $ bundle install
 Fetching gem metadata from https://rubygems.org/...........
@@ -94,6 +101,7 @@ https://github.com/jch/html-pipeline#dependencies
 ```
 *(took about 19 mins)*
 
+## Run Jekyll
 
 Now you should be able to run your Jekyll site locally with:
 ```shell
@@ -103,4 +111,27 @@ However: this will only be available on the local computer - the Raspberry Pi in
 ```shell
 ~/websites/davethw.github.io $ bundle exec jekyll serve --host 0.0.0.0
 ```
-Seems to work nicely, magic!
+~~Seems to work nicely, magic!~~
+
+-----
+
+## Run Jekyll better
+
+...Actually, it doesn't always work totally nicely - if your Jekyll site makes use of the `site.url` variable or the `absolute_url` filter, then it'll look weird - Jekyll is running (by default) in a development environment, so is replacing `site.url` (from \_config.yml) with \<host>:\<port> from the command line / config file (see the [Jekyll docs about the site.url variable](https://jekyllrb.com/docs/variables/#site-variables) and [the absolute_url filter](https://jekyllrb.com/docs/liquid/filters/) and [this issue on minimal-mistakes](https://github.com/mmistakes/minimal-mistakes/issues/1588)).  Therefore any links using either `site.url` or `absolute_url` (including any pointing to resources like css and js files) will be targetting http(s)://0.0.0.0:4000/... - which doesn't work from a remote device!..
+
+(Note: If you try to get around this by telling Jekyll that it's running in a production environment, then it'll use the `site.url` value given in the \_config.yml file, so your local site will link to the 'live' version on the internet...)
+
+Therefore your options seem to be: Either to run Jekyll with something like:
+```shell
+~/websites/davethw.github.io $ bundle exec jekyll serve --host 192.168.1.70
+```
+Or set up a 'development' config file, as suggested as [a solution to the issue on minimal-mistakes](https://github.com/mmistakes/minimal-mistakes/issues/1588#issuecomment-373937514), and pass that to Jekyll on the command line (see also the info box at the bottom of the [Jekyll page about environments](https://jekyllrb.com/docs/configuration/environments/), and/or the [Jekyll Build Command options list](https://jekyllrb.com/docs/configuration/options/#build-command-options) (note: `jekyll serve` [can accept any of the](https://jekyllrb.com/docs/configuration/options/#serve-command-options) `build` options)).
+
+-----
+
+## Keeping up-to-date
+
+See the [GitHub guide, here](https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll#keeping-your-site-up-to-date-with-the-github-pages-gem), but basically you need to periodically do:
+```shell
+~/websites/davethw.github.io $ bundle update
+```
