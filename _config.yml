@@ -214,7 +214,7 @@ category_archive:
 #  type: jekyll-archives
 #  path: /
   type: manual
-  path: 
+  path: /
 tag_archive:
   type: liquid
   path: /tags/
