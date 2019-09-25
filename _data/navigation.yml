@@ -19,4 +19,7 @@ sidebar:
       url: /theatre-royal/eos-remote/
   - title: "Website"
     url: /website/
-    
+  - title: "Programming"
+    url: /programming/
+  - title: "GalliumOS"
+    url: /galliumos/    
