@@ -1,5 +1,5 @@
 ---
-title: "How to Remove and apt Repository"
+title: "How to Remove an apt Repository"
 categories: GalliumOS
 tags: GalliumOS
 excerpt: Notes on how to remove a repository from apt's lists, on Linux (specifically on GalliumOS)
@@ -17,15 +17,22 @@ Hit:3 http://security.ubuntu.com/ubuntu bionic-security InRelease
 Hit:4 http://archive.ubuntu.com/ubuntu bionic InRelease                        
 Hit:5 http://archive.ubuntu.com/ubuntu bionic-updates InRelease                
 Hit:6 http://archive.ubuntu.com/ubuntu bionic-backports InRelease              
-Hit:8 http://ppa.launchpad.net/remmina-ppa-team/remmina-next/ubuntu bionic InRelease
+Hit:8 http://ppa.launchpad.net/remmina-ppa-team/remmina-next/ubuntu bionic
+ InRelease
 Get:7 http://ppa.launchpad.net/appgrid/stable/ubuntu bionic InRelease [15.4 kB]
 Err:7 http://ppa.launchpad.net/appgrid/stable/ubuntu bionic InRelease
-  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 241FE6973B765FAE
+  The following signatures couldn't be verified because the public key is not
+   available: NO_PUBKEY 241FE6973B765FAE
 Reading package lists... Done
-W: GPG error: http://ppa.launchpad.net/appgrid/stable/ubuntu bionic InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 241FE6973B765FAE
-E: The repository 'http://ppa.launchpad.net/appgrid/stable/ubuntu bionic InRelease' is not signed.
-N: Updating from such a repository can't be done securely, and is therefore disabled by default.
-N: See apt-secure(8) manpage for repository creation and user configuration details.
+W: GPG error: http://ppa.launchpad.net/appgrid/stable/ubuntu bionic InRelease:
+ The following signatures couldn't be verified because the public key is not
+ available: NO_PUBKEY 241FE6973B765FAE
+E: The repository 'http://ppa.launchpad.net/appgrid/stable/ubuntu bionic
+ InRelease' is not signed.
+N: Updating from such a repository can't be done securely, and is therefore
+ disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration
+ details.
 ```
 
 According to [this reply on Reddit](https://www.reddit.com/r/GalliumOS/comments/b8rwes/appgrip_repository_is_not_signed_on_galliumos/ek02k48/), "You can safely remove the ppa.launchpad.net entry from your APT config" - but it doesn't say how!
