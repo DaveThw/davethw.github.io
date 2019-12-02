@@ -2,12 +2,12 @@
 title: "How to Remove an apt Repository"
 categories: GalliumOS
 tags: GalliumOS
-excerpt: Notes on how to remove a repository from apt's lists, on Linux (specifically on GalliumOS)
+excerpt: Notes on how to remove a repository from apt's lists, on Linux
 date: 2019-12-02 11:50
 #modified: 2019-03-04 20:35
 ---
 
-It seems that [AppGrid installs it's own repository](https://www.reddit.com/r/GalliumOS/comments/b8rwes/appgrip_repository_is_not_signed_on_galliumos/) (but not a GPG public key...), so running `sudo apt update` gives the following error:
+It seems that [AppGrid installs it's own repository](https://www.reddit.com/r/GalliumOS/comments/b8rwes/appgrip_repository_is_not_signed_on_galliumos/) (but not a GPG public key...), so running `sudo apt update` gives the following error (on GalliumOS):
 ``` shell
 dave@chrx:~$ sudo apt update
 [sudo] password for dave: 
