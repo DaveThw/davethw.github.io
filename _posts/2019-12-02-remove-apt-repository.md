@@ -50,7 +50,9 @@ deb http://archive.canonical.com/ubuntu bionic partner
 [galliumos.list] deb http://apt.galliumos.org bismuth main
 ```
 
-As for acutally removing the ppa, several of the [answers to the quation on askubuntu](https://askubuntu.com/questions/307/how-can-ppas-be-removed) didn't work for me - specifically `sudo ppa-purge -o appgrid` (and `sudo ppa-purge -o appgrid -p stable`) failed, complaining that `E: The repository 'http://ppa.launchpad.net/appgrid/stable/ubuntu bionic InRelease' is not signed.`, and `sudo add-apt-repository --remove ppa:appgrid/stable` looked like it might've worked, but `ppa:appgrid/stable` still appeared in the list of repositories given with the command above.
+As for acutally removing the ppa, several of the [answers to the question on askubuntu](https://askubuntu.com/questions/307/how-can-ppas-be-removed) didn't work for me - specifically:
+- `sudo ppa-purge -o appgrid` (and `sudo ppa-purge -o appgrid -p stable`) failed, complaining that `E: The repository 'http://ppa.launchpad.net/appgrid/stable/ubuntu bionic InRelease' is not signed.`
+- `sudo add-apt-repository --remove ppa:appgrid/stable` looked like it might've worked, but `ppa:appgrid/stable` still appeared in the list of repositories given with the command above.
 
 So in the end, I resorted to just deleting the relevant files from `/etc/apt/sources.list.d/`:
 ``` shell
