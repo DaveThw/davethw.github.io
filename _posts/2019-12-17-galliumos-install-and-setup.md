@@ -21,7 +21,7 @@ Which installed GalliumOS, taking about 14mins.  (note: Installation log files a
 
 Once logged in to GalliumOS, update keyboard settings:
  - Menu -> Settings -> Settings Manager -> Keyboard -> Layout
- - Set "Keyboard model" to "Chromebook Falco/Pixel/Pixel2 | Search overlay | F keys mapped to media keys"  ([see here for more details](https://wiki.galliumos.org/Media_keys_and_default_keybindings) - Right alt as overlay doesn't work with some programmes (eg. Chromium takes the Right-Alt press as a start to keyboard navigation of the browser toolbar...))
+ - Set "Keyboard model" to "Chromebook Falco/Pixel/Pixel2 / Search overlay / F keys mapped to media keys"  ([see here for more details](https://wiki.galliumos.org/Media_keys_and_default_keybindings) - Right alt as overlay doesn't work with some programmes (eg. Chromium takes the Right-Alt press as a start to keyboard navigation of the browser toolbar...))
  - Also add "English (UK)" to "Keyboard layout", and remove "English (US)"
 Note: On the initial login screen, the Keyboard layout will (always?) be "English (US)" - therefore be wary of special characters / punctuation like `"£@#~\|¬` in passwords...
 
