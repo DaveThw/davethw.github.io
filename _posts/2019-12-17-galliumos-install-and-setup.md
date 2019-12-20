@@ -35,7 +35,7 @@ Change Window Manager theme, mainly to give thicker borders on windows:
 Generally tweak various settings:
  - File Manager settings:
    * On the Display tab:
-     + Set "Date" format to "Today - at 20:21:11"
+     + Set "Date" format to "Today at 20:21:11"
  - Screen Saver settings:
    * install missing screensaver modules with `sudo apt install xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra`
  - Window Manager settings:
