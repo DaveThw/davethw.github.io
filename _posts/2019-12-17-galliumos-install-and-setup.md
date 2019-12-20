@@ -18,6 +18,7 @@ chronos@localhost / $ cd ; curl -Os https://chrx.org/go && sh go -H gallium -U d
 ```
 Which installed GalliumOS, taking about 14mins.  (note: Installation log files are preserved in `/var/cache/chrx`)
 
+-----
 
 Once logged in to GalliumOS, update keyboard settings:
  - Menu -> Settings -> Settings Manager -> Keyboard -> Layout
@@ -48,10 +49,11 @@ Generally tweak various settings:
    * On the Advanced tab:
      + turn on "Window snapping - to other windows"
 
+-----
 
 Set up user's bin:
  - make new directory `~/bin`
  - copy `timer.sh` from Moneta into `bin`
    * rename to `timer`
    * make executable with `chmod a+x ~/bin/timer`
- - I think you'll then need to log out and in again to see `/home/dave/bin` appear in `$PATH`
+ - I think you'll then need to log out and in again to see `/home/dave/bin` appear in `$PATH`...
