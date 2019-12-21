@@ -143,6 +143,7 @@ Install additional software:
      dave@gallium:~/Downloads$ sudo apt install -f
      ```
      (the last line [attempts to fix any broken dependancies](https://askubuntu.com/a/1039353))
+   * Open up VNC Viewer (in Menu->Internet) - sign in (needs Authy for an authentication code)
  - [Remmina](https://remmina.org/):
    * Following the [official instructions for Ubuntu](https://remmina.org/how-to-install-remmina/#ubuntu):
      ``` shell
