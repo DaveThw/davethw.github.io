@@ -4,7 +4,8 @@ categories: GalliumOS
 tags: GalliumOS
 excerpt: Notes on what I did to (re-)install GalliumOS on my Chromebook, and what additional steps I took to do the initial setting up.
 date: 2019-12-17 21:10
-modified: 2019-12-20 22:00
+# modified: 2019-12-20 22:00
+modified: 2019-12-21 15:10
 ---
 
 Following an `apt upgrade` on GalliumOS which updated GRUB, and it would seem I [selected the wrong location to install the bootloader](https://www.reddit.com/r/GalliumOS/comments/6dxqy5/galliumos_wont_boot/), GalliumOS now won't boot up.  Unfortunately, [this guide for fixing the problem](https://www.reddit.com/r/GalliumOS/comments/5mhjd3/acer_14_wont_boot_after_grub_update/) didn't work for me, so I'm re-installing GalliumOS (again), and taking notes this time on what I do to get things the way I like it, just in case I need to do it all again sometime... :-)
@@ -26,6 +27,11 @@ Once logged in to GalliumOS, update keyboard settings:
  - Also add "English (UK)" to "Keyboard layout", and remove "English (US)"
 Note: On the initial login screen, the Keyboard layout will (always?) be "English (US)" - therefore be wary of special characters / punctuation like `"£@#~\|¬` in passwords...
 
+-----
+
+Don't forget to change the default password - use `passwd` in a terminal window.
+
+-----
 
 Change Window Manager theme, mainly to give thicker borders on windows:
  - Menu -> Settings -> Settings Manager -> Window Manager -> Style
@@ -57,3 +63,42 @@ Set up user's bin:
    * rename to `timer`
    * make executable with `chmod a+x ~/bin/timer`
  - I think you'll then need to log out and in again to see `/home/dave/bin` appear in `$PATH`...
+
+-----
+
+Check the current timezone settings:
+``` shell
+dave@gallium:~$ timedatectl
+                      Local time: Fri 2019-12-20 22:13:47 UTC
+                  Universal time: Fri 2019-12-20 22:13:47 UTC
+                        RTC time: Fri 2019-12-20 22:13:47
+                       Time zone: Etc/UTC (UTC, +0000)
+       System clock synchronized: yes
+systemd-timesyncd.service active: yes
+                 RTC in local TZ: no
+dave@gallium:~$ cat /etc/timezone 
+Etc/UTC
+dave@gallium:~$ ls -l /etc/localtime 
+lrwxrwxrwx 1 root root 27 Dec 17 16:41 /etc/localtime -> /usr/share/zoneinfo/Etc/UTC
+```
+
+[Set timezone](https://www.tecmint.com/set-time-timezone-and-synchronize-time-using-timedatectl-command/) to Europe/London:
+``` shell
+dave@gallium:~$ timedatectl set-timezone "Europe/London"
+```
+
+Check the new settings:
+``` shell
+dave@gallium:~$ timedatectl
+                      Local time: Fri 2019-12-20 22:16:48 GMT
+                  Universal time: Fri 2019-12-20 22:16:48 UTC
+                        RTC time: Fri 2019-12-20 22:16:48
+                       Time zone: Europe/London (GMT, +0000)
+       System clock synchronized: yes
+systemd-timesyncd.service active: yes
+                 RTC in local TZ: no
+dave@gallium:~$ cat /etc/timezone 
+Europe/London
+dave@gallium:~$ ls -l /etc/localtime 
+lrwxrwxrwx 1 root root 35 Dec 20 22:16 /etc/localtime -> ../usr/share/zoneinfo/Europe/London
+```
