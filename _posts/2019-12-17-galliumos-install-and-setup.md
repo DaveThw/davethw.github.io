@@ -5,7 +5,8 @@ tags: GalliumOS
 excerpt: Notes on what I did to (re-)install GalliumOS on my Chromebook, and what additional steps I took to do the initial setting up.
 date: 2019-12-17 21:10
 # modified: 2019-12-20 22:00
-modified: 2019-12-21 15:10
+# modified: 2019-12-21 15:10
+modified: 2019-12-21 17:30
 ---
 
 Following an `apt upgrade` on GalliumOS which updated GRUB, and it would seem I [selected the wrong location to install the bootloader](https://www.reddit.com/r/GalliumOS/comments/6dxqy5/galliumos_wont_boot/), GalliumOS now won't boot up.  Unfortunately, [this guide for fixing the problem](https://www.reddit.com/r/GalliumOS/comments/5mhjd3/acer_14_wont_boot_after_grub_update/) didn't work for me, so I'm re-installing GalliumOS (again), and taking notes this time on what I do to get things the way I like it, just in case I need to do it all again sometime... :-)
@@ -102,3 +103,42 @@ Europe/London
 dave@gallium:~$ ls -l /etc/localtime 
 lrwxrwxrwx 1 root root 35 Dec 20 22:16 /etc/localtime -> ../usr/share/zoneinfo/Europe/London
 ```
+
+-----
+
+[Remove the AppGrid ppa repository](https://dave.thwaites.org.uk/galliumos/remove-apt-repository.html):
+``` shell
+dave@gallium:~$ sudo rm -i /etc/apt/sources.list.d/appgrid*
+dave@gallium:~$ sudo apt update
+```
+
+I've also removed AppGrid, as I don't use it, and I think this might prevent the repository from reappearing...
+``` shell
+dave@gallium:~$ sudo apt remove appgrid
+dave@gallium:~$ sudo apt autoremove
+```
+
+-----
+
+Install additional software:
+ - [Libre Office](https://www.libreoffice.org/): main Gallium/Ubuntu repositories only have an older version available (v.6.0.7, as of time of writing) - a more up-to-date version (v.6.3.4) can be found at [ppa:libreoffice/ppa](https://launchpad.net/~libreoffice/+archive/ubuntu/ppa)
+   * Add the repository:
+     ``` shell
+     dave@gallium:~$ sudo add-apt-repository ppa:libreoffice/ppa
+     ```
+   * Install:
+     ``` shell
+     dave@gallium:~$ sudo apt install libreoffice
+     ```
+     *(took a couple of minutes)*
+ - [RealVNC Viewer](https://www.realvnc.com/en/): doesn't seem to be available via apt repositories, so download and install from the website:
+   * Download the Linux / DEB x64 version of the viewer from [the RealVNC website](https://www.realvnc.com/en/connect/download/viewer/)
+   * Open the Downloads folder, right-click on the VNC-Viewer .deb file, and choose "Open With "GDebi Package Installer""
+   * Click on "Install Package"
+   * If that doesn't seem to work, [try in a terminal instead](https://www.addictivetips.com/ubuntu-linux-tips/realvnc-on-linux/):
+     ``` shell
+     dave@gallium:~$ cd ~/Downloads
+     dave@gallium:~/Downloads$ sudo dpkg -i VNC-Viewer-*-Linux-x64.deb
+     dave@gallium:~/Downloads$ sudo apt install -f
+     ```
+     (the last line [attempts to fix any broken dependancies](https://askubuntu.com/a/1039353))
