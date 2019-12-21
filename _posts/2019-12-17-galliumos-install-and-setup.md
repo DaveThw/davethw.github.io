@@ -35,6 +35,13 @@ Don't forget to change the default password - use `passwd` in a terminal window.
 
 -----
 
+Add the option to [change the keybaord layout on the initial login screen](https://www.reddit.com/r/GalliumOS/comments/9awzdu/keyboard_layout_on_login_screen/):
+ - `dave@gallium:~$ sudo mousepad  /etc/lxdm/lxdm.conf`
+ - Scroll down to the `[display]` section
+ - set `bottom_pane=1` and `keyboard=1`
+
+-----
+
 Change Window Manager theme, mainly to give thicker borders on windows:
  - Menu -> Settings -> Settings Manager -> Window Manager -> Style
  - Set "Theme" to "Daloa" or "Kokodi" - some of the others have thick borders too.
