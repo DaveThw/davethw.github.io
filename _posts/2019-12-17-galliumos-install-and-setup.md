@@ -160,3 +160,12 @@ Install additional software:
      ```
      *(install took about 40s)*  
      (I'm not sure how essential the `sudo apt update` is - it looks like `apt-add-repository` does it too)
+ - [LXFree for Java](https://www.claudeheintzdesign.com/lx/lxfree_about.html):
+   * Download the Linux 64bit dpkg from [the downloads page](https://www.claudeheintzdesign.com/lx/lxfreejava_download.html)
+   * Then, in a terminal:
+     ``` shell
+     dave@gallium:~$ cd ~/Downloads
+     dave@gallium:~/Downloads$ sudo dpkg -i lxfreeforjava_x64.deb
+     dave@gallium:~/Downloads$ sudo apt install -f
+     ```
+     (LXFree for Java appears in the Menu->Other)
