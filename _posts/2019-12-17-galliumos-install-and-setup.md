@@ -6,7 +6,8 @@ excerpt: Notes on what I did to (re-)install GalliumOS on my Chromebook, and wha
 date: 2019-12-17 21:10
 # modified: 2019-12-20 22:00
 # modified: 2019-12-21 15:10
-modified: 2019-12-21 17:30
+# modified: 2019-12-21 17:30
+modified: 2019-12-21 21:00
 ---
 
 Following an `apt upgrade` on GalliumOS which updated GRUB, and it would seem I [selected the wrong location to install the bootloader](https://www.reddit.com/r/GalliumOS/comments/6dxqy5/galliumos_wont_boot/), GalliumOS now won't boot up.  Unfortunately, [this guide for fixing the problem](https://www.reddit.com/r/GalliumOS/comments/5mhjd3/acer_14_wont_boot_after_grub_update/) didn't work for me, so I'm re-installing GalliumOS (again), and taking notes this time on what I do to get things the way I like it, just in case I need to do it all again sometime... :-)
@@ -112,7 +113,7 @@ dave@gallium:~$ sudo rm -i /etc/apt/sources.list.d/appgrid*
 dave@gallium:~$ sudo apt update
 ```
 
-I've also removed AppGrid, as I don't use it, and I think this might prevent the repository from reappearing...
+I've also removed AppGrid, as I don't use it, and I hope this might prevent the repository from reappearing...
 ``` shell
 dave@gallium:~$ sudo apt remove appgrid
 dave@gallium:~$ sudo apt autoremove
@@ -142,3 +143,12 @@ Install additional software:
      dave@gallium:~/Downloads$ sudo apt install -f
      ```
      (the last line [attempts to fix any broken dependancies](https://askubuntu.com/a/1039353))
+ - [Remmina](https://remmina.org/):
+   * Following the [official instructions for Ubuntu](https://remmina.org/how-to-install-remmina/#ubuntu):
+     ``` shell
+     dave@gallium:~$ sudo apt-add-repository ppa:remmina-ppa-team/remmina-next
+     dave@gallium:~$ sudo apt update
+     dave@gallium:~$ sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret
+     ```
+     *(install took about 40s)*  
+     (I'm not sure how essential the `sudo apt update` is - it looks like `apt-add-repository` does it too)
