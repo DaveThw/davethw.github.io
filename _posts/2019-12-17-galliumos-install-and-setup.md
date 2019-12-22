@@ -7,7 +7,8 @@ date: 2019-12-17 21:10
 # modified: 2019-12-20 22:00
 # modified: 2019-12-21 15:10
 # modified: 2019-12-21 17:30
-modified: 2019-12-21 21:00
+# modified: 2019-12-21 21:00
+modified: 2019-12-22 21:00
 ---
 
 Following an `apt upgrade` on GalliumOS which updated GRUB, and it would seem I [selected the wrong location to install the bootloader](https://www.reddit.com/r/GalliumOS/comments/6dxqy5/galliumos_wont_boot/), GalliumOS now won't boot up.  Unfortunately, [this guide for fixing the problem](https://www.reddit.com/r/GalliumOS/comments/5mhjd3/acer_14_wont_boot_after_grub_update/) didn't work for me, so I'm re-installing GalliumOS (again), and taking notes this time on what I do to get things the way I like it, just in case I need to do it all again sometime... :-)
@@ -95,6 +96,7 @@ lrwxrwxrwx 1 root root 27 Dec 17 16:41 /etc/localtime -> /usr/share/zoneinfo/Etc
 ``` shell
 dave@gallium:~$ timedatectl set-timezone "Europe/London"
 ```
+(or you can do it graphically - see below)
 
 Check the new settings:
 ``` shell
@@ -111,6 +113,20 @@ Europe/London
 dave@gallium:~$ ls -l /etc/localtime 
 lrwxrwxrwx 1 root root 35 Dec 20 22:16 /etc/localtime -> ../usr/share/zoneinfo/Europe/London
 ```
+
+-----
+
+Adjust the clock display settings:
+ - Right-click on the clock, then choose Properites
+ - Change Clock Options - Format to Custom Format
+ - set the format to `%-l:%M:%S %P`
+
+If you haven't set the timezone yet, you can do it by clicking on "Time and Date Settings..." (or Menu->Settings->Time and Date):
+ - Click "Unlock"
+ - Click on the Time zone at the top
+ - Click on London in the map, or pick "Europe/London" from the drop-down menu
+
+Note: The Time and Date Settings window shows Configuration as Manual, and if you try to change it to "Keep synchronised with Internet servers" it complains that "NTP support is not installed".  However timedatectl reports that `systemd-timesyncd.service active: yes`... Not sure what's going on there...
 
 -----
 
@@ -169,3 +185,18 @@ Install additional software:
      dave@gallium:~/Downloads$ sudo apt install -f
      ```
      (LXFree for Java appears in the Menu->Other)
+
+-----
+
+Change Favourites in the application menu - something like this:
+ - GalliumOS Update *(System)*
+ - Synaptic Package Manager *(System)*
+ - Settings Mamanger *(Settings)*
+ - Task Manager *(System)*
+ - Chromium Web Browser *(Internet)*
+ - Mousepad *(Accessories)*
+ - VNC Viewer *(Internet)*
+ - Remmina *(Internet)*
+ - Calculator *(Accessories)*
+ - LXFree for Java *(Other)*
+ - LibreOffice *(Office)*
