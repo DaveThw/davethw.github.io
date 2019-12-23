@@ -8,7 +8,8 @@ date: 2019-12-17 21:10
 # modified: 2019-12-21 15:10
 # modified: 2019-12-21 17:30
 # modified: 2019-12-21 21:00
-modified: 2019-12-22 21:00
+# modified: 2019-12-22 21:00
+modified: 2019-12-23 18:00
 ---
 
 Following an `apt upgrade` on GalliumOS which updated GRUB, and it would seem I [selected the wrong location to install the bootloader](https://www.reddit.com/r/GalliumOS/comments/6dxqy5/galliumos_wont_boot/), GalliumOS now won't boot up.  Unfortunately, [this guide for fixing the problem](https://www.reddit.com/r/GalliumOS/comments/5mhjd3/acer_14_wont_boot_after_grub_update/) didn't work for me, so I'm re-installing GalliumOS (again), and taking notes this time on what I do to get things the way I like it, just in case I need to do it all again sometime... :-)
@@ -119,7 +120,7 @@ lrwxrwxrwx 1 root root 35 Dec 20 22:16 /etc/localtime -> ../usr/share/zoneinfo/E
 Adjust the clock display settings:
  - Right-click on the clock, then choose Properites
  - Change Clock Options - Format to Custom Format
- - set the format to `%-l:%M:%S %P`
+ - [Set the format](https://docs.xfce.org/xfce/xfce4-panel/4.12/clock#label_and_tooltip_markup) to `%-l:%M:%S %P` (or whatever...)
 
 If you haven't set the timezone yet, you can do it by clicking on "Time and Date Settings..." (or Menu->Settings->Time and Date):
  - Click "Unlock"
@@ -127,6 +128,52 @@ If you haven't set the timezone yet, you can do it by clicking on "Time and Date
  - Click on London in the map, or pick "Europe/London" from the drop-down menu
 
 Note: The Time and Date Settings window shows Configuration as Manual, and if you try to change it to "Keep synchronised with Internet servers" it complains that "NTP support is not installed".  However timedatectl reports that `systemd-timesyncd.service active: yes`... Not sure what's going on there...
+
+-----
+
+Install NTPd:
+As mentioned above, the Time and Date Settings window seems to think that the time configuation is manual, even with `timedatectl set-ntp on`.  This seems to be similar to [the issue here](https://www.reddit.com/r/GalliumOS/comments/cx9b2n/time_server_ntp_support_is_not_installed/), although it's maybe not described very well...  Following the suggestion(s) there don't seem to help (ie. time **is** synchronised by systemd-timesyncd, but the Time and Date Settings window doesn't know it...).
+
+[Installing NTPd](https://vitux.com/how-to-install-ntp-server-and-client-on-ubuntu/) (and turning off `timedatectl set-ntp`) seems to make Time and Date Settings happier!:
+ - Install the NTP daemon:
+   ``` shell
+   dave@gallium:~$ sudo apt update
+   dave@gallium:~$ sudo apt install ntp
+   ```
+ - Confirm it's installed:
+   ``` shell
+   dave@gallium:~$ sntp --version
+   sntp 4.2.8p10@1.3728-o (1)
+   ```
+ - Update the config file:
+   ``` shell
+   dave@gallium:~$ sudo mousepad /etc/ntp.conf
+   ```
+   - Look for the details for nearest NTP Server pool here: https://support.ntp.org/bin/view/Servers/NTPPoolServers.
+   - Fill out the details in the `ntp.conf` file - note, the support.ntp.org website suggests that the config file lines should be something like `server 0.uk.pool.ntp.org`, but the version of ntp I have installed [seems to use](https://www.freebsd.org/cgi/man.cgi?query=ntp.conf&sektion=5&manpath=freebsd-release-ports) `pool 0.uk.pool.ntp.org iburst`.
+   - Save `ntp.conf` when you're done!
+ - Re-start the NTP server:
+   ``` shell
+   dave@gallium:~$ sudo service ntp restart
+   ```
+ - And check that it's running, if you want:
+   ``` shell
+   dave@gallium:~$ sudo service ntp status
+   ```
+ - Turn off the systemd-timesyncd service:
+   ``` shell
+   dave@gallium:~$ sudo timedatectl set-ntp off
+   ```
+ - Check if the local clock is synchronized with an NTP server:
+   ``` shell
+   dave@gallium:~$ ntpdate -qu 0.uk.pool.ntp.org
+   ```
+ - View the Time Synchronization Queue:
+   ``` shell
+   dave@gallium:~$ ntpq -p
+   ```
+
+Now the Time and Date Settings window should show the Configuration as "Keep synchronised with Internet servers"! :-)
 
 -----
 
