@@ -9,7 +9,8 @@ date: 2019-12-17 21:10
 # modified: 2019-12-21 17:30
 # modified: 2019-12-21 21:00
 # modified: 2019-12-22 21:00
-modified: 2019-12-23 18:00
+# modified: 2019-12-23 18:00
+modified: 2019-12-29 16:00
 ---
 
 Following an `apt upgrade` on GalliumOS which updated GRUB, and it would seem I [selected the wrong location to install the bootloader](https://www.reddit.com/r/GalliumOS/comments/6dxqy5/galliumos_wont_boot/), GalliumOS now won't boot up.  Unfortunately, [this guide for fixing the problem](https://www.reddit.com/r/GalliumOS/comments/5mhjd3/acer_14_wont_boot_after_grub_update/) didn't work for me, so I'm re-installing GalliumOS (again), and taking notes this time on what I do to get things the way I like it, just in case I need to do it all again sometime... :-)
@@ -56,6 +57,15 @@ Generally tweak various settings:
      + Set "Date" format to "Today at 20:21:11"
  - Screen Saver settings:
    * install missing screensaver modules with `sudo apt install xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra`
+   * On the Display Modes tab:
+     + set "Mode" to "Random Screen Saver"
+     + These are the screen savers I've got active at the moment: Abstractile, Anemone, Atlantis, Attraction, Atunnel, BinaryRing, Blaster, BlinkBox, BlockTube, Bouboule, Boxed, BoxFit, Braid, Bumps, Cage, CCurve, Celtic, Circuit, Cityflow, CloudLife, Coral, Crackberg, Cynosure, DecayScreen, Deco, Distort, Drift, Eurption, Euler2D, Fiberlamp, Fireworkx, FlipFlop, FlipText, FluidBalls, FlyingToasts, FontGlide, Galaxy, Gears, Geodesic, GeodesicGears, GLHanoi, GLKnots, GLMatrix, GLSchool, Goop, Grav, Halftone, Hilbert, Hypertorus, IFS, IMSMap, Interaggregate, Interference, Intermomentary, Jigsaw, Julia, Kumppa, Lavalite, Loop, Maze, MetaBalls, Mountain, Pacman, Penrose, Petri, Piecewise, Pipes, SlideScreen, Slip, SplitFlap, Sproingies, Squiral, StarWars, Surfaces, Wander, Wormhole, XMatrix
+     + set "Blank After" to 10 minutes
+     + set "Cycle After" to 1 minute
+     + set "Lock Screen After" to 1 minute
+   * On the Advanced tab:
+     + set "Image Manipulation" to "Grab Desktop Images"
+     + set "Text Manipulation" to "URL" - "http://feeds.bbci.co.uk/news/rss.xml"  (according to [the man page](https://linux.die.net/man/1/xscreensaver-text) the URL can be HTML, RSS or Atom (or plain text))
  - Window Manager settings:
    * On the Keyboard tab:
      + set "Toggle Fullscreen" to F4 (the fullscreen button!)
