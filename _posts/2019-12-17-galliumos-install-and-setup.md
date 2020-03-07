@@ -262,6 +262,11 @@ Install additional software:
      (note: python3-gpg was needed for the helper app to verify signatures)  
      (Dropbox appears in the Menu->Internet)  
      Run the helper app to install the main application, then sign in to your Dropbox account when prompted.
+ - [QDirStat](https://github.com/shundhammer/qdirstat):
+   * Install:
+     ``` shell
+     dave@gallium:~$ sudo apt install qdirstat
+     ```
 
 -----
 
