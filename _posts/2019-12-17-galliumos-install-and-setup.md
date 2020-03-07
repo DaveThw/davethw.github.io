@@ -10,7 +10,8 @@ date: 2019-12-17 21:10
 # modified: 2019-12-21 21:00
 # modified: 2019-12-22 21:00
 # modified: 2019-12-23 18:00
-modified: 2019-12-29 16:00
+# modified: 2019-12-29 16:00
+modified: 2020-03-07 11:50
 ---
 
 Following an `apt upgrade` on GalliumOS which updated GRUB, and it would seem I [selected the wrong location to install the bootloader](https://www.reddit.com/r/GalliumOS/comments/6dxqy5/galliumos_wont_boot/), GalliumOS now won't boot up.  Unfortunately, [this guide for fixing the problem](https://www.reddit.com/r/GalliumOS/comments/5mhjd3/acer_14_wont_boot_after_grub_update/) didn't work for me, so I'm re-installing GalliumOS (again), and taking notes this time on what I do to get things the way I like it, just in case I need to do it all again sometime... :-)
@@ -242,6 +243,18 @@ Install additional software:
      dave@gallium:~/Downloads$ sudo apt install -f
      ```
      (LXFree for Java appears in the Menu->Other)
+ - [Dropbox](https://www.dropbox.com/):
+   * Download the "Ubuntu 14.04 or higher (.deb) - 64-bit" file from [the installation page](https://www.dropbox.com/install) - this installs a helper application, which in turn installs the main application!..
+   * Then, in a terminal:
+     ``` shell
+     dave@gallium:~$ cd ~/Downloads
+     dave@gallium:~/Downloads$ sudo dpkg -i dropbox_*_amd64.deb
+     dave@gallium:~/Downloads$ sudo apt install -f
+     dave@gallium:~/Downloads$ sudo apt install python3-gpg
+     ```
+     (note: python3-gpg was needed for the helper app to verify signatures)  
+     (Dropbox appears in the Menu->Internet)  
+     Run the helper app to install the main application, then sign in to your Dropbox account when prompted.
 
 -----
 
