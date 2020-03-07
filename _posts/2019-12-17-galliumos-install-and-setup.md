@@ -11,7 +11,7 @@ date: 2019-12-17 21:10
 # modified: 2019-12-22 21:00
 # modified: 2019-12-23 18:00
 # modified: 2019-12-29 16:00
-modified: 2020-03-07 11:50
+modified: 2020-03-07 15:40
 ---
 
 Following an `apt upgrade` on GalliumOS which updated GRUB, and it would seem I [selected the wrong location to install the bootloader](https://www.reddit.com/r/GalliumOS/comments/6dxqy5/galliumos_wont_boot/), GalliumOS now won't boot up.  Unfortunately, [this guide for fixing the problem](https://www.reddit.com/r/GalliumOS/comments/5mhjd3/acer_14_wont_boot_after_grub_update/) didn't work for me, so I'm re-installing GalliumOS (again), and taking notes this time on what I do to get things the way I like it, just in case I need to do it all again sometime... :-)
@@ -76,6 +76,13 @@ Generally tweak various settings:
      + turn on "Automatically raise windows when they receive focus"
    * On the Advanced tab:
      + turn on "Window snapping - to other windows"
+
+-----
+
+Adjust power settings:
+ - my Chromebook seems to be developing a fault on the screen/lid, so it sometimes thinks that the lid has beeb closed (and opened again) when just moving the laptop around - with the default settings, this gives several seconds of black screen, and then you see the lock screen and have to type your password in, which rapidly gets annoying...
+ - To prevent the laptop going to sleep when the lid is closed: Power Manager settings -> General -> When laptop lid is closed: set to "Switch off display", for both On Battery and Plugged In
+ - To add a keyboard shortcut for "Suspend" (aka. "Go to Sleep"): Keyboard settings -> Application Shortcuts -> Add. Set [the command](https://askubuntu.com/a/164215) to `xfce4-session-logout -s`, then click OK, then choose a keyboard shortcut (I went for `Ctrl+PowerOff`)
 
 -----
 
