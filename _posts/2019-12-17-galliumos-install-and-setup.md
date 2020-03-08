@@ -11,13 +11,15 @@ date: 2019-12-17 21:10
 # modified: 2019-12-22 21:00
 # modified: 2019-12-23 18:00
 # modified: 2019-12-29 16:00
-modified: 2020-03-07 15:40
+# modified: 2020-03-07 15:40
+modified: 2020-03-08 14:50
 ---
 
 Following an `apt upgrade` on GalliumOS which updated GRUB, and it would seem I [selected the wrong location to install the bootloader](https://www.reddit.com/r/GalliumOS/comments/6dxqy5/galliumos_wont_boot/), GalliumOS now won't boot up.  Unfortunately, [this guide for fixing the problem](https://www.reddit.com/r/GalliumOS/comments/5mhjd3/acer_14_wont_boot_after_grub_update/) didn't work for me, so I'm re-installing GalliumOS (again), and taking notes this time on what I do to get things the way I like it, just in case I need to do it all again sometime... :-)
 
 -----
 
+## GalliumOS
 First up, install GalliumOS with chrx!  Following the [chrx install guide](https://chrx.org/#step-by-step) I did the following:
 ``` shell
 crosh> shell
@@ -27,6 +29,7 @@ Which installed GalliumOS, taking about 14mins.  (note: Installation log files a
 
 -----
 
+## Keyboard
 Once logged in to GalliumOS, update keyboard settings:
  - Menu -> Settings -> Settings Manager -> Keyboard -> Layout
  - Set "Keyboard model" to "Chromebook Falco/Pixel/Pixel2 / Search overlay / F keys mapped to media keys"  ([see here for more details](https://wiki.galliumos.org/Media_keys_and_default_keybindings) - Right alt as overlay doesn't work with some programmes (eg. Chromium takes the Right-Alt press as a start to keyboard navigation of the browser toolbar...))
@@ -35,10 +38,12 @@ Note: On the initial login screen, the Keyboard layout will (always?) be "Englis
 
 -----
 
+## Password
 Don't forget to change the default password - use `passwd` in a terminal window.
 
 -----
 
+## Login Screen
 Add the option to [change the keybaord layout on the initial login screen](https://www.reddit.com/r/GalliumOS/comments/9awzdu/keyboard_layout_on_login_screen/):
  - `dave@gallium:~$ sudo mousepad  /etc/lxdm/lxdm.conf`
  - Scroll down to the `[display]` section
@@ -46,6 +51,7 @@ Add the option to [change the keybaord layout on the initial login screen](https
 
 -----
 
+## Desktop preferences
 Change Window Manager theme, mainly to give thicker borders on windows:
  - Menu -> Settings -> Settings Manager -> Window Manager -> Style
  - Set "Theme" to "Daloa" or "Kokodi" - some of the others have thick borders too.
@@ -79,14 +85,14 @@ Generally tweak various settings:
 
 -----
 
-Adjust power settings:
- - my Chromebook seems to be developing a fault on the screen/lid, so it sometimes thinks that the lid has beeb closed (and opened again) when just moving the laptop around - with the default settings, this gives several seconds of black screen, and then you see the lock screen and have to type your password in, which rapidly gets annoying...
+## Power settings
+My Chromebook seems to be developing a fault on the screen/lid, so it sometimes thinks that the lid has beeb closed (and opened again) when just moving the laptop around - with the default settings, this gives several seconds of black screen, and then you see the lock screen and have to type your password in, which rapidly gets annoying...
  - To prevent the laptop going to sleep when the lid is closed: Power Manager settings -> General -> When laptop lid is closed: set to "Switch off display", for both On Battery and Plugged In
  - To add a keyboard shortcut for "Suspend" (aka. "Go to Sleep"): Keyboard settings -> Application Shortcuts -> Add. Set [the command](https://askubuntu.com/a/164215) to `xfce4-session-logout -s`, then click OK, then choose a keyboard shortcut (I went for `Ctrl+PowerOff`)
 
 -----
 
-Set up user's bin:
+## User's bin:
  - make new directory `~/bin`
  - copy `timer.sh` from Moneta into `bin`
    * rename to `timer`
@@ -95,6 +101,7 @@ Set up user's bin:
 
 -----
 
+## Timezone
 Check the current timezone settings:
 ``` shell
 dave@gallium:~$ timedatectl
@@ -135,7 +142,7 @@ lrwxrwxrwx 1 root root 35 Dec 20 22:16 /etc/localtime -> ../usr/share/zoneinfo/E
 
 -----
 
-Adjust the clock display settings:
+## Clock settings
  - Right-click on the clock, then choose Properites
  - Change Clock Options - Format to Custom Format
  - [Set the format](https://docs.xfce.org/xfce/xfce4-panel/4.12/clock#label_and_tooltip_markup) to `%-l:%M:%S %P` (or whatever...)
@@ -149,7 +156,7 @@ Note: The Time and Date Settings window shows Configuration as Manual, and if yo
 
 -----
 
-Install NTPd:
+## Install NTPd
 As mentioned above, the Time and Date Settings window seems to think that the time configuation is manual, even with `timedatectl set-ntp on`.  This seems to be similar to [the issue here](https://www.reddit.com/r/GalliumOS/comments/cx9b2n/time_server_ntp_support_is_not_installed/), although it's maybe not described very well...  Following the suggestion(s) there don't seem to help (ie. time **is** synchronised by systemd-timesyncd, but the Time and Date Settings window doesn't know it...).
 
 [Installing NTPd](https://vitux.com/how-to-install-ntp-server-and-client-on-ubuntu/) (and turning off `timedatectl set-ntp`) seems to make Time and Date Settings happier!:
@@ -195,6 +202,7 @@ Now the Time and Date Settings window should show the Configuration as "Keep syn
 
 -----
 
+## Remove AppGrid
 [Remove the AppGrid ppa repository](https://dave.thwaites.org.uk/galliumos/remove-apt-repository.html):
 ``` shell
 dave@gallium:~$ sudo rm -i /etc/apt/sources.list.d/appgrid*
@@ -209,7 +217,7 @@ dave@gallium:~$ sudo apt autoremove
 
 -----
 
-Install additional software:
+## Install additional software:
  - [Libre Office](https://www.libreoffice.org/): main Gallium/Ubuntu repositories only have an older version available (v.6.0.7, as of time of writing) - a more up-to-date version (v.6.3.4) can be found at [ppa:libreoffice/ppa](https://launchpad.net/~libreoffice/+archive/ubuntu/ppa)
    * Add the repository:
      ``` shell
@@ -270,6 +278,7 @@ Install additional software:
 
 -----
 
+## Application Menu
 Change Favourites in the application menu - something like this:
  - GalliumOS Update *(System)*
  - Synaptic Package Manager *(System)*
