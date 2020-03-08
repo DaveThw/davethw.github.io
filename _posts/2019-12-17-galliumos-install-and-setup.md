@@ -17,7 +17,7 @@ modified: 2020-03-08 14:50
 
 Following an `apt upgrade` on GalliumOS which updated GRUB, and it would seem I [selected the wrong location to install the bootloader](https://www.reddit.com/r/GalliumOS/comments/6dxqy5/galliumos_wont_boot/), GalliumOS now won't boot up.  Unfortunately, [this guide for fixing the problem](https://www.reddit.com/r/GalliumOS/comments/5mhjd3/acer_14_wont_boot_after_grub_update/) didn't work for me, so I'm re-installing GalliumOS (again), and taking notes this time on what I do to get things the way I like it, just in case I need to do it all again sometime... :-)
 
------
+
 
 ## GalliumOS
 First up, install GalliumOS with chrx!  Following the [chrx install guide](https://chrx.org/#step-by-step) I did the following:
@@ -27,7 +27,7 @@ chronos@localhost / $ cd ; curl -Os https://chrx.org/go && sh go -H gallium -U d
 ```
 Which installed GalliumOS, taking about 14mins.  (note: Installation log files are preserved in `/var/cache/chrx`)
 
------
+
 
 ## Keyboard
 Once logged in to GalliumOS, update keyboard settings:
@@ -36,12 +36,12 @@ Once logged in to GalliumOS, update keyboard settings:
  - Also add "English (UK)" to "Keyboard layout", and remove "English (US)"
 Note: On the initial login screen, the Keyboard layout will (always?) be "English (US)" - therefore be wary of special characters / punctuation like `"£@#~\|¬` in passwords...
 
------
+
 
 ## Password
 Don't forget to change the default password - use `passwd` in a terminal window.
 
------
+
 
 ## Login Screen
 Add the option to [change the keybaord layout on the initial login screen](https://www.reddit.com/r/GalliumOS/comments/9awzdu/keyboard_layout_on_login_screen/):
@@ -49,7 +49,7 @@ Add the option to [change the keybaord layout on the initial login screen](https
  - Scroll down to the `[display]` section
  - set `bottom_pane=1` and `keyboard=1`
 
------
+
 
 ## Desktop preferences
 Change Window Manager theme, mainly to give thicker borders on windows:
@@ -57,8 +57,7 @@ Change Window Manager theme, mainly to give thicker borders on windows:
  - Set "Theme" to "Daloa" or "Kokodi" - some of the others have thick borders too.
  - More details [here](https://mxlinux.org/wiki/xfce/changing-border-size-with-xfce4-window-manager/) and [here](https://sevkeifert.blogspot.com/2014/12/increase-window-border-size-in-xubuntu.html)
 
-
-Generally tweak various settings:
+### Generally tweak various settings:
  - File Manager settings:
    * On the Display tab:
      + Set "Date" format to "Today at 20:21:11"
@@ -83,23 +82,23 @@ Generally tweak various settings:
    * On the Advanced tab:
      + turn on "Window snapping - to other windows"
 
------
+
 
 ## Power settings
 My Chromebook seems to be developing a fault on the screen/lid, so it sometimes thinks that the lid has beeb closed (and opened again) when just moving the laptop around - with the default settings, this gives several seconds of black screen, and then you see the lock screen and have to type your password in, which rapidly gets annoying...
  - To prevent the laptop going to sleep when the lid is closed: Power Manager settings -> General -> When laptop lid is closed: set to "Switch off display", for both On Battery and Plugged In
  - To add a keyboard shortcut for "Suspend" (aka. "Go to Sleep"): Keyboard settings -> Application Shortcuts -> Add. Set [the command](https://askubuntu.com/a/164215) to `xfce4-session-logout -s`, then click OK, then choose a keyboard shortcut (I went for `Ctrl+PowerOff`)
 
------
 
-## User's bin:
+
+## User's bin
  - make new directory `~/bin`
  - copy `timer.sh` from Moneta into `bin`
    * rename to `timer`
    * make executable with `chmod a+x ~/bin/timer`
  - I think you'll then need to log out and in again to see `/home/dave/bin` appear in `$PATH`...
 
------
+
 
 ## Timezone
 Check the current timezone settings:
@@ -140,7 +139,7 @@ dave@gallium:~$ ls -l /etc/localtime
 lrwxrwxrwx 1 root root 35 Dec 20 22:16 /etc/localtime -> ../usr/share/zoneinfo/Europe/London
 ```
 
------
+
 
 ## Clock settings
  - Right-click on the clock, then choose Properites
@@ -154,7 +153,7 @@ If you haven't set the timezone yet, you can do it by clicking on "Time and Date
 
 Note: The Time and Date Settings window shows Configuration as Manual, and if you try to change it to "Keep synchronised with Internet servers" it complains that "NTP support is not installed".  However timedatectl reports that `systemd-timesyncd.service active: yes`... Not sure what's going on there...
 
------
+
 
 ## Install NTPd
 As mentioned above, the Time and Date Settings window seems to think that the time configuation is manual, even with `timedatectl set-ntp on`.  This seems to be similar to [the issue here](https://www.reddit.com/r/GalliumOS/comments/cx9b2n/time_server_ntp_support_is_not_installed/), although it's maybe not described very well...  Following the suggestion(s) there don't seem to help (ie. time **is** synchronised by systemd-timesyncd, but the Time and Date Settings window doesn't know it...).
@@ -200,7 +199,7 @@ As mentioned above, the Time and Date Settings window seems to think that the ti
 
 Now the Time and Date Settings window should show the Configuration as "Keep synchronised with Internet servers"! :-)
 
------
+
 
 ## Remove AppGrid
 [Remove the AppGrid ppa repository](https://dave.thwaites.org.uk/galliumos/remove-apt-repository.html):
@@ -215,68 +214,76 @@ dave@gallium:~$ sudo apt remove appgrid
 dave@gallium:~$ sudo apt autoremove
 ```
 
------
 
-## Install additional software:
- - [Libre Office](https://www.libreoffice.org/): main Gallium/Ubuntu repositories only have an older version available (v.6.0.7, as of time of writing) - a more up-to-date version (v.6.3.4) can be found at [ppa:libreoffice/ppa](https://launchpad.net/~libreoffice/+archive/ubuntu/ppa)
-   * Add the repository:
-     ``` shell
-     dave@gallium:~$ sudo add-apt-repository ppa:libreoffice/ppa
-     ```
-   * Install:
-     ``` shell
-     dave@gallium:~$ sudo apt install libreoffice
-     ```
-     *(took a couple of minutes)*
- - [RealVNC Viewer](https://www.realvnc.com/en/): doesn't seem to be available via apt repositories, so download and install from the website:
-   * Download the Linux / DEB x64 version of the viewer from [the RealVNC website](https://www.realvnc.com/en/connect/download/viewer/)
-   * Open the Downloads folder, right-click on the VNC-Viewer .deb file, and choose "Open With "GDebi Package Installer""
-   * Click on "Install Package"
-   * If that doesn't seem to work, [try in a terminal instead](https://www.addictivetips.com/ubuntu-linux-tips/realvnc-on-linux/):
-     ``` shell
-     dave@gallium:~$ cd ~/Downloads
-     dave@gallium:~/Downloads$ sudo dpkg -i VNC-Viewer-*-Linux-x64.deb
-     dave@gallium:~/Downloads$ sudo apt install -f
-     ```
-     (the last line [attempts to fix any broken dependancies](https://askubuntu.com/a/1039353))
-   * Open up VNC Viewer (in Menu->Internet) - sign in (needs Authy for an authentication code)
- - [Remmina](https://remmina.org/):
-   * Following the [official instructions for Ubuntu](https://remmina.org/how-to-install-remmina/#ubuntu):
-     ``` shell
-     dave@gallium:~$ sudo apt-add-repository ppa:remmina-ppa-team/remmina-next
-     dave@gallium:~$ sudo apt update
-     dave@gallium:~$ sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret
-     ```
-     *(install took about 40s)*  
-     (I'm not sure how essential the `sudo apt update` is - it looks like `apt-add-repository` does it too)
- - [LXFree for Java](https://www.claudeheintzdesign.com/lx/lxfree_about.html):
-   * Download the Linux 64bit dpkg from [the downloads page](https://www.claudeheintzdesign.com/lx/lxfreejava_download.html)
-   * Then, in a terminal:
-     ``` shell
-     dave@gallium:~$ cd ~/Downloads
-     dave@gallium:~/Downloads$ sudo dpkg -i lxfreeforjava_x64.deb
-     dave@gallium:~/Downloads$ sudo apt install -f
-     ```
-     (LXFree for Java appears in the Menu->Other)
- - [Dropbox](https://www.dropbox.com/):
-   * Download the "Ubuntu 14.04 or higher (.deb) - 64-bit" file from [the installation page](https://www.dropbox.com/install) - this installs a helper application, which in turn installs the main application!..
-   * Then, in a terminal:
-     ``` shell
-     dave@gallium:~$ cd ~/Downloads
-     dave@gallium:~/Downloads$ sudo dpkg -i dropbox_*_amd64.deb
-     dave@gallium:~/Downloads$ sudo apt install -f
-     dave@gallium:~/Downloads$ sudo apt install python3-gpg
-     ```
-     (note: python3-gpg was needed for the helper app to verify signatures)  
-     (Dropbox appears in the Menu->Internet)  
-     Run the helper app to install the main application, then sign in to your Dropbox account when prompted.
- - [QDirStat](https://github.com/shundhammer/qdirstat):
-   * Install:
-     ``` shell
-     dave@gallium:~$ sudo apt install qdirstat
-     ```
 
------
+## Install additional software
+
+### [Libre Office](https://www.libreoffice.org/)
+ - The main Gallium/Ubuntu repositories only have an older version available (v.6.0.7, as of time of writing) - a more up-to-date version (v.6.3.4) can be found at [ppa:libreoffice/ppa](https://launchpad.net/~libreoffice/+archive/ubuntu/ppa)
+ - Add the repository:
+   ``` shell
+   dave@gallium:~$ sudo add-apt-repository ppa:libreoffice/ppa
+   ```
+ - Install:
+   ``` shell
+   dave@gallium:~$ sudo apt install libreoffice
+   ```
+   *(took a couple of minutes)*
+
+### [RealVNC Viewer](https://www.realvnc.com/en/)
+ - Doesn't seem to be available via apt repositories, so download and install from the website:
+ - Download the Linux / DEB x64 version of the viewer from [the RealVNC website](https://www.realvnc.com/en/connect/download/viewer/)
+ - Open the Downloads folder, right-click on the VNC-Viewer .deb file, and choose "Open With "GDebi Package Installer""
+ - Click on "Install Package"
+ - If that doesn't seem to work, [try in a terminal instead](https://www.addictivetips.com/ubuntu-linux-tips/realvnc-on-linux/):
+   ``` shell
+   dave@gallium:~$ cd ~/Downloads
+   dave@gallium:~/Downloads$ sudo dpkg -i VNC-Viewer-*-Linux-x64.deb
+   dave@gallium:~/Downloads$ sudo apt install -f
+   ```
+   (the last line [attempts to fix any broken dependancies](https://askubuntu.com/a/1039353))
+ - Open up VNC Viewer (in Menu->Internet) - sign in (needs Authy for an authentication code)
+
+### [Remmina](https://remmina.org/)
+ - Following the [official instructions for Ubuntu](https://remmina.org/how-to-install-remmina/#ubuntu):
+   ``` shell
+   dave@gallium:~$ sudo apt-add-repository ppa:remmina-ppa-team/remmina-next
+   dave@gallium:~$ sudo apt update
+   dave@gallium:~$ sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret
+   ```
+   *(install took about 40s)*  
+   (I'm not sure how essential the `sudo apt update` is - it looks like `apt-add-repository` does it too)
+
+### [LXFree for Java](https://www.claudeheintzdesign.com/lx/lxfree_about.html)
+ - Download the Linux 64bit dpkg from [the downloads page](https://www.claudeheintzdesign.com/lx/lxfreejava_download.html)
+ - Then, in a terminal:
+   ``` shell
+   dave@gallium:~$ cd ~/Downloads
+   dave@gallium:~/Downloads$ sudo dpkg -i lxfreeforjava_x64.deb
+   dave@gallium:~/Downloads$ sudo apt install -f
+   ```
+   (LXFree for Java appears in the Menu->Other)
+
+### [Dropbox](https://www.dropbox.com/)
+ - Download the "Ubuntu 14.04 or higher (.deb) - 64-bit" file from [the installation page](https://www.dropbox.com/install) - this installs a helper application, which in turn installs the main application!..
+ - Then, in a terminal:
+   ``` shell
+   dave@gallium:~$ cd ~/Downloads
+   dave@gallium:~/Downloads$ sudo dpkg -i dropbox_*_amd64.deb
+   dave@gallium:~/Downloads$ sudo apt install -f
+   dave@gallium:~/Downloads$ sudo apt install python3-gpg
+   ```
+   (note: python3-gpg was needed for the helper app to verify signatures)  
+   (Dropbox appears in the Menu->Internet)  
+   Run the helper app to install the main application, then sign in to your Dropbox account when prompted.
+
+### [QDirStat](https://github.com/shundhammer/qdirstat)
+ - Install:
+   ``` shell
+   dave@gallium:~$ sudo apt install qdirstat
+   ```
+
+
 
 ## Application Menu
 Change Favourites in the application menu - something like this:
