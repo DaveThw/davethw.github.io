@@ -139,6 +139,7 @@ exclude:
   - /test # ignore Minimal Mistakes /test
   - banner.js
   - minimal-mistakes-jekyll.gemspec
+  - serve.js
 keep_files:
   - .git
   - .svn
