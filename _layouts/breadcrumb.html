@@ -23,7 +23,6 @@ layout: default
     {% endunless %}
     {{ content }}
 
-    {% include base_path %}
     {% assign page_categories = page.categories | split: ' ' %}
     <div class="grid__wrapper">
       {% for post in site.posts %}
