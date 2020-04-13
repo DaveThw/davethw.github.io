@@ -5,6 +5,10 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # `jekyll serve`. If you change this file, please restart the server process.
 
+remote_theme: mmistakes/minimal-mistakes
+# theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: default
+
 # Site Settings
 locale                   : "en"
 title                    : "dave.thwaites.org.uk" # "davethw.github.io"
@@ -183,7 +187,7 @@ timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
