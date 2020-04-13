@@ -6,7 +6,6 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 remote_theme: mmistakes/minimal-mistakes
-# theme: minimal-mistakes-jekyll
 minimal_mistakes_skin: default
 
 # Site Settings
@@ -113,37 +112,22 @@ author:
 
 # Reading Files
 include:
-  - .htaccess
   - _pages
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
 exclude:
-  - "*.sublime-project"
-  - "*.sublime-workspace"
-  - vendor
-  - .asset-cache
-  - .bundle
-  - .jekyll-assets-cache
-  - .sass-cache
-  - assets/js/plugins
-  - assets/js/_main.js
-  - assets/js/vendor
-  - Capfile
-  - CHANGELOG
-  - config
   - Gemfile
-  - Gruntfile.js
-  - gulpfile.js
-  - LICENSE
-  - log
+  - Gemfile.lock
   - node_modules
-  - package.json
-  - Rakefile
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+# Custom exclude files start here:
+  - LICENSE
   - README
-  - tmp
-  - /docs # ignore Minimal Mistakes /docs
-  - /test # ignore Minimal Mistakes /test
-  - banner.js
-  - minimal-mistakes-jekyll.gemspec
-  - serve.js
+  - serve.sh
 keep_files:
   - .git
   - .svn
@@ -193,6 +177,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jemoji
+  - jekyll-include-cache
 
 # mimic GitHub Pages with --safe
 whitelist:
