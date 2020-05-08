@@ -13,6 +13,7 @@
 
   /* Give tables black borders all around (MM seems to under do bottom-border) */
   table {
+    display: table !important;
     border: 1px solid #000;
   }
 
@@ -22,17 +23,17 @@
   }
 
   thead {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #000 !important;
   }
 
   /* But remove the bottom border if there are multiple header rows... */
-  th {
+  thead th {
     border-bottom: none;
   }
 
   /* Allow tables to split across pages */
   table {
-    page-break-inside: auto;
+    page-break-inside: auto !important;
   }
 
 
@@ -44,12 +45,27 @@
   /* Hide link addresses in breadcrumbs and tags */
   .breadcrumbs a:after,
   .page__taxonomy a:after {
-    content: none;
+    content: none !important;
   }
 
   /* Reduce margin at the top of the page */
   #main {
-    margin-top: 0.5em;
+    // margin-top: 0.5em;
+  }
+
+  /* Move Breadcrumbs over to the right */
+  nav.breadcrumbs ol {
+    float: none;
+  }
+
+  /* Allow lists to split accross pages */
+  .page__content ul, .page__content ol {
+    page-break-inside: auto;
+  }
+
+  /* Restore borders around code blocks */
+  div.highlighter-rouge {
+    border: 1px solid #f0f0f0;
   }
 
 /* Hide the following elements on print
@@ -57,6 +73,6 @@
 
   /* Totally hide the sidebar - MM already hides most (all?) sections contained in it */
   .sidebar {
-    display: none !important;
+    // display: none !important;
   }
 }
