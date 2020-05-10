@@ -4,7 +4,7 @@ categories: RaspberryPi
 tags: RaspberryPi OLA DMX
 excerpt: Notes on how to install and set-up OLA (Open Lighting Architecture) on a Raspberry Pi.
 date: 2020-01-04 15:30
-# modified: 2019-12-29 16:00
+# last_modified_at: 2019-12-29 16:00
 ---
 
 OLA is a software framework for interfacing with various DMX protocols - see [openlighting.org/ola](https://www.openlighting.org/ola/).  The website/wiki seems to be a bit out of date, but [the github repository](https://github.com/OpenLightingProject/ola) is still getting (occasional?) updates.

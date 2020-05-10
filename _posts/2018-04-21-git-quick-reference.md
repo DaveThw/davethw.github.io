@@ -5,11 +5,12 @@ categories: Programming
 tags: git
 excerpt: Various reminders of how to do things in git!
 date: 2018-04-21 21:00
-#modified: 2018-04-22 21:00
-#modified: 2018-04-23 21:00
-#modified: 2018-04-29 21:00
-#modified: 2018-06-17 22:00
-modified: 2018-06-20 21:00
+modified:
+ - 2018-04-22 21:00
+ - 2018-04-23 21:00
+ - 2018-04-29 21:00
+ - 2018-06-17 22:00
+last_modified_at: 2018-06-20 21:00
 ---
 
 {:center: style="text-align: center"}

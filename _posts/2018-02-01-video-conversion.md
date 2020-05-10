@@ -3,9 +3,10 @@ title: "Video conversion using ffmpeg on Windows"
 categories: Theatre-Royal
 tags: ffmpeg
 excerpt: Step-by-step through using ffmpeg to convert video files (from our video camera) to mp4's
-# date: 2018-02-01 11:00
-# modified: 2018-02-20 12:00
-modified: 2018-03-28 16:00
+date: 2018-02-01 11:00
+modified:
+ - 2018-02-20 12:00
+last_modified_at: 2018-03-28 16:00
 ---
 
 First, if not yet done, [download ffmpeg](https://ffmpeg.zeranoe.com/builds/) - I went for the latest Release Build (3.4.1), Windows 64-bit, Static.  Once the zip files has downloaded, extract the contents somewhere (Downloads folder works) - note the zip folder contains a directory, which contains everything else, so it's less confusing if you extract directly into Downloads, rather than the subdirectory that the extractor will suggest!..

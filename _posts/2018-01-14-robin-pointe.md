@@ -4,7 +4,7 @@ categories: Theatre-Royal
 tags: DMX
 excerpt: Fixture details for Robe's Robin Pointe Moving Heads
 read_time: false
-# modified: 2018-01-14
+# last_modified_at: 2018-01-14
 ---
 
 ## Robin Pointe Fixture, from our Ion
