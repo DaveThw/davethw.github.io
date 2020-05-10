@@ -1,11 +1,4 @@
 /* ==========================================================================
-   Default skin
-   ========================================================================== */
-
-// Intentionally left blank
-
-
-/* ==========================================================================
    USER STYLES
    ========================================================================== */
 
@@ -13,7 +6,7 @@
 
   /* Give tables black borders all around (MM seems to under do bottom-border) */
   table {
-    display: table !important;
+    display: table;
     border: 1px solid #000;
   }
 
@@ -23,7 +16,7 @@
   }
 
   thead {
-    border-bottom: 1px solid #000 !important;
+    border-bottom: 1px solid #000;
   }
 
   /* But remove the bottom border if there are multiple header rows... */
@@ -33,9 +26,8 @@
 
   /* Allow tables to split across pages */
   table {
-    page-break-inside: auto !important;
+    page-break-inside: auto;
   }
-
 
   /* Allow blocks of code to split across pages */
   code, pre.highlight {
@@ -45,7 +37,7 @@
   /* Hide link addresses in breadcrumbs and tags */
   .breadcrumbs a:after,
   .page__taxonomy a:after {
-    content: none !important;
+    content: none;
   }
 
   /* Reduce margin at the top of the page */
