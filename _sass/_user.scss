@@ -51,7 +51,7 @@
   }
 
   /* Allow lists to split accross pages */
-  .page__content ul, .page__content ol {
+  .page__content ul, .page__content ol, .page__content li {
     page-break-inside: auto;
   }
 
