@@ -4,8 +4,9 @@ categories: Theatre-Royal
 tags: DMX
 excerpt: DMX Control details for our LED Starcloth Light Sources
 read_time: false
-#modified: 2017-04-05
-modified: 2017-04-29
+modified:
+ - 2017-04-05
+last_modified_at: 2017-04-29
 ---
 
 Model: LEE-1001DMX  

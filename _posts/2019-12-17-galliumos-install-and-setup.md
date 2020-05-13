@@ -4,15 +4,16 @@ categories: GalliumOS
 tags: GalliumOS
 excerpt: Notes on what I did to (re-)install GalliumOS on my Chromebook, and what additional steps I took to do the initial setting up.
 date: 2019-12-17 21:10
-# modified: 2019-12-20 22:00
-# modified: 2019-12-21 15:10
-# modified: 2019-12-21 17:30
-# modified: 2019-12-21 21:00
-# modified: 2019-12-22 21:00
-# modified: 2019-12-23 18:00
-# modified: 2019-12-29 16:00
-# modified: 2020-03-07 15:40
-modified: 2020-03-08 14:50
+modified:
+ - 2019-12-20 22:00
+ - 2019-12-21 15:10
+ - 2019-12-21 17:30
+ - 2019-12-21 21:00
+ - 2019-12-22 21:00
+ - 2019-12-23 18:00
+ - 2019-12-29 16:00
+ - 2020-03-07 15:40
+last_modified_at: 2020-03-08 14:50
 ---
 
 Following an `apt upgrade` on GalliumOS which updated GRUB, and it would seem I [selected the wrong location to install the bootloader](https://www.reddit.com/r/GalliumOS/comments/6dxqy5/galliumos_wont_boot/) (*hint:* next time, select `/dev/sda`, not `/dev/sda7`!..), GalliumOS now won't boot up.  Unfortunately, [this guide for fixing the problem](https://www.reddit.com/r/GalliumOS/comments/5mhjd3/acer_14_wont_boot_after_grub_update/) didn't work for me, so I'm re-installing GalliumOS (again), and taking notes this time on what I do to get things the way I like it, just in case I need to do it all again sometime... :-)

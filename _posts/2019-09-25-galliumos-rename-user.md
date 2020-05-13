@@ -4,7 +4,7 @@ categories: GalliumOS
 tags: GalliumOS
 excerpt: Notes on how to rename a user on Linux (specifically on GalliumOS)
 date: 2019-09-25 20:30
-#modified: 2019-03-04 20:35
+#last_modified_at: 2019-03-04 20:35
 ---
 
 It seems renaming a user on Linux isn't quite a trivial affair!  So, following guides found [on Reddit](https://www.reddit.com/r/GalliumOS/comments/4ffzwh/chrx_username_change_not_working/), and [on nixCraft](https://www.cyberciti.biz/faq/howto-change-rename-user-name-id/) the following seemed to work for me.
