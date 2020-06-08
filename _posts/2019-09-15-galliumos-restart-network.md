@@ -1,7 +1,7 @@
 ---
 title: "Restarting Networking on GalliumOS"
-categories: GalliumOS
-tags: Network GalliumOS
+categories: Guides
+tags: Network GalliumOS Linux
 excerpt: Notes on how to restart networking on GalliumOS
 date: 2019-09-15 22:00
 #last_modified_at: 2019-03-04 20:35

@@ -1,6 +1,6 @@
 ---
 title: "Caching GitHub credentials"
-categories: Website
+categories: Guides
 tags: git GitHub
 excerpt: Step-by-step through telling git to cache your GitHub credentials
 date: 2017-03-09 21:00

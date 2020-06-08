@@ -10,16 +10,22 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+  - title: "Projects"
+    url: /projects/
+  - title: "Guides"
+    url: /guides/
+  - title: "Notes"
+    url: /notes/
 
-sidebar:
-  - title: "Programming"
-    url: /programming/
-  - title: "Website"
-    url: /website/
-  - title: "GalliumOS"
-    url: /galliumos/    
-  - title: "Theatre Royal"
-    url: /theatre-royal/
-    children:
-    - title: "EOS Remote"
-      url: /theatre-royal/eos-remote/
+#sidebar:
+#  - title: "Programming"
+#    url: /programming/
+#  - title: "Website"
+#    url: /website/
+#  - title: "GalliumOS"
+#    url: /galliumos/    
+#  - title: "Theatre Royal"
+#    url: /theatre-royal/
+#    children:
+#    - title: "EOS Remote"
+#      url: /theatre-royal/eos-remote/

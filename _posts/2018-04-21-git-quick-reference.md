@@ -1,7 +1,7 @@
 ---
 # layout: post
-title:  "Git Quick Reference"
-categories: Programming
+title: "Git Quick Reference"
+categories: Guides
 tags: git
 excerpt: Various reminders of how to do things in git!
 date: 2018-04-21 21:00

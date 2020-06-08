@@ -1,7 +1,7 @@
 ---
 title: "AnchorJS links"
-categories: Website
-# tags: 
+categories: Notes
+tags: Website
 excerpt: Links to a couple of pages about AnchorJS - might be useful/nice to use?
 date: 2017-03-09 23:30
 read_time: false

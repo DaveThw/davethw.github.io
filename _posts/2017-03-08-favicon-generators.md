@@ -1,7 +1,7 @@
 ---
 title: "favicon generators"
-categories: Website
-# tags: 
+categories: Notes
+tags: Website
 excerpt: Links to a couple of favicon generators, and other related information
 read_time: false
 ---

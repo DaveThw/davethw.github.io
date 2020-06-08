@@ -1,7 +1,7 @@
 ---
 title: "Upgrading minimal-mistakes"
-categories: Website
-tags: git GitHub minimal-mistakes
+categories: Guides
+tags: git GitHub minimal-mistakes Website
 excerpt: Step-by-step through upgrading minimal-mistakes from GitHub
 date: 2017-03-09 21:00
 last_modified_at: 2017-03-13 21:30

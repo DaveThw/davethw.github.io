@@ -1,7 +1,7 @@
 ---
 title: "Blogging links"
-categories: Website
-# tags: 
+categories: Notes
+tags: Website
 excerpt: Links to some useful resources for blogging
 date: 2017-03-09 18:30
 last_modified_at: 2017-03-29 09:30

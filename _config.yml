@@ -119,8 +119,8 @@ author:
 #    - label : "Instagram"
 #      icon  : "fab fa-fw fa-instagram"
 #      url   : "https://instagram.com/"
-  uri              :
-  email            :
+  uri              : https://dave.thwaites.org.uk
+  email            : contact@dave.thwaites.org.uk
 
 
 # Site Footer

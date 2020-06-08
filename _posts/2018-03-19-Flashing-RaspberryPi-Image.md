@@ -1,8 +1,8 @@
 ---
 # layout: post
-title:  "Flashing an OS image for Raspberry Pi"
-categories: Theatre-Royal EOS-Remote
-tags: RaspberryPi Chromebook ChromeOS Crouton
+title: "Flashing an OS image for Raspberry Pi"
+categories: Guides
+tags: Linux RaspberryPi ChromeOS EOS-Remote
 excerpt: Step-by-step notes on how to flash a (fresh!) OS image for a Raspberry Pi, on an (old) SD card, using (my) Chromebook
 ---
 

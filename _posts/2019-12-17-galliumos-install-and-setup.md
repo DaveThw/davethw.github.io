@@ -1,6 +1,6 @@
 ---
 title: "Installing and seting-up GalliumOS from scratch"
-categories: GalliumOS
+categories: Projects
 tags: GalliumOS
 excerpt: Notes on what I did to (re-)install GalliumOS on my Chromebook, and what additional steps I took to do the initial setting up.
 date: 2019-12-17 21:10

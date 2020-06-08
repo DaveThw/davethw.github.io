@@ -1,7 +1,7 @@
 ---
 title: Robin Pointe Fixture (for ETC Ion)
-categories: Theatre-Royal
-tags: DMX
+categories: Notes
+tags: DMX Theatre-Royal
 excerpt: Fixture details for Robe's Robin Pointe Moving Heads
 read_time: false
 # last_modified_at: 2018-01-14

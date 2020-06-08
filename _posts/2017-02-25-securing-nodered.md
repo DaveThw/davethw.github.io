@@ -1,8 +1,8 @@
 ---
 # layout: post
 title: Securing Node-RED connections (HTTPS / WSS)
-categories: Theatre-Royal EOS-Remote
-tags: RaspberryPi Node-RED
+categories: Guides
+tags: Linux RaspberryPi Node-RED SSL EOS-Remote
 excerpt: Step-by-step notes going through the process of enabling secure connections for Node-RED
 last_modified_at: 2017-04-05
 ---

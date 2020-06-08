@@ -1,7 +1,7 @@
 ---
 title: "Rename a User on Linux"
-categories: GalliumOS
-tags: GalliumOS
+categories: Guides
+tags: GalliumOS Linux
 excerpt: Notes on how to rename a user on Linux (specifically on GalliumOS)
 date: 2019-09-25 20:30
 #last_modified_at: 2019-03-04 20:35

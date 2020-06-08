@@ -1,8 +1,8 @@
 ---
 # layout: post
 title:  "Network Metrics (on a Raspberry Pi)"
-categories: Theatre-Royal EOS-Remote
-tags: RaspberryPi Network
+categories: Guides
+tags: Linux RaspberryPi Network EOS-Remote
 excerpt: Step-by-step notes on how to adjust the network metrics when working multiple ports
 ---
 So... With my Raspberry Pi now connected to two networks - one with the LAN port, on a closed network, and one via a wifi dongle, with internet access, both with gateways configured (because I can't work out how to tell the router on the closed network that it doesn't actually have internet access!..) - the Raspberry Pi prefers to use the LAN port for internet access.  But, of course, this doesn't work.

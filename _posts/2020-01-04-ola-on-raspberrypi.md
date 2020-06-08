@@ -1,7 +1,7 @@
 ---
 title: "Installing OLA on a Raspberry Pi"
-categories: RaspberryPi
-tags: RaspberryPi OLA DMX
+categories: Projects
+tags: RaspberryPi Linux OLA DMX
 excerpt: Notes on how to install and set-up OLA (Open Lighting Architecture) on a Raspberry Pi.
 date: 2020-01-04 15:30
 # last_modified_at: 2019-12-29 16:00

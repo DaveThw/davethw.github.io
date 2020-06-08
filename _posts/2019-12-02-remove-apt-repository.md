@@ -1,7 +1,7 @@
 ---
 title: "How to Remove an apt Repository"
-categories: GalliumOS
-tags: GalliumOS
+categories: Guides
+tags: GalliumOS Linux apt
 excerpt: Notes on how to remove a repository from apt's lists, on Linux
 date: 2019-12-02 11:50
 #last_modified_at: 2019-03-04 20:35
@@ -12,11 +12,11 @@ It seems that [AppGrid installs it's own repository](https://www.reddit.com/r/Ga
 dave@chrx:~$ sudo apt update
 [sudo] password for dave: 
 Hit:1 http://apt.galliumos.org bismuth InRelease
-Hit:2 http://archive.canonical.com/ubuntu bionic InRelease                     
-Hit:3 http://security.ubuntu.com/ubuntu bionic-security InRelease              
-Hit:4 http://archive.ubuntu.com/ubuntu bionic InRelease                        
-Hit:5 http://archive.ubuntu.com/ubuntu bionic-updates InRelease                
-Hit:6 http://archive.ubuntu.com/ubuntu bionic-backports InRelease              
+Hit:2 http://archive.canonical.com/ubuntu bionic InRelease
+Hit:3 http://security.ubuntu.com/ubuntu bionic-security InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu bionic InRelease
+Hit:5 http://archive.ubuntu.com/ubuntu bionic-updates InRelease
+Hit:6 http://archive.ubuntu.com/ubuntu bionic-backports InRelease
 Hit:8 http://ppa.launchpad.net/remmina-ppa-team/remmina-next/ubuntu bionic
  InRelease
 Get:7 http://ppa.launchpad.net/appgrid/stable/ubuntu bionic InRelease [15.4 kB]

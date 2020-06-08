@@ -1,7 +1,7 @@
 ---
-title: "Video conversion using ffmpeg on Windows"
-categories: Theatre-Royal
-tags: ffmpeg
+title: "Video conversion using ffmpeg (on Windows)"
+categories: Guides
+tags: ffmpeg Theatre-Royal
 excerpt: Step-by-step through using ffmpeg to convert video files (from our video camera) to mp4's
 date: 2018-02-01 11:00
 modified:
