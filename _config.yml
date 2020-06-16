@@ -166,6 +166,7 @@ exclude:
   - README
   - CNAME
   - serve.sh
+  - redirects.json
 keep_files:
   - .git
   - .svn
@@ -333,5 +334,7 @@ defaults:
 
 # jekyll-redirect-from settings
 # (only works with v.0.16 - GitHub Pages currently seems to be using 0.15 (as of 16/6/2020)...)
+# For workaround, see:
+# https://github.com/jekyll/jekyll-redirect-from/issues/189#issuecomment-509544569
 redirect_from:
   json: false
