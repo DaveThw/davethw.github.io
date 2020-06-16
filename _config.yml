@@ -329,3 +329,9 @@ defaults:
       related: false
       sidebar:
         nav: "sidebar"
+
+
+# jekyll-redirect-from settings
+# (only works with v.0.16 - GitHub Pages currently seems to be using 0.15 (as of 16/6/2020)...)
+redirect_from:
+  json: false
