@@ -4,6 +4,7 @@ title: "Flashing an OS image for Raspberry Pi"
 categories: Guides
 tags: Linux RaspberryPi ChromeOS EOS-Remote
 excerpt: Step-by-step notes on how to flash a (fresh!) OS image for a Raspberry Pi, on an (old) SD card, using (my) Chromebook
+redirect_from: /theatre-royal/eos-remote/Flashing-RaspberryPi-Image.html
 ---
 
 First, download an OS image from https://www.raspberrypi.org/downloads/ - I've been using Raspbian (March 2018 version, released on 2018-03-13).

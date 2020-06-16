@@ -11,6 +11,7 @@ modified:
  - 2018-04-29 21:00
  - 2018-06-17 22:00
 last_modified_at: 2018-06-20 21:00
+redirect_from: /programming/git-quick-reference.html
 ---
 
 {:center: style="text-align: center"}

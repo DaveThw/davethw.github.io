@@ -1,9 +1,10 @@
 ---
-title: Amp Specs
+title: Theatre Royal Amp Specs
 categories: Notes
 tags: Theatre-Royal
-excerpt: Notes on specifications for (older) amps
+excerpt: Notes on the specifications for the Theatre Royal's (older) amps
 read_time: false
+redirect_from: /theatre-royal/amp-specs.html
 ---
 ## Amp 11+12 - dead
 - HH Electronic VX-450 MOS-FET High Performance Professional Power Amplifer

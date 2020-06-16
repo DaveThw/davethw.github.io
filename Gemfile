@@ -18,6 +18,7 @@ group :jekyll_plugins do
   # Used in mm-github-pages-starter - use to enable site search by Algolia
   #  https://github.com/algolia/jekyll-algolia#jekyll-algolia-plugin
   #gem "jekyll-algolia"
+  gem "jekyll-redirect-from"
 end
 
 gem "dotenv"

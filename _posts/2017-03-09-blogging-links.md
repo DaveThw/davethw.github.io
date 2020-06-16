@@ -2,10 +2,11 @@
 title: "Blogging links"
 categories: Notes
 tags: Website
-excerpt: Links to some useful resources for blogging
+excerpt: Links to some useful resources for blogging (with GitHub Pages / Jekyll / Minimal Mistakes, etc)
 date: 2017-03-09 18:30
 last_modified_at: 2017-03-29 09:30
 read_time: false
+redirect_from: /website/blogging-links.html
 ---
 
 ## Minimal Mistakes

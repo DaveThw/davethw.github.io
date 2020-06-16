@@ -4,6 +4,7 @@ categories: Guides
 tags: git GitHub minimal-mistakes Website
 excerpt: Step-by-step through upgrading minimal-mistakes from GitHub (now using v.4.4.1)
 date: 2017-05-09 21:00
+redirect_from: /website/upgrading-minimal-mistakes-again.html
 ---
 
 Following steps from the [Upgrading guide](https://mmistakes.github.io/minimal-mistakes/docs/upgrading/#use-git):

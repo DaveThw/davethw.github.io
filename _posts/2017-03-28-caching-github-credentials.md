@@ -5,6 +5,7 @@ tags: git GitHub
 excerpt: Step-by-step through telling git to cache your GitHub credentials
 date: 2017-03-09 21:00
 last_modified_at: 2017-03-13 21:30
+redirect_from: /website/caching-github-credentials.html
 ---
 
 Following steps from the GitHub guide to [Caching your GitHub password in Git](https://help.github.com/articles/caching-your-github-password-in-git/):

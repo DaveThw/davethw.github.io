@@ -5,6 +5,7 @@ tags: Network GalliumOS Linux
 excerpt: Notes on how to restart networking on GalliumOS
 date: 2019-09-15 22:00
 #last_modified_at: 2019-03-04 20:35
+redirect_from: /galliumos/galliumos-restart-network.html
 ---
 
 Sometimes after waking from sleep, networking seems to fail on GalliumOS on my laptop.

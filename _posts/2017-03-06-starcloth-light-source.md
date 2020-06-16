@@ -7,6 +7,7 @@ read_time: false
 modified:
  - 2017-04-05
 last_modified_at: 2017-04-29
+redirect_from: /theatre-royal/starcloth-light-source.html
 ---
 
 Model: LEE-1001DMX  

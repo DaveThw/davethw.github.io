@@ -1,10 +1,11 @@
 ---
-title: "Installing Jekyll on a Raspberry Pi"
+title: "Installing Jekyll (on a Raspberry Pi)"
 categories: Projects
 tags: Jekyll GitHub GitHub-Pages RaspberryPi Linux Website
 excerpt: Step-by-step through installing Jekyll, for local GitHub Pages, on a Raspberry Pi
 date: 2019-03-04 10:00
 last_modified_at: 2019-03-04 20:35
+redirect_from: /website/installing-jekyll.html
 ---
 
 Mainly following (some of) the steps from [Setting up your GitHub Pages site locally with Jekyll](https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll):
