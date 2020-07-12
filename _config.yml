@@ -273,9 +273,9 @@ compress_html:
 
 # Collections
 collections:
-  notes:
-    output: true
-    permalink: /:path:output_ext
+#  notes:
+#    output: true
+#    permalink: /:path:output_ext
   breadcrumbs:
     output: true
     permalink: /:categories/
@@ -308,18 +308,18 @@ defaults:
       author_profile: true
       sidebar:
         nav: "sidebar"
-  # _notes
-  - scope:
-      path: ""
-      type: notes
-    values:
-      layout: single
-      read_time: false
-      author_profile: true
-      share: false
-      comments: false
-      # sidebar:
-      #   nav: "docs"
+#  # _notes
+#  - scope:
+#      path: ""
+#      type: notes
+#    values:
+#      layout: single
+#      read_time: false
+#      author_profile: true
+#      share: false
+#      comments: false
+#      # sidebar:
+#      #   nav: "docs"
   # _breadcrumbs
   - scope:
       path: ""
