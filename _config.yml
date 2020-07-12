@@ -279,6 +279,9 @@ collections:
   breadcrumbs:
     output: true
     permalink: /:categories/
+  theatre-work:
+    output: true
+    permalink: /work/theatre/:title/
 
 
 # Defaults
@@ -328,6 +331,19 @@ defaults:
       comments: false
       share: false
       related: false
+      sidebar:
+        nav: "sidebar"
+  # _theatre-work
+  - scope:
+      path: ""
+      type: theatre-work
+    values:
+      layout: single
+      author_profile: true
+      read_time: false
+      comments: true
+      share: true
+      related: true
       sidebar:
         nav: "sidebar"
 
