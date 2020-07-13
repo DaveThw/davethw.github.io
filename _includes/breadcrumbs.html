@@ -6,15 +6,14 @@
     {% assign path_type = nil %}
   {% when "manual" %}
     {% assign path_type = '/' %}
+  {% else %}
+    {% assign path_type = nil %}
 {% endcase %}
 
 <!-- page.collection = '{{ page.collection }}' -->
 {% if page.collection == 'posts' %}
   {% assign crumb_path = site.category_archive.path %}
-{% elsif page.collection == 'breadcrumbs' %}
-  {% assign crumb_path = site.category_archive.path %}
 {% else %}
-  {% assign path_type = nil %}
   {% assign crumb_path = '/' %}
 {% endif %}
 
@@ -57,7 +56,7 @@
       {% endif %}
       {% unless forloop.last and page.collection == 'breadcrumbs' %}
         {% assign i = i | plus: 1 %}
-        {% assign crumb_path = crumb | downcase | replace: '%20', '-' | append: path_type | prepend: crumb_path %}
+        {% assign crumb_path = crumb | downcase | replace: '%20', '-' | replace: ' ', '-' | append: path_type | prepend: crumb_path %}
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
          {% comment %}
           <a href="{{ crumb | downcase | replace: '%20', '-' | prepend: path_type | prepend: crumb_path | absolute_url }}" itemprop="item"><span itemprop="name">{{ crumb | replace: '-', ' ' | replace: '%20', ' ' | capitalize }}</span></a>
