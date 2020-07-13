@@ -119,8 +119,8 @@ author:
 #    - label : "Instagram"
 #      icon  : "fab fa-fw fa-instagram"
 #      url   : "https://instagram.com/"
-  uri              : https://dave.thwaites.org.uk
-  email            : contact@dave.thwaites.org.uk
+  uri              : "https://dave.thwaites.org.uk"
+  email            : "contact@dave.thwaites.org.uk"
 
 
 # Site Footer
@@ -281,7 +281,7 @@ collections:
     permalink: /:categories/
   theatre-work:
     output: true
-    permalink: /work/theatre/:title/
+    permalink: /work/theatre/:path/
 
 
 # Defaults
