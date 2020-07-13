@@ -281,7 +281,8 @@ collections:
     permalink: /:categories/
   theatre-work:
     output: true
-    permalink: /work/theatre/:path/
+    permalink: /:categories/:title.html
+#    permalink: /work/theatre/:path/
 
 
 # Defaults
