@@ -4,11 +4,7 @@ layout: archive
 {{ content }}
 
 {%- assign page_categories = page.categories | split: ' ' -%}
-{%- if page.collections == nil -%}
-  {%- assign collections = "posts" -%}
-{%- else -%}
-  {%- assign collections = page.collections -%}
-{%- endif -%}
+{%- assign collections = page.collections | default: "posts" -%}
 <div class="entries-{{ page.entries_layout | default: 'list' }}">
   {%- for collection in collections -%}
     {%- for post in site[collection] -%}
