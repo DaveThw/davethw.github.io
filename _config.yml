@@ -327,11 +327,13 @@ defaults:
       type: breadcrumbs
     values:
       layout: breadcrumb
+      classes: wide
       author_profile: true
       read_time: false
       comments: false
       share: false
       related: false
+      collections: posts
       sidebar:
         nav: "sidebar"
   # _theatre-work
@@ -340,6 +342,7 @@ defaults:
       type: theatre-work
     values:
       layout: single
+      classes: wide
       author_profile: true
       read_time: false
       comments: true
