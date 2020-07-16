@@ -9,7 +9,7 @@ layout: archive
 {% else %}
   {% assign collections = page.collections %}
 {% endif %}
-<div class="grid__wrapper">
+<div class="entries-{{ page.entries_layout | default: 'list' }}">
   {% for collection in collections %}
     {% for post in site[collection] %}
       {% assign do = true %}{% assign i = 0 %}
@@ -17,7 +17,7 @@ layout: archive
         {% if category != post.categories[i] %}{% assign do = false %}{% endif %}
         {% assign i = i | plus: 1 %}
       {% endfor %}
-      {% if do %}{% include archive-single.html type="grid" %}{% endif %}
+      {% if do %}{% include archive-single.html type=page.entries_layout %}{% endif %}
     {% endfor %}
   {% endfor %}
 </div>
