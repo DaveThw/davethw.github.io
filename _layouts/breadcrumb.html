@@ -3,21 +3,21 @@ layout: archive
 ---
 {{ content }}
 
-{% assign page_categories = page.categories | split: ' ' %}
-{% if page.collections == nil %}
-  {% assign collections = "posts" %}
-{% else %}
-  {% assign collections = page.collections %}
-{% endif %}
+{%- assign page_categories = page.categories | split: ' ' -%}
+{%- if page.collections == nil -%}
+  {%- assign collections = "posts" -%}
+{%- else -%}
+  {%- assign collections = page.collections -%}
+{%- endif -%}
 <div class="entries-{{ page.entries_layout | default: 'list' }}">
-  {% for collection in collections %}
-    {% for post in site[collection] %}
-      {% assign do = true %}{% assign i = 0 %}
-      {% for category in page.categories %}
-        {% if category != post.categories[i] %}{% assign do = false %}{% endif %}
-        {% assign i = i | plus: 1 %}
-      {% endfor %}
-      {% if do %}{% include archive-single.html type=page.entries_layout %}{% endif %}
-    {% endfor %}
-  {% endfor %}
+  {%- for collection in collections -%}
+    {%- for post in site[collection] -%}
+      {%- assign do = true -%}{%- assign i = 0 -%}
+      {%- for category in page.categories -%}
+        {%- if category != post.categories[i] -%}{%- assign do = false -%}{%- endif -%}
+        {%- assign i = i | plus: 1 -%}
+      {%- endfor -%}
+      {%- if do -%}{% include archive-single.html type=page.entries_layout %}{%- endif -%}
+    {%- endfor -%}
+  {%- endfor -%}
 </div>
