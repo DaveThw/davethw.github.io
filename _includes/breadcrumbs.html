@@ -1,65 +1,65 @@
-{% comment %}<!-- site.category_archive.type = '{{ site.category_archive.type }}' -->{% endcomment %}
-{% case site.category_archive.type %}
-  {% when "liquid" %}
-    {% assign path_type = site.category_archive.path_type | default: "#" %}
-    {% assign path_structure = site.category_archive.structure | default: "flat" %}
-  {% when "jekyll-archives" %}
-    {% assign path_type = site.category_archive.path_type | default: nil %}
-    {% assign path_structure = site.category_archive.structure | default: "flat" %}
-  {% when "manual" %}
-    {% assign path_type = site.category_archive.path_type | default: '/' %}
-    {% assign path_structure = site.category_archive.structure | default: "nested" %}
-  {% else %}
-    {% assign path_type = site.category_archive.path_type | default: nil %}
-    {% assign path_structure = site.category_archive.structure | default: "flat" %}
-{% endcase %}
+{%- comment -%}<!-- site.category_archive.type = '{{ site.category_archive.type }}' -->{%- endcomment -%}
+{%- case site.category_archive.type -%}
+  {%- when "liquid" -%}
+    {%- assign path_type = site.category_archive.path_type | default: "#" -%}
+    {%- assign path_structure = site.category_archive.structure | default: "flat" -%}
+  {%- when "jekyll-archives" -%}
+    {%- assign path_type = site.category_archive.path_type | default: nil -%}
+    {%- assign path_structure = site.category_archive.structure | default: "flat" -%}
+  {%- when "manual" -%}
+    {%- assign path_type = site.category_archive.path_type | default: '/' -%}
+    {%- assign path_structure = site.category_archive.structure | default: "nested" -%}
+  {%- else -%}
+    {%- assign path_type = site.category_archive.path_type | default: nil -%}
+    {%- assign path_structure = site.category_archive.structure | default: "flat" -%}
+{%- endcase -%}
 
-{% comment %}<!-- page.collection = '{{ page.collection }}' -->{% endcomment %}
-{% if page.collection == 'posts' %}
-  {% assign crumb_path = site.category_archive.path %}
-{% else %}
-  {% assign crumb_path = '/' %}
-{% endif %}
+{%- comment -%}<!-- page.collection = '{{ page.collection }}' -->{%- endcomment -%}
+{%- if page.collection == 'posts' -%}
+  {%- assign crumb_path = site.category_archive.path -%}
+{%- else -%}
+  {%- assign crumb_path = '/' -%}
+{%- endif -%}
 
-{% comment %}
+{%- comment -%}
 <!-- path_type = '{{ path_type }}' -->
 <!-- crumb_path = '{{ crumb_path }}' -->
-{% endcomment %}
+{%- endcomment -%}
 
-{% if page.collection == 'breadcrumbs' %}
-  {% assign skip_last_crumb = true %}
-  {% assign use_last_crumb_as_current = true %}
-{% endif %}
+{%- if page.collection == 'breadcrumbs' -%}
+  {%- assign skip_last_crumb = true -%}
+  {%- assign use_last_crumb_as_current = true -%}
+{%- endif -%}
 
-{% comment %}
+{%- comment -%}
 <!-- page.categories = '{{ page.categories | join: "', '" }}' -->
 <!-- page.url = '{{ page.url }}' -->
-{% endcomment %}
-{% case site.category_archive.basis %}
-  {% when "url" %}
-    {% assign crumbs = page.url | split: '/' %}
-    {% assign crumb_offset = 1 %}
-    {% assign crumb_capitalize = true %}
-    {% assign skip_last_crumb = true %}
-  {% when "category" %}
-    {% assign crumbs = page.categories %}
-    {% assign crumb_offset = 0 %}
-    {% assign crumb_capitalize = false %}
-  {% else %}
-    {% assign crumbs = page.categories %}
-    {% assign crumb_offset = 0 %}
-    {% assign crumb_capitalize = false %}
-{% endcase %}
-{% comment %}
+{%- endcomment -%}
+{%- case site.category_archive.basis -%}
+  {%- when "url" -%}
+    {%- assign crumbs = page.url | split: '/' -%}
+    {%- assign crumb_offset = 1 -%}
+    {%- assign crumb_capitalize = true -%}
+    {%- assign skip_last_crumb = true -%}
+  {%- when "category" -%}
+    {%- assign crumbs = page.categories -%}
+    {%- assign crumb_offset = 0 -%}
+    {%- assign crumb_capitalize = false -%}
+  {%- else -%}
+    {%- assign crumbs = page.categories -%}
+    {%- assign crumb_offset = 0 -%}
+    {%- assign crumb_capitalize = false -%}
+{%- endcase -%}
+{%- comment -%}
 <!-- crumbs = '{{ crumbs | join: "', '" }}' -->
 <!-- crumb_offset = '{{ crumb_offset }}' -->
-{% endcomment %}
+{%- endcomment -%}
 
-<nav class="breadcrumbs">
-  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-    {% assign i = 1 %}
-    {% if path_type != "/" %}{% assign crumb_path = crumb_path | append: path_type %}{% endif %}
-    {% for crumb in crumbs offset: crumb_offset %}
+    <nav class="breadcrumbs">
+      <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    {%- assign i = 1 -%}
+    {%- if path_type != "/" -%}{%- assign crumb_path = crumb_path | append: path_type -%}{%- endif -%}
+    {%- for crumb in crumbs offset: crumb_offset -%}
 
       {% if forloop.first %}
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -67,36 +67,36 @@
           <meta itemprop="position" content="{{ i }}" />
         </li>
         <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
-      {% endif %}
+      {%- endif -%}
 
-      {% unless forloop.last and skip_last_crumb %}
-        {% assign i = i | plus: 1 %}
-        {% assign this_crumb_path = crumb | downcase | replace: '%20', '-' | replace: ' ', '-' | prepend: crumb_path %}
-        {% if path_type == "/" %}{% assign this_crumb_path = this_crumb_path | append: path_type %}{% endif %}
-        {% if path_structure == "nested" %}{% assign crumb_path = this_crumb_path %}{% endif %}
-        {% assign crumb_label = crumb | replace: '-', ' ' | replace: '%20', ' ' %}
-        {% if crumb_capitalize %}{% assign crumb_label = crumb_label | capitalize %}{% endif %}
+      {%- unless forloop.last and skip_last_crumb -%}
+        {%- assign i = i | plus: 1 -%}
+        {%- assign this_crumb_path = crumb | downcase | replace: '%20', '-' | replace: ' ', '-' | prepend: crumb_path -%}
+        {%- if path_type == "/" -%}{%- assign this_crumb_path = this_crumb_path | append: path_type -%}{%- endif -%}
+        {%- if path_structure == "nested" -%}{%- assign crumb_path = this_crumb_path -%}{%- endif -%}
+        {%- assign crumb_label = crumb | replace: '-', ' ' | replace: '%20', ' ' -%}
+        {%- if crumb_capitalize -%}{%- assign crumb_label = crumb_label | capitalize -%}{% endif %}
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
           <a href="{{ this_crumb_path | relative_url }}" itemprop="item"><span itemprop="name">{{ crumb_label }}</span></a>
           <meta itemprop="position" content="{{ i }}" />
         </li>
         <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
-      {% endunless %}
+      {%- endunless -%}
 
-      {% if forloop.last %}
-        {% assign i = i | plus: 1 %}
-        {% if use_last_crumb_as_current %}
-          {% assign crumb_label = crumb | replace: '-', ' ' | replace: '%20', ' ' %}
-          {% if crumb_capitalize %}{% assign crumb_label = crumb_label | capitalize %}{% endif %}
-        {% else %}
-          {% assign crumb_label = page.title %}
+      {%- if forloop.last -%}
+        {%- assign i = i | plus: 1 -%}
+        {%- if use_last_crumb_as_current -%}
+          {%- assign crumb_label = crumb | replace: '-', ' ' | replace: '%20', ' ' -%}
+          {%- if crumb_capitalize -%}{%- assign crumb_label = crumb_label | capitalize -%}{%- endif -%}
+        {%- else -%}
+          {%- assign crumb_label = page.title -%}
         {% endif %}
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="current">
           <span itemprop="name">{{ crumb_label }}</span>
           <meta itemprop="position" content="{{ i }}" />
         </li>
-      {% endif %}
+      {%- endif -%}
 
     {% endfor %}
-  </ol>
-</nav>
+      </ol>
+    </nav>
