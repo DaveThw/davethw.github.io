@@ -1,4 +1,4 @@
-<!-- site.category_archive.type = '{{ site.category_archive.type }}' -->
+{% comment %}<!-- site.category_archive.type = '{{ site.category_archive.type }}' -->{% endcomment %}
 {% case site.category_archive.type %}
   {% when "liquid" %}
     {% assign path_type = site.category_archive.path_type | default: "#" %}
@@ -14,23 +14,27 @@
     {% assign path_structure = site.category_archive.structure | default: "flat" %}
 {% endcase %}
 
-<!-- page.collection = '{{ page.collection }}' -->
+{% comment %}<!-- page.collection = '{{ page.collection }}' -->{% endcomment %}
 {% if page.collection == 'posts' %}
   {% assign crumb_path = site.category_archive.path %}
 {% else %}
   {% assign crumb_path = '/' %}
 {% endif %}
 
+{% comment %}
 <!-- path_type = '{{ path_type }}' -->
 <!-- crumb_path = '{{ crumb_path }}' -->
+{% endcomment %}
 
 {% if page.collection == 'breadcrumbs' %}
   {% assign skip_last_crumb = true %}
   {% assign use_last_crumb_as_current = true %}
 {% endif %}
 
+{% comment %}
 <!-- page.categories = '{{ page.categories | join: "', '" }}' -->
 <!-- page.url = '{{ page.url }}' -->
+{% endcomment %}
 {% case site.category_archive.basis %}
   {% when "url" %}
     {% assign crumbs = page.url | split: '/' %}
@@ -46,8 +50,10 @@
     {% assign crumb_offset = 0 %}
     {% assign crumb_capitalize = false %}
 {% endcase %}
+{% comment %}
 <!-- crumbs = '{{ crumbs | join: "', '" }}' -->
 <!-- crumb_offset = '{{ crumb_offset }}' -->
+{% endcomment %}
 
 <nav class="breadcrumbs">
   <ol itemscope itemtype="https://schema.org/BreadcrumbList">
