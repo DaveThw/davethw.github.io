@@ -54,6 +54,7 @@
     {% assign i = 1 %}
     {% if path_type != "/" %}{% assign crumb_path = crumb_path | append: path_type %}{% endif %}
     {% for crumb in crumbs offset: crumb_offset %}
+
       {% if forloop.first %}
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
           <a href="{{ "/" | relative_url }}" itemprop="item"><span itemprop="name">{{ site.data.ui-text[site.locale].breadcrumb_home_label | default: "Home" }}</span></a>
@@ -61,6 +62,7 @@
         </li>
         <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
       {% endif %}
+
       {% unless forloop.last and skip_last_crumb %}
         {% assign i = i | plus: 1 %}
         {% assign this_crumb_path = crumb | downcase | replace: '%20', '-' | replace: ' ', '-' | prepend: crumb_path %}
@@ -74,17 +76,21 @@
         </li>
         <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
       {% endunless %}
+
       {% if forloop.last %}
-        <li class="current">
-          {% if use_last_crumb_as_current %}
-            {% assign crumb_label = crumb | replace: '-', ' ' | replace: '%20', ' ' %}
-            {% if crumb_capitalize %}{% assign crumb_label = crumb_label | capitalize %}{% endif %}
-          {% else %}
-            {% assign crumb_label = page.title %}
-          {% endif %}
-          {{ crumb_label }}
+        {% assign i = i | plus: 1 %}
+        {% if use_last_crumb_as_current %}
+          {% assign crumb_label = crumb | replace: '-', ' ' | replace: '%20', ' ' %}
+          {% if crumb_capitalize %}{% assign crumb_label = crumb_label | capitalize %}{% endif %}
+        {% else %}
+          {% assign crumb_label = page.title %}
+        {% endif %}
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="current">
+          <span itemprop="name">{{ crumb_label }}</span>
+          <meta itemprop="position" content="{{ i }}" />
         </li>
       {% endif %}
+
     {% endfor %}
   </ol>
 </nav>
