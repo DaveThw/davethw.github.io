@@ -13,6 +13,7 @@ layout: archive
         {%- if category != post.categories[i] -%}{%- assign do = false -%}{%- endif -%}
         {%- assign i = i | plus: 1 -%}
       {%- endfor -%}
+      {%- if post.hidden %}{% assign do = false %}{% endif -%}
       {%- if do -%}{% include archive-single.html type=page.entries_layout %}{%- endif -%}
     {%- endfor -%}
   {%- endfor -%}
