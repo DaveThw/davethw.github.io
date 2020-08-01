@@ -26,6 +26,7 @@ production_team:
   Director: Marcus Romer
   Designer: Dawn Allsopp
   Production Managers: Lewis Moore (Core Productions) / Dave Thwaites
+  Lighting Designer: Dave Thwaites
   Sound Designer: Chris Last
 
 
@@ -38,39 +39,47 @@ header:
 #  image: "/assets/images/1280x320.png"
 ## To provide a custom alt tag for screen readers:
 #  image_description: "A description of the image"
-  overlay_image: "/assets/images/prideandprejudice/PP52_header.jpg"
+#  overlay_image: "/assets/images/prideandprejudice/PP52_header.jpg"
+  overlay_image: "/assets/images/prideandprejudice/PP47_header.jpg"
+#  overlay_image: "/assets/images/prideandprejudice/PP47_header1.jpg"
+#  overlay_image: "/assets/images/prideandprejudice/PP47_header2.jpg"
+#  overlay_image: "/assets/images/prideandprejudice/PP47_header3.jpg"
+#  overlay_image: "/assets/images/prideandprejudice/PP47_header4.jpg"
   caption: "*(photographer: Tony Kelly)*"
-  teaser: /assets/images/prideandprejudice/PP52.jpg
+#  teaser: /assets/images/prideandprejudice/th-PP52.jpg
+  teaser: /assets/images/prideandprejudice/th-PP47.jpg
 
 tagline: "Co-Production Manager / Lighting Designer / Lead Carpenter"
 
 photos:
   - heading: Production Photos
     id: prod_photos
-    caption: "*(photographer: Tony Kelly)*"
+#    caption: "*(photographer: Tony Kelly)*"
 prod_photos:
-  - image_path: /assets/images/prideandprejudice/PP14.jpg
+  - image_path: /assets/images/prideandprejudice/th-PP14.jpg
+# image_path is the thumbnail image - should be something like 600px wide
+# url is the full size image
     url: /assets/images/prideandprejudice/PP14.jpg
-    alt: "Pride and Prejudice - alt"
-    title: "Pride and Prejudice - title"
-  - image_path: /assets/images/prideandprejudice/PP25.jpg
+    alt: "Pride and Prejudice"
+    title: "Pride and Prejudice (photographer: Tony Kelly)"
+  - image_path: /assets/images/prideandprejudice/th-PP25.jpg
     url: /assets/images/prideandprejudice/PP25.jpg
-#    alt: "Pride and Prejudice"
-#    title: "Pride and Prejudice"
-  - image_path: /assets/images/prideandprejudice/PP30.jpg
-#    url: /assets/images/prideandprejudice/PP30.jpg
-    alt: "Pride and Prejudice - alt"
-    title: "Pride and Prejudice - title"
-  - image_path: /assets/images/prideandprejudice/PP41.jpg
-#    url: /assets/images/prideandprejudice/PP41.jpg
-#    alt: "Pride and Prejudice"
-#    title: "Pride and Prejudice"
-  - image_path: /assets/images/prideandprejudice/PP47.jpg
-#    url: /assets/images/prideandprejudice/PP47.jpg
-#    alt: "Pride and Prejudice"
-#    title: "Pride and Prejudice"
-  - image_path: /assets/images/prideandprejudice/PP52.jpg
-#    url: /assets/images/prideandprejudice/PP52.jpg
-#    alt: "Pride and Prejudice"
-#    title: "Pride and Prejudice"
+    alt: "Pride and Prejudice"
+    title: "Pride and Prejudice (photographer: Tony Kelly)"
+  - image_path: /assets/images/prideandprejudice/th-PP30.jpg
+    url: /assets/images/prideandprejudice/PP30.jpg
+    alt: "Pride and Prejudice"
+    title: "Pride and Prejudice (photographer: Tony Kelly)"
+  - image_path: /assets/images/prideandprejudice/th-PP41.jpg
+    url: /assets/images/prideandprejudice/PP41.jpg
+    alt: "Pride and Prejudice"
+    title: "Pride and Prejudice (photographer: Tony Kelly)"
+  - image_path: /assets/images/prideandprejudice/th-PP47.jpg
+    url: /assets/images/prideandprejudice/PP47.jpg
+    alt: "Pride and Prejudice"
+    title: "Pride and Prejudice (photographer: Tony Kelly)"
+  - image_path: /assets/images/prideandprejudice/th-PP52.jpg
+    url: /assets/images/prideandprejudice/PP52.jpg
+    alt: "Pride and Prejudice"
+    title: "Pride and Prejudice (photographer: Tony Kelly)"
 ---
