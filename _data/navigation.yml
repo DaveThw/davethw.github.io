@@ -31,3 +31,12 @@ main:
 #    children:
 #    - title: "EOS Remote"
 #      url: /theatre-royal/eos-remote/
+
+work-theatre:
+  - title: "Work - Theatre"
+    url: /work/theatre/
+    children:
+    - title: "Theatre Royal"
+      url: /work/theatre/theatre-royal/
+    - title: "Fail Better"
+      url: /work/theatre/fail-better/
