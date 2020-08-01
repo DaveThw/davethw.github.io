@@ -342,15 +342,15 @@ defaults:
       path: ""
       type: theatre-work
     values:
-      layout: single
+      layout: theatre_show
       classes: wide
       author_profile: true
       read_time: false
-      comments: true
+      comments: false
       share: true
       related: true
       sidebar:
-        nav: "sidebar"
+        nav: "work-theatre"
 
 
 # jekyll-redirect-from settings
