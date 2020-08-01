@@ -1,0 +1,163 @@
+---
+layout: default
+---
+
+{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
+  {% include page__hero.html %}
+{% elsif page.header.video.id and page.header.video.provider %}
+  {% include page__hero_video.html %}
+{% endif %}
+
+{% if page.url != "/" and site.breadcrumbs %}
+  {% unless paginator %}
+    {% include breadcrumbs.html %}
+  {% endunless %}
+{% endif %}
+
+<div id="main" role="main">
+  {% include sidebar.html %}
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
+    {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
+
+    <div class="page__inner-wrap">
+      {% unless page.header.overlay_color or page.header.overlay_image %}
+        <header>
+          {% if page.title %}<h1 id="page-title" class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
+          {% if page.read_time %}
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
+          {% endif %}
+        </header>
+      {% endunless %}
+
+      <section class="page__content" itemprop="text">
+        {% if page.toc %}
+          <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
+              {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
+            </nav>
+          </aside>
+        {% endif %}
+
+        <p>
+          {% if page.sub-title %}<strong><em>{{ page.sub-title }}</em></strong><br />{% endif %}
+          {% if page.company -%}
+            {%- assign company = page.company.name | default: page.company -%}
+            <strong>
+            {%- if page.company.url %}<a href="{{ page.company.url }}">{% endif -%}
+            {{ company }}
+            {%- if page.company.url %}</a>{% endif -%}
+            {%- if page.company.show_url %} - <a href="{{ page.company.show_url }}">Show page</a>{% endif -%}
+            </strong><br />
+          {%- endif %}
+          {% if page.venue or page.venues or page.production_dates -%}
+            <em>
+            {%- assign venue = page.venue.name | default: page.venue -%}
+            {%- if page.venues %}{% assign venue = "Various Venues" %}{% endif -%}
+            {%- if page.production_dates -%}
+              {%- if page.production_dates.from_text -%}
+                {%- assign date_from = page.production_dates.from_text -%}
+              {%- else -%}
+                {%- assign date_from = page.production_dates.from | date_to_string: "ordinal" -%}
+              {%- endif -%}
+              {%- if page.production_dates.to_text -%}
+                {%- assign date_to = page.production_dates.to_text -%}
+              {%- else -%}
+                {%- assign date_to = page.production_dates.to | date_to_string: "ordinal" -%}
+              {%- endif -%}
+            {%- endif -%}
+            {%- if venue and venue != company -%}
+              {%- if page.venue.url %}<a href="{{ page.venue.url }}">{% endif -%}
+              {{- venue -}}
+              {%- if page.venue.url %}</a>{% endif -%}
+              {%- if date_from or date_to %}, {% endif -%}
+            {%- endif -%}
+            {%- if date_from or date_to -%}
+              {%- if page.venue.show_url %}<a href="{{ page.venue.show_url }}">{% endif -%}
+              {{- date_from }}{% if date_from and date_to %} - {% endif %}{{ date_to -}}
+              {%- if page.venue.show_url %}</a>{% endif -%}
+            {%- endif -%}
+            </em><!-- <br />
+          {%- endif %}
+          {% if page.role %}{{ page.role | join: " / " }}{% endif %} -->
+        </p>
+
+        {{ content }}
+
+    {% if page.photos %}
+      {% comment %}Jekyll seems to get upset if we use square brackets when passing variables as parameter values to includes...{% endcomment %}
+      {% for photos in page.photos %}
+        {% if photos.heading %}<h3 id="{{ photos.heading | slugify: "latin" }}">{{ photos.heading }}</h3>{% endif %}
+        {% include gallery id=photos.id caption=photos.caption %}
+      {% endfor %}
+    {% endif %}
+
+      {% if page.production_team %}
+        <h3 id="production-team">Production Team</h3>
+        <ul>
+        {%- for team in page.production_team %}
+          <li>{{ team[0] | replace: "_", " " }}: {{ team[1] }}</li>
+        {%- endfor %}
+        </ul>
+      {% endif %}
+
+      {% if page.crew %}
+        <h3 id="crew">Crew</h3>
+        <ul>
+        {%- for team in page.crew %}
+          <li>{{ team[0] | replace: "_", " " }}: {{ team[1] }}</li>
+        {%- endfor %}
+        </ul>
+      {% endif %}
+
+      {% if page.cast %}
+        <h3 id="cast">Cast</h3>
+        <ul>
+        {%- for team in page.cast %}
+          <li>{{ team[0] | replace: "_", " " }}: {{ team[1] }}</li>
+        {%- endfor %}
+        </ul>
+      {% endif %}
+
+      {% if page.venues %}
+        <h3 id="venues">Venues</h3>
+        <ul>
+        {%- for venue in page.venues %}
+          <li>{{ venue.venue }}
+              {%- if venue.location %}, {{ venue.location }}{% endif -%}
+              {%- if venue.dates %} <em>({{ venue.dates }})</em>{% endif -%}
+          </li>
+        {%- endfor %}
+        </ul>
+      {% endif %}
+
+        {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
+      </section>
+
+<!--
+      <footer class="page__meta">
+        {% if site.data.ui-text[site.locale].meta_label %}
+          <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
+        {% endif %}
+        {% include page__taxonomy.html %}
+        {% include page__date.html %}
+      </footer>
+-->
+
+      {% if page.share %}{% include social-share.html %}{% endif %}
+
+<!--
+      {% include post_pagination.html %}
+-->
+    </div>
+
+    {% if jekyll.environment == 'production' and site.comments.provider and page.comments %}
+      {% include comments.html %}
+    {% endif %}
+  </article>
+
+</div>
