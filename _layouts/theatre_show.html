@@ -83,7 +83,7 @@ layout: default
           {%- endif -%}
           </em>
         {%- endif -%}
-        {%- unless page.header.overlay_color or page.header.overlay_image -%}
+        {%- unless page.tagline and page.header.overlay_color or page.header.overlay_image -%}
           {%- if page.role %}<br />
           {{ page.role | join: " / " }}{% endif -%}
         {%- endunless %}

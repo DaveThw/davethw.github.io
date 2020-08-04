@@ -49,6 +49,7 @@ header:
 #  teaser: /assets/images/prideandprejudice/th-PP52.jpg
   teaser: /assets/images/prideandprejudice/th-PP47.jpg
 
+# if we have an header.overlay_image, then we can also use tagline to highlight my production role(s):
 tagline: "Co-Production Manager / Lighting Designer / Lead Carpenter"
 
 photos:
