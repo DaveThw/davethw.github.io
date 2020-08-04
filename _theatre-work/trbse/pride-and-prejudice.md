@@ -39,14 +39,8 @@ header:
 #  image: "/assets/images/1280x320.png"
 ## To provide a custom alt tag for screen readers:
 #  image_description: "A description of the image"
-#  overlay_image: "/assets/images/prideandprejudice/PP52_header.jpg"
-  overlay_image: "/assets/images/prideandprejudice/PP47_header.jpg"
-#  overlay_image: "/assets/images/prideandprejudice/PP47_header1.jpg"
-#  overlay_image: "/assets/images/prideandprejudice/PP47_header2.jpg"
-#  overlay_image: "/assets/images/prideandprejudice/PP47_header3.jpg"
-#  overlay_image: "/assets/images/prideandprejudice/PP47_header4.jpg"
+  overlay_image: "/assets/images/prideandprejudice/header.jpg"
   caption: "*(photographer: Tony Kelly)*"
-#  teaser: /assets/images/prideandprejudice/th-PP52.jpg
   teaser: /assets/images/prideandprejudice/th-PP47.jpg
 
 # if we have an header.overlay_image, then we can also use tagline to highlight my production role(s):
