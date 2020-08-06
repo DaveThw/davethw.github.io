@@ -359,3 +359,16 @@ defaults:
 # https://github.com/jekyll/jekyll-redirect-from/issues/189#issuecomment-509544569
 redirect_from:
   json: false
+
+
+## Site footer scripts
+#footer_scripts:
+##  - /assets/js/main.min.js
+#  - assets/js/vendor/jquery/jquery-3.4.1.js
+#  - assets/js/plugins/jquery.fitvids.js
+#  - assets/js/plugins/jquery.greedy-navigation.js
+#  - assets/js/plugins/jquery.magnific-popup.js
+#  - assets/js/plugins/jquery.ba-throttle-debounce.js 
+#  - assets/js/plugins/smooth-scroll.js
+#  - assets/js/plugins/gumshoe.js
+#  - assets/js/_main.js
