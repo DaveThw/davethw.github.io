@@ -22,28 +22,14 @@ role:
  - Lighting Designer
  - Lead Carpenter
 
-production_team:
-  Director: Marcus Romer
-  Designer: Dawn Allsopp
-  Production Managers: Lewis Moore (Core Productions) / Dave Thwaites
-  Lighting Designer: Dave Thwaites
-  Sound Designer: Chris Last
-
-
-#excerpt: "Fail Better Productions
-#Aug&nbsp;'07&#8209;Dec&nbsp;'09
-#Lighting&nbsp;Designer
-#A&nbsp;revival&nbsp;of&nbsp;two short plays by Samuel Beckett, honouring the 20th #anniversary of his death."
-
 header:
-#  image: "/assets/images/1280x320.png"
-## To provide a custom alt tag for screen readers:
-#  image_description: "A description of the image"
+# header.overlay_image: around 1280-1600px is a good width, and an apect ratio of 3:4 seems to work (for me...)
   overlay_image: "/assets/images/prideandprejudice/header.jpg"
-  caption: "*(photographer: Tony Kelly)*"
+  caption: "*photographer: Tony Kelly*"
+# header.teaser - should be something like 600px wide - the bottom will get cropped off if more than ~300px(?) tall, as the archive page resizes...
   teaser: /assets/images/prideandprejudice/th-PP47.jpg
 
-# if we have an header.overlay_image, then we can also use tagline to highlight my production role(s):
+# if we have an header.overlay_image, then we can also use tagline to highlight my production role(s).  Note: can use MarkDown...:
 tagline: "Co-Production Manager / Lighting Designer / Lead Carpenter"
 
 photos:
@@ -77,4 +63,19 @@ prod_photos:
     url: /assets/images/prideandprejudice/PP52.jpg
     alt: "Pride and Prejudice"
     title: "Pride and Prejudice (photographer: Tony Kelly)"
+
+production_team:
+  Director: Marcus Romer
+  Designer: Dawn Allsopp
+  Production Managers: Lewis Moore (Core Productions) / Dave Thwaites
+  Lighting Designer: Dave Thwaites
+  Sound Designer: Chris Last
+#crew:
+#  DSM: DSM Name
+#  LX Op: LX Op Name
+#cast:
+#  Cast 1: Cast 1 Name
+#  Cast 2: Cast 2 Name
+
+#excerpt: "Short blurb about Template Show"
 ---

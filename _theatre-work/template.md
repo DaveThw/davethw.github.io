@@ -33,9 +33,16 @@ role: Lighting Designer
 #header:
 #  image: /assets/images/stasis/stasis_01_full.jpg
 ## header.image: around 1280-1600px is a good width if you aren’t responsively serving up images. Probably shouldn't be very tall - ~320-400px, maybe less..??
-#  caption: "*(photographer: Dave Thwaites)*"
+## To provide a custom alt tag for screen readers:
+#  image_description: "A description of the image"
+## header.overlay_image: around 1280-1600px is a good width, and an apect ratio of 3:4 seems to work (for me...)
+#  overlay_image: "/assets/images/prideandprejudice/header.jpg"
+#  caption: "*photographer: Dave Thwaites*"
+## header.teaser - should be something like 600px wide - the bottom will get cropped off if more than ~300px(?) tall, as the archive page resizes...
 #  teaser: /assets/images/stasis/stasis_01_full.jpg
-## header.teaser - should be something like 600px wide - the bottom will get cropped off if more than ~300px(?) tall, as the page resizes...
+
+## if we have an header.overlay_image, then we can also use tagline to highlight my production role(s).  Note: can use MarkDown...:
+#tagline: "Lighting Designer"
 
 #photos:
 #  - heading: Production Photos
