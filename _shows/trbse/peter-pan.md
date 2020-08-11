@@ -1,11 +1,12 @@
 ---
-categories: Work Theatre Theatre-Royal
-#tags: Lighting-Design
+categories: Work Theatre Shows
+tags: Lighting-Programmer Theatre-Royal
 date: 2020-07-22
 last_modified_at: 2020-07-25
 
 title: "Peter Pan"
 #sub-title: "Rough for Theatre II and Ohio Impromptu by Samuel Beckett"
+#no-link: true
 
 sort_date: 2019-11-29
 production_dates:
@@ -55,10 +56,6 @@ cast:
   Female Understudy: Katie Wright
 
 
-#excerpt: "Fail Better Productions
-#Aug&nbsp;'07&#8209;Dec&nbsp;'09
-#Lighting&nbsp;Designer
-#A&nbsp;revival&nbsp;of&nbsp;two short plays by Samuel Beckett, honouring the 20th #anniversary of his death."
 #photos:
 #  - heading: Production Photos
 #    id: prod_photos
@@ -72,5 +69,7 @@ cast:
 #    image_path: /assets/images/stasis/stasis_02_full.jpg
 #    alt: "Rough for Theatre II: 'Switch on'"
 #    title: "Rough for Theatre II: 'Switch on'"
+
+summary: ""
 ---
 My fifth panto at the Theatre Royal.

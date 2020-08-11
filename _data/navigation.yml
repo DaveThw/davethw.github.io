@@ -36,7 +36,11 @@ work-theatre:
   - title: "Work - Theatre"
     url: /work/theatre/
     children:
+    - title: "Lighting Design"
+      url: /work/theatre/lighting-design.html
     - title: "Theatre Royal"
-      url: /work/theatre/theatre-royal/
+      url: /work/theatre/theatre-royal.html
     - title: "Fail Better"
-      url: /work/theatre/fail-better/
+      url: /work/theatre/fail-better.html
+    - title: "All Shows"
+      url: /work/theatre/shows/

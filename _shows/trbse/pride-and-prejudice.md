@@ -1,6 +1,6 @@
 ---
-categories: Work Theatre Theatre-Royal
-tags: Lighting-Design Production-Manager Lead-Carpenter
+categories: Work Theatre Shows
+tags: Lighting-Design Production-Manager Lead-Carpenter Theatre-Royal
 date: 2020-07-25
 #last_modified_at: 2020-07-25
 
@@ -23,11 +23,11 @@ role:
  - Lead Carpenter
 
 header:
-# header.overlay_image: around 1280-1600px is a good width, and an apect ratio of 3:4 seems to work (for me...)
   overlay_image: "/assets/images/prideandprejudice/header.jpg"
   caption: "*photographer: Tony Kelly*"
-# header.teaser - should be something like 600px wide - the bottom will get cropped off if more than ~300px(?) tall, as the archive page resizes...
   teaser: /assets/images/prideandprejudice/th-PP47.jpg
+# header.overlay_image: around 1280-1600px is a good width, and an apect ratio of 3:4 seems to work (for me...)
+# header.teaser - should be something like 600px wide - the bottom will get cropped off if more than ~300px(?) tall, as the archive page resizes...
 
 # if we have an header.overlay_image, then we can also use tagline to highlight my production role(s).  Note: can use MarkDown...:
 tagline: "Co-Production Manager / Lighting Designer / Lead Carpenter"
@@ -77,5 +77,6 @@ production_team:
 #  Cast 1: Cast 1 Name
 #  Cast 2: Cast 2 Name
 
-#excerpt: "Short blurb about Template Show"
+summary: ""
 ---
+TRBSE Summer production 2019

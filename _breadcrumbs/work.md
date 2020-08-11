@@ -1,6 +1,6 @@
 ---
 title: "All Work"
 categories: Work
-collections: theatre-work
+collections: shows
 redirect_to: /work/theatre/
 ---

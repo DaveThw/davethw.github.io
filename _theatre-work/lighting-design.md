@@ -1,8 +1,8 @@
 ---
-title: "Theatre Work"
+title: "Lighting Design"
 categories: Work Theatre
+tags: Lighting-Design
 collections: shows
-#entries_layout: list
 sidebar:
   nav: "work-theatre"
 ---

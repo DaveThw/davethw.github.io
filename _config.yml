@@ -283,6 +283,9 @@ collections:
     output: true
     permalink: /:categories/:title.html
 #    permalink: /work/theatre/:path/
+  shows:
+    output: true
+    permalink: /:categories/:title.html
 
 
 # Defaults
@@ -342,15 +345,34 @@ defaults:
       path: ""
       type: theatre-work
     values:
+      layout: theatre_archive
+      classes: wide
+      entries_layout: grid
+      author_profile: true
+      read_time: false
+      comments: false
+      share: true
+      related: false
+      sidebar:
+        nav: "work-theatre"
+  # _shows
+  - scope:
+      path: ""
+      type: shows
+    values:
       layout: theatre_show
       classes: wide
       author_profile: true
       read_time: false
       comments: false
       share: true
-      related: true
+      related: false
       sidebar:
         nav: "work-theatre"
+      # this next line prevents auto-generated excerpts - see
+      # https://jekyllrb.com/docs/troubleshooting/#excerpts
+      # If the excerpt is missing, then I was to generate it myself :-)
+      excerpt_separator: ""
 
 
 # jekyll-redirect-from settings

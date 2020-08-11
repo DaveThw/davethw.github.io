@@ -1,8 +1,8 @@
 ---
-title: "Theatre Work"
+title: "Fail Better"
 categories: Work Theatre
+tags: Fail-Better
 collections: shows
-#entries_layout: list
 sidebar:
   nav: "work-theatre"
 ---

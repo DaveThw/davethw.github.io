@@ -1,6 +1,6 @@
 ---
-categories: Work Theatre Fail-Better
-tags: Lighting-Design
+categories: Work Theatre Shows
+tags: Lighting-Design Fail-Better
 date: 2020-07-15
 last_modified_at: 2020-07-21
 
@@ -38,15 +38,27 @@ production_team:
   Designer: Nomi Everall
   Lighting Designer: Dave Thwaites
 
-excerpt: "Fail Better Productions
-Aug&nbsp;'07&#8209;Dec&nbsp;'09
-Lighting&nbsp;Designer
-A&nbsp;revival&nbsp;of&nbsp;two short plays by Samuel Beckett, honouring the 20th anniversary of his death."
+#excerpt: |-
+#  Fail Better Productions
+#  Aug '07&#8209;Dec '09
+#  Lighting Designer
+#  A revival of two short plays by Samuel Beckett, honouring the 20th anniversary of his death.
+summary: "A revival of two short plays by Samuel Beckett, honouring the 20th anniversary of his death."
 
 header:
-  image: /assets/images/stasis/stasis_01_full.jpg
-  caption: "*(photographer: Dave Thwaites)*"
+#  image: /assets/images/stasis/stasis_01_full.jpg
+## header.image: around 1280-1600px is a good width if you aren’t responsively serving up images. Probably shouldn't be very tall - ~320-400px, maybe less..??
+## To provide a custom alt tag for screen readers:
+#  image_description: "A description of the image"
+# header.overlay_image: around 1280-1600px is a good width, and an apect ratio of 3:4 seems to work (for me...)
+  overlay_image: /assets/images/stasis/stasis_header.jpg
+  caption: "*photographer: Dave Thwaites*"
+# header.teaser - should be something like 600px wide - the bottom will get cropped off if more than ~300px(?) tall, as the archive page resizes...
   teaser: /assets/images/stasis/stasis_01_full.jpg
+
+## if we have an header.overlay_image, then we can also use tagline to highlight my production role(s).  Note: can use MarkDown...:
+tagline: "Lighting Designer"
+
 
 photos:
   - heading: Production Photos

@@ -1,12 +1,13 @@
 ---
-categories: Work Theatre Company
-tags: Lighting-Design
+categories: Work Theatre Shows
+tags: Lighting-Design Theatre-Company
 date: 2020-07-25
 #last_modified_at: 2020-07-25
 hidden: true
 
 title: "Template Show"
 #sub-title: "Show Sub-Title"
+#no-link: true
 
 sort_date: 2007-08-01
 production_dates:
@@ -29,6 +30,9 @@ venue: Venue Name
 #    location: City 2
 #    dates: 2007
 role: Lighting Designer
+#role:
+# - Production Manager
+# - Lighting Designer
 
 #header:
 #  image: /assets/images/stasis/stasis_01_full.jpg
@@ -71,6 +75,7 @@ cast:
   Cast 1: Cast 1 Name
   Cast 2: Cast 2 Name
 
-excerpt: "Short blurb about Template Show"
+#summary: ""
+summary: "Short blurb about Template Show"
 ---
 A bit of a description of the show / my role / whatever...

@@ -1,7 +1,8 @@
 ---
 title: "Theatre Royal, Bury St Edmunds"
-categories: Work Theatre Theatre-Royal
-collections: theatre-work
+categories: Work Theatre
+tags: Theatre-Royal
+collections: shows
 sidebar:
   nav: "work-theatre"
 ---
