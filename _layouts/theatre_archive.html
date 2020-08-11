@@ -1,0 +1,38 @@
+---
+layout: archive
+---
+<h3>(Theatre Archive)</h3>
+{{ content }}
+
+{%- assign page_categories = page.categories -%}
+{%- assign page_tags = page.tags -%}
+{%- assign page_entries_layout = page.entries_layout -%}
+{%- comment %}<!--
+So... minimal-mistakes/_includes/post__meta.html, which gets used by
+minimal-mistakes/_includes/archive-single.html, which we use below, re-assigns
+page with {% assign page = post | default: page %}, so we can't refer to
+page.{something} within the loop below, or weird things start to happen...
+Therefore, we capture all the page attributes that we want in the variables above!
+-->{% endcomment -%}
+{%- assign collections = page.collections | default: "posts" -%}
+<div class="entries-{{ page.entries_layout | default: 'list' }}">
+  {%- for collection in collections -%}
+    {%- for post in site[collection] -%}
+      {%- assign do = true -%}{%- assign i = 0 -%}
+      {%- for category in page_categories -%}
+        {%- if category != post.categories[i] %}{% assign do = false %}{% endif -%}
+        {%- assign i = i | plus: 1 -%}
+      {%- endfor -%}
+      {%- assign post_tags = post.tags | join: '><' | prepend: '<' | append: '>' -%}
+      {%- for tag in page_tags -%}
+        {%- assign tag2 = tag | prepend: '<' | append: '>' -%}
+        {%- assign tags = post_tags | remove: tag2 -%}
+        {%- if tags == post_tags %}{% assign do = false %}{% endif -%}
+      {%- endfor -%}
+      {%- if post.hidden %}{% assign do = false %}{% endif -%}
+      {%- if do -%}
+        {%- include archive-single-show.html type=page_entries_layout -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endfor -%}
+</div>
