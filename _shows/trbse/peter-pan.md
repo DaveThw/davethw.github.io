@@ -2,7 +2,7 @@
 categories: Work Theatre Shows
 tags: Lighting-Programmer Theatre-Royal
 date: 2020-07-22
-last_modified_at: 2020-07-25
+last_modified_at: 2020-08-13
 
 title: "Peter Pan"
 #sub-title: "Rough for Theatre II and Ohio Impromptu by Samuel Beckett"
@@ -25,10 +25,8 @@ role:
  - Swing Techncial Cover
 
 header:
-# header.overlay_image: around 1280-1600px is a good width, and an apect ratio of 3:4 seems to work (for me...)
   overlay_image: "/assets/images/theatreroyal/auditorium-header.jpg"
   caption: "*photographer: Dave Thwaites*"
-# header.teaser - should be something like 600px wide - the bottom will get cropped off if more than ~300px(?) tall, as the archive page resizes...
   teaser: /assets/images/theatreroyal/auditorium-th.jpg
 
 # if we have an header.overlay_image, then we can also use tagline to highlight my production role(s).  Note: can use MarkDown...:
