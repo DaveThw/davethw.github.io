@@ -46,7 +46,7 @@ production_team:
 summary: "A revival of two short plays by Samuel Beckett, honouring the 20th anniversary of his death."
 
 header:
-#  image: /assets/images/stasis/stasis_01_full.jpg
+#  image: /assets/images/stasis/stasis_01.jpg
 ## header.image: around 1280-1600px is a good width if you aren’t responsively serving up images. Probably shouldn't be very tall - ~320-400px, maybe less..??
 ## To provide a custom alt tag for screen readers:
 #  image_description: "A description of the image"
@@ -54,7 +54,7 @@ header:
   overlay_image: /assets/images/stasis/stasis_header.jpg
   caption: "*photographer: Dave Thwaites*"
 # header.teaser - should be something like 600px wide - the bottom will get cropped off if more than ~300px(?) tall, as the archive page resizes...
-  teaser: /assets/images/stasis/stasis_01_full.jpg
+  teaser: /assets/images/stasis/th-stasis_01.jpg
 
 ## if we have an header.overlay_image, then we can also use tagline to highlight my production role(s).  Note: can use MarkDown...:
 tagline: "Lighting Designer"
@@ -65,21 +65,23 @@ photos:
     id: prod_photos
     caption: "*(photographer: Dave Thwaites)*"
 prod_photos:
-  - url: /assets/images/stasis/stasis_01_full.jpg
-    image_path: /assets/images/stasis/stasis_01_full.jpg
+  - image_path: /assets/images/stasis/th-stasis_01.jpg
+# image_path is the thumbnail image - should be something like 600px wide
+    url: /assets/images/stasis/stasis_01.jpg
+# url is the full size image
     alt: "Rough for Theatre II: A and B"
-    title: "Rough for Theatre II: A and B"
-  - url: /assets/images/stasis/stasis_02_full.jpg
-    image_path: /assets/images/stasis/stasis_02_full.jpg
+    title: "Rough for Theatre II: A and B (photographer: Dave Thwaites)"
+  - image_path: /assets/images/stasis/th-stasis_02.jpg
+    url: /assets/images/stasis/stasis_02.jpg
     alt: "Rough for Theatre II: 'Switch on'"
-    title: "Rough for Theatre II: 'Switch on'"
-  - url: /assets/images/stasis/stasis_03_full.jpg
-    image_path: /assets/images/stasis/stasis_03_full.jpg
+    title: "Rough for Theatre II: 'Switch on' (photographer: Dave Thwaites)"
+  - image_path: /assets/images/stasis/th-stasis_03.jpg
+    url: /assets/images/stasis/stasis_03.jpg
     alt: "Ohio Impromptu: 'Little is left to tell'"
-    title: "Ohio Impromptu: 'Little is left to tell'"
-  - url: /assets/images/stasis/stasis_04_full.jpg
-    image_path: /assets/images/stasis/stasis_04_full.jpg
+    title: "Ohio Impromptu: 'Little is left to tell' (photographer: Dave Thwaites)"
+  - image_path: /assets/images/stasis/th-stasis_04.jpg
+    url: /assets/images/stasis/stasis_04.jpg
     alt: "Ohio Impromptu: 'So sat on, turned to stone'"
-    title: "Ohio Impromptu: 'So sat on, turned to stone'"
+    title: "Ohio Impromptu: 'So sat on, turned to stone' (photographer: Dave Thwaites)"
 ---
 This revival of two short plays by Samuel Beckett was the centrepiece of Fail Better's 2009 Beckett Season, honouring the twentieth anniversary of the author's death. A rough and an impromptu formed a unique double-bill, seen in Oxford for the first time in 2009, following performances in 2007 (on the London fringe and at Warwick University).
