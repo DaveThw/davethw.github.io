@@ -166,6 +166,7 @@ exclude:
   - README
   - CNAME
   - serve.sh
+  - make_thumbs.sh
   - redirects.json
 keep_files:
   - .git
