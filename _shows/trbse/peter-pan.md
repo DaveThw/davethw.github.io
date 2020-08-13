@@ -24,6 +24,32 @@ role:
  - Lighting Operator
  - Swing Techncial Cover
 
+header:
+# header.overlay_image: around 1280-1600px is a good width, and an apect ratio of 3:4 seems to work (for me...)
+  overlay_image: "/assets/images/theatreroyal/auditorium-header.jpg"
+  caption: "*photographer: Dave Thwaites*"
+# header.teaser - should be something like 600px wide - the bottom will get cropped off if more than ~300px(?) tall, as the archive page resizes...
+  teaser: /assets/images/theatreroyal/auditorium-th.jpg
+
+# if we have an header.overlay_image, then we can also use tagline to highlight my production role(s).  Note: can use MarkDown...:
+tagline: "Technical Manager / Lighting Programmer / Lighting Operator / Swing Techncial Cover"
+
+#photos:
+#  - heading: Production Photos
+#    id: prod_photos
+#    caption: "*(photographer: Dave Thwaites)*"
+#prod_photos:
+#  - image_path: /assets/images/stasis/stasis_01_full.jpg
+## image_path is the thumbnail image - should be something like 600px wide
+#    url: /assets/images/stasis/stasis_01_full.jpg
+## url is the full size image
+#    alt: "Rough for Theatre II: A and B"
+#    title: "Rough for Theatre II: A and B"
+#  - image_path: /assets/images/stasis/stasis_02_full.jpg
+#    url: /assets/images/stasis/stasis_02_full.jpg
+#    alt: "Rough for Theatre II: 'Switch on'"
+#    title: "Rough for Theatre II: 'Switch on'"
+
 production_team:
   Director: Marcus Romer
   Designer: Dawn Allsopp
@@ -44,6 +70,10 @@ production_team:
   Running Wardrobe Assistant: Fiona Terrington
   Wardrobe and Design Assistant: Nuria Mila Molist
 
+#crew:
+#  DSM: DSM Name
+#  LX Op: LX Op Name
+
 cast:
   Tinkerbell: Anna Campkin
   Tiger Lily: Chris Clarkson
@@ -54,21 +84,6 @@ cast:
   Dad / Captain Hook: Alan Mehdizadeh
   Mad Maud / Miranda: Joanne Sandi
   Female Understudy: Katie Wright
-
-
-#photos:
-#  - heading: Production Photos
-#    id: prod_photos
-#    caption: "*(photographer: Dave Thwaites)*"
-#prod_photos:
-#  - url: /assets/images/stasis/stasis_01_full.jpg
-#    image_path: /assets/images/stasis/stasis_01_full.jpg
-#    alt: "Rough for Theatre II: A and B"
-#    title: "Rough for Theatre II: A and B"
-#  - url: /assets/images/stasis/stasis_02_full.jpg
-#    image_path: /assets/images/stasis/stasis_02_full.jpg
-#    alt: "Rough for Theatre II: 'Switch on'"
-#    title: "Rough for Theatre II: 'Switch on'"
 
 summary: ""
 ---
