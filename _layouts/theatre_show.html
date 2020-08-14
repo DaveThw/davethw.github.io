@@ -42,48 +42,34 @@ layout: default   #  based on minimal-mistakes/_layouts/single.html
         {% endif %}
 
         <p>
-        {% if page.sub-title %}<strong><em>{{ page.sub-title }}</em></strong><br />{% endif %}
-        {% if page.company -%}
-          {%- assign company = page.company.name | default: page.company -%}
+        {% include get_show_data max_role_len=30 %}
+        {% if sub_title %}<strong><em>{{ sub_title }}</em></strong><br />{% endif %}
+        {% if company -%}
           <strong>
-          {%- if page.company.url %}<a href="{{ page.company.url }}">{% endif -%}
+          {%- if company_url %}<a href="{{ company_url }}">{% endif -%}
           {{ company }}
-          {%- if page.company.url %}</a>{% endif -%}
-          {%- if page.company.show_url %} - <a href="{{ page.company.show_url }}">Show page</a>{% endif -%}
+          {%- if company_url %}</a>{% endif -%}
+          {%- if company_show_url %} - <a href="{{ company_show_url }}">Show page</a>{% endif -%}
           </strong><br />
         {%- endif %}
-        {% if page.venue or page.venues or page.production_dates -%}
+        {% if venue or dates -%}
           <em>
-          {%- assign venue = page.venue.name | default: page.venue -%}
-          {%- if page.venues %}{% assign venue = "Various Venues" %}{% endif -%}
-          {%- if page.production_dates -%}
-            {%- if page.production_dates.from_text -%}
-              {%- assign date_from = page.production_dates.from_text -%}
-            {%- else -%}
-              {%- assign date_from = page.production_dates.from | date_to_string: "ordinal" -%}
-            {%- endif -%}
-            {%- if page.production_dates.to_text -%}
-              {%- assign date_to = page.production_dates.to_text -%}
-            {%- else -%}
-              {%- assign date_to = page.production_dates.to | date_to_string: "ordinal" -%}
-            {%- endif -%}
-          {%- endif -%}
           {%- if venue and venue != company -%}
-            {%- if page.venue.url %}<a href="{{ page.venue.url }}">{% endif -%}
+            {%- if venue_url %}<a href="{{ venue_url }}">{% endif -%}
             {{- venue -}}
-            {%- if page.venue.url %}</a>{% endif -%}
-            {%- if date_from or date_to %}, {% endif -%}
+            {%- if venue_url %}</a>{% endif -%}
+            {%- if dates %}, {% endif -%}
           {%- endif -%}
-          {%- if date_from or date_to -%}
-            {%- if page.venue.show_url %}<a href="{{ page.venue.show_url }}">{% endif -%}
-            {{- date_from }}{% if date_from and date_to %} - {% endif %}{{ date_to -}}
-            {%- if page.venue.show_url %}</a>{% endif -%}
+          {%- if dates -%}
+            {%- if venue_show_url %}<a href="{{ venue_show_url }}">{% endif -%}
+            {{- dates -}}
+            {%- if venue_show_url %}</a>{% endif -%}
           {%- endif -%}
           </em>
         {%- endif -%}
         {%- unless page.tagline and page.header.overlay_color or page.header.overlay_image -%}
-          {%- if page.role %}<br />
-          {{ page.role | join: " / " }}{% endif -%}
+          {%- if role %}<br />
+          {{ role }}{% endif -%}
         {%- endunless %}
         </p>
 

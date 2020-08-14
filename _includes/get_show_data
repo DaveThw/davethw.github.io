@@ -1,0 +1,71 @@
+{%- assign doc = post | default: page -%}
+
+{%- assign sub_title = doc.sub-title -%}
+
+{%- assign company = doc.company.name | default: doc.company -%}
+{%- assign company_url = doc.company.url -%}
+{%- assign company_show_url = doc.company.show_url -%}
+
+{%- assign venue = doc.venue.name | default: doc.venue -%}
+{%- if doc.venues -%}
+  {%- assign venue = "Various Venues" -%}
+{%- else -%}
+  {%- assign venue_url = doc.venue.url -%}
+  {%- assign venue_show_url = doc.venue.show_url -%}
+{%- endif -%}
+
+{%- if doc.production_dates -%}
+  {%- if doc.production_dates.from_text -%}
+    {%- assign date_from = doc.production_dates.from_text -%}
+  {%- else -%}
+    {%- assign date_from = doc.production_dates.from | date_to_string: "ordinal" -%}
+  {%- endif -%}
+  {%- if doc.production_dates.to_text -%}
+    {%- assign date_to = doc.production_dates.to_text -%}
+  {%- else -%}
+    {%- assign date_to = doc.production_dates.to | date_to_string: "ordinal" -%}
+  {%- endif -%}
+  {%- if date_from -%}
+    {%- capture date_from -%}{%- include pretty_date date=date_from remove_ordinals=include.remove_ordinals abbreviate_year=include.abbreviate_year -%}{%- endcapture -%}
+    {%- assign date_from_split = split_date -%}
+  {%- endif -%}
+  {%- if date_to -%}
+    {%- capture date_to -%}{%- include pretty_date date=date_to remove_ordinals=include.remove_ordinals abbreviate_year=include.abbreviate_year -%}{%- endcapture -%}
+    {%- assign date_to_split = split_date -%}
+  {%- endif -%}
+  {%- if date_from and date_to -%}
+    {%- if date_from_split.size == 3 and date_to_split.size == 3 -%}
+      {%- if date_from_split[2] == date_to_split[2] -%}
+        {%- assign date_from_split = date_from_split | pop -%}
+        {%- if date_from_split[1] == date_to_split[1] -%}
+          {%- assign date_from_split = date_from_split | pop -%}
+          {%- if date_from_split[0] == date_to_split[0] -%}
+            {%- assign date_from_split = date_from_split | pop -%}
+          {%- endif -%}
+        {%- endif -%}
+        {%- assign date_from = date_from_split | join: " " -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endif -%}
+  {%- capture dates -%}{{ date_from }}{% if date_from and date_to %} &ndash; {% endif %}{{ date_to }}{%- endcapture -%}
+{%- endif -%}
+
+{%- if doc.role -%}
+  {%- if doc.role[0] -%}
+    {%- assign role = doc.role | join: " / " -%}
+    {%- if include.max_role_len and role.size > include.max_role_len -%}
+      {%- assign role = doc.role[0] | append: " / etc..." -%}
+    {%- endif -%}
+  {%- else -%}
+    {%- assign role = doc.role -%}
+  {%- endif -%}
+{%- endif -%}
+
+{%- if doc.summary -%}
+  {%- assign summary = doc.summary | markdownify | remove: "<p>" | remove: "</p>" -%}
+{%- elsif doc.content.size > 2 -%}
+  {%- assign max_summary_len = include.max_summary_len | default: 100 -%}
+  {%- assign summary = doc.content | truncate: max_summary_len | markdownify | remove: "<p>" | remove: "</p>" -%}
+{%- endif -%}
+
+{%- assign excerpt = doc.excerpt | strip -%}

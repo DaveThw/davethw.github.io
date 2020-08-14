@@ -1,0 +1,30 @@
+{%- assign date = include.date -%}
+
+{%- if include.remove_ordinals -%}
+  {%- assign date = date | replace: "1st", "1" -%}
+  {%- assign date = date | replace: "2nd", "2" -%}
+  {%- assign date = date | replace: "3rd", "3" -%}
+  {%- assign date = date | replace: "th ", " " -%}
+{%- else -%}
+  {%- assign date = date | replace: "1st", "1<sup>st</sup>" -%}
+  {%- assign date = date | replace: "2nd", "2<sup>nd</sup>" -%}
+  {%- assign date = date | replace: "3rd", "3<sup>rd</sup>" -%}
+  {%- assign date = date | replace: "th ", "<sup>th</sup> " -%}
+{%- endif -%}
+
+{%- assign split_date = date | split: " " -%}
+
+{%- if include.abbreviate_year and split_date.last.size == 4 -%}
+  {%- assign year = split_date.last -%}
+  {%- assign century = year | slice: 0, 2 -%}
+  {%- if century == "19" or century == "20" -%}
+    {%- assign new_year = year | slice: 2, 2 | prepend: " &rsquo;" -%}
+    {%- assign year = year | prepend: " " -%}
+    {%- assign date = date | replace: year, new_year -%}
+    {%- assign split_date = date | split: " " -%}
+  {%- endif -%}
+{%- endif -%}
+
+{%- unless include.quiet -%}
+  {{ date }}
+{%- endunless -%}

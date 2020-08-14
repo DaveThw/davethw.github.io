@@ -28,98 +28,14 @@
     </h2>
     {% include post__meta.html type=include.type %}
     <p class="archive__item-excerpt" itemprop="description">
-    {% assign excerpt = post.excerpt | strip %}
+    {% include get_show_data max_role_len=30 remove_ordinals=true abbreviate_year=false %}
     {% if excerpt == "" %}
-      {% assign company = post.company.name | default: post.company %}
-
-      {%- assign venue = page.venue.name | default: page.venue -%}
-      {%- if page.venues %}{% assign venue = "Various Venues" %}{% endif -%}
-
-      {%- if page.production_dates -%}
-        {%- if page.production_dates.from_text -%}
-          {%- assign date_from = page.production_dates.from_text -%}
-        {%- else -%}
-          {%- assign date_from = page.production_dates.from | date_to_string: "ordinal" -%}
-        {%- endif -%}
-        {%- if page.production_dates.to_text -%}
-          {%- assign date_to = page.production_dates.to_text -%}
-        {%- else -%}
-          {%- assign date_to = page.production_dates.to | date_to_string: "ordinal" -%}
-        {%- endif -%}
-        {%- if date_from -%}
-          {%- assign date_from = date_from | replace: "st ", "<sup>st</sup> " -%}
-          {%- assign date_from = date_from | replace: "nd ", "<sup>nd</sup> " -%}
-          {%- assign date_from = date_from | replace: "rd ", "<sup>rd</sup> " -%}
-          {%- assign date_from = date_from | replace: "th ", "<sup>th</sup> " -%}
-          {%- assign date_from_split = date_from | split: " " -%}
-          {%- if date_from_split.last.size == 4 -%}
-            {%- assign year = date_from_split.last -%}
-            {%- assign century = year | slice: 0, 2 -%}
-            {%- if century == "19" or century == "20" -%}
-              {%- assign new_year = year | slice: 2, 2 | prepend: " &rsquo;" -%}
-              {%- assign year = year | prepend: " " -%}
-              {%- assign date_from = date_from | replace: year, new_year -%}
-              {%- assign date_from_split = date_from | split: " " -%}
-            {%- endif -%}
-          {%- endif -%}
-        {%- endif -%}
-        {%- if date_to -%}
-          {%- assign date_to = date_to | replace: "st ", "<sup>st</sup> " -%}
-          {%- assign date_to = date_to | replace: "nd ", "<sup>nd</sup> " -%}
-          {%- assign date_to = date_to | replace: "rd ", "<sup>rd</sup> " -%}
-          {%- assign date_to = date_to | replace: "th ", "<sup>th</sup> " -%}
-          {%- assign date_to_split = date_to | split: " " -%}
-          {%- if date_to_split.last.size == 4 -%}
-            {%- assign year = date_to_split.last -%}
-            {%- assign century = year | slice: 0, 2 -%}
-            {%- if century == "19" or century == "20" -%}
-              {%- assign new_year = year | slice: 2, 2 | prepend: " &rsquo;" -%}
-              {%- assign year = year | prepend: " " -%}
-              {%- assign date_to = date_to | replace: year, new_year -%}
-              {%- assign date_to_split = date_to | split: " " -%}
-            {%- endif -%}
-          {%- endif -%}
-        {%- endif -%}
-        {%- if date_from and date_to -%}
-          {%- if date_from_split.size == 3 and date_to_split.size == 3 -%}
-            {%- if date_from_split[2] == date_to_split[2] -%}
-              {%- assign date_from_split = date_from_split | pop -%}
-              {%- if date_from_split[1] == date_to_split[1] -%}
-                {%- assign date_from_split = date_from_split | pop -%}
-                {%- if date_from_split[0] == date_to_split[0] -%}
-                  {%- assign date_from_split = date_from_split | pop -%}
-                {%- endif -%}
-              {%- endif -%}
-              {%- assign date_from = date_from_split | join: " " -%}
-            {%- endif -%}
-          {%- endif -%}
-        {%- endif -%}
-      {%- endif -%}
-
-      {%- if page.role -%}
-        {%- if page.role[0] -%}
-          {%- assign role = page.role | join " / " -%}
-          {%- if role.size > 30 -%}
-            {%- assign role = page.role[0] | append: " / etc..." -%}
-          {%- endif -%}
-        {%- else -%}
-          {%- assign role = page.role -%}
-        {%- endif -%}
-      {%- endif -%}
-
-      {%- if page.summary -%}
-        {%- assign summary = page.summary | markdownify | remove: "<p>" | remove: "</p>" -%}
-      {%- elsif page.content.size > 2 -%}
-        {%- assign summary = page.content | truncate: 100 | markdownify | remove: "<p>" | remove: "</p>" -%}
-      {%- endif -%}
-
       {{ company }}<br />
-      {{ date_from }} &ndash; {{ date_to }}<br />
+      {{ dates }}<br />
       {{ role }}
       {%- if summary != "" -%}<br />
       {{ summary }}{%- endif %}
     {% else %}
-      <!-- use excerpt -->
       {{ excerpt | truncate: 160 | newline_to_br | markdownify | remove: "<p>" | remove: "</p>" }}
     {% endif %}
     </p>
