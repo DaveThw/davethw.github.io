@@ -17,7 +17,8 @@ Therefore, we capture all the page attributes that we want in the variables abov
 {%- assign collections = page.collections | default: "posts" -%}
 <div class="entries-{{ page.entries_layout | default: 'list' }}">
   {%- for collection in collections -%}
-    {%- for post in site[collection] -%}
+    {%- assign this_collection = site[collection] | sort: "sort_date" | reverse -%}
+    {%- for post in this_collection -%}
       {%- assign do = true -%}{%- assign i = 0 -%}
       {%- for category in page_categories -%}
         {%- if category != post.categories[i] %}{% assign do = false %}{% endif -%}
