@@ -4,7 +4,7 @@ categories: Work Theatre
 collections: shows
 layout: theatre_archive
 classes: wide
-entries_layout: list
+#entries_layout: list
 author_profile: true
 read_time: false
 comments: false
