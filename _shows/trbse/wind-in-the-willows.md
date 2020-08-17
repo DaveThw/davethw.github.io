@@ -23,13 +23,10 @@ role:
  - Lighting Designer
 
 header:
-# header.overlay_image: around 1280-1600px is a good width, and an apect ratio of 3:4 seems to work (for me...)
   overlay_image: "/assets/images/theatreroyal/auditorium-header.jpg"
   caption: "*photographer: Dave Thwaites*"
-# header.teaser - should be something like 600px wide - the bottom will get cropped off if more than ~300px(?) tall, as the archive page resizes...
   teaser: /assets/images/theatreroyal/auditorium-th.jpg
 
-# if we have an header.overlay_image, then we can also use tagline to highlight my production role(s).  Note: can use MarkDown...:
 tagline: "Technical & Production Manager / Lighting Designer"
 
 feature:
