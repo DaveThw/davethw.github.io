@@ -48,6 +48,17 @@ role: Lighting Designer
 ## if we have an header.overlay_image, then we can also use tagline to highlight my production role(s).  Note: can use MarkDown...:
 #tagline: "Lighting Designer"
 
+#feature:
+##  image_path defaults to header.teaser
+##  image_path: /assets/images/prideandprejudice/th-PP47.jpg
+#  image_alt: "Pride and Prejudice"
+##  image_caption defaults to header.caption
+##  image_caption: "*photographer: Dave Thwaites*"
+##  btn_class defaults to "btn--primary"
+##  btn_class: "btn--primary"
+##  btn_label defaults to "More Details"
+##  btn_label: "More Details"
+
 #photos:
 #  - heading: Production Photos
 #    id: prod_photos

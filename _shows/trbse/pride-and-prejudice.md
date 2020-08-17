@@ -32,6 +32,13 @@ header:
 # if we have an header.overlay_image, then we can also use tagline to highlight my production role(s).  Note: can use MarkDown...:
 tagline: "Co-Production Manager / Lighting Designer / Lead Carpenter"
 
+feature:
+#  image_path: /assets/images/prideandprejudice/th-PP47.jpg
+  image_alt: "Pride and Prejudice"
+#  image_caption: "*photographer: Tony Kelly*"
+#  btn_class: "btn--primary"
+#  btn_label: "More Details"
+
 photos:
   - heading: Production Photos
     id: prod_photos

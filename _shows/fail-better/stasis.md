@@ -59,6 +59,12 @@ header:
 ## if we have an header.overlay_image, then we can also use tagline to highlight my production role(s).  Note: can use MarkDown...:
 tagline: "Lighting Designer"
 
+feature:
+#  image_path: /assets/images/stasis/th-stasis_01.jpg
+  image_alt: "Stasis: Rough for Theatre II: A and B"
+#  image_caption: "*photographer: Dave Thwaites*"
+#  btn_class: "btn--primary"
+#  btn_label: "More Details"
 
 photos:
   - heading: Production Photos
