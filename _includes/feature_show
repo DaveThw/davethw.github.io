@@ -37,12 +37,13 @@
             {% include get_show_data show=show max_role_len=100 remove_ordinals=false abbreviate_year=false %}
             {% if excerpt == "" %}
               <ul>
-                <li>{{ company }}</li>
-                <li>{{ dates }}</li>
-                <li>{{ role }}</li>
-                {%- if summary != "" %}
-                <li>{{ summary }}</li>{% endif %}
+                <li class="show-company">{{ company }}</li>
+                <li class="show-dates">{{ dates }}</li>
+                <li class="show-role">{{ role }}</li>
               </ul>
+              {%- if summary != "" %}
+              <p class="show-summary">{{ summary }}</p>
+              {%- endif %}
             {% else %}
               {{ excerpt | truncate: 160 | newline_to_br | markdownify | remove: "<p>" | remove: "</p>" }}
             {% endif %}
