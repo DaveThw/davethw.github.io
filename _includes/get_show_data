@@ -1,4 +1,4 @@
-{%- assign doc = post | default: page -%}
+{%- assign doc = include.show | default: post | default: page -%}
 
 {%- assign sub_title = doc.sub-title -%}
 
@@ -62,10 +62,10 @@
 {%- endif -%}
 
 {%- if doc.summary -%}
-  {%- assign summary = doc.summary | markdownify | remove: "<p>" | remove: "</p>" -%}
+  {%- assign summary = doc.summary | markdownify | remove: "<p>" | remove: "</p>" | strip -%}
 {%- elsif doc.content.size > 2 -%}
   {%- assign max_summary_len = include.max_summary_len | default: 100 -%}
-  {%- assign summary = doc.content | truncate: max_summary_len | markdownify | remove: "<p>" | remove: "</p>" -%}
+  {%- assign summary = doc.content | truncate: max_summary_len | markdownify | remove: "<p>" | remove: "</p>" | strip -%}
 {%- endif -%}
 
 {%- assign excerpt = doc.excerpt | strip -%}

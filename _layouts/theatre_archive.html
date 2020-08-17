@@ -4,6 +4,13 @@ layout: archive
 <h3>(Theatre Archive Layout)</h3>
 {{ content }}
 
+{%- if page.feature_shows -%}
+  <h3 id=featured-shows>Featured Shows</h3>
+  {% include feature_show %}
+
+  <h3 id=other-shows>Other Shows</h3>
+{%- endif -%}
+
 {%- assign page_categories = page.categories -%}
 {%- assign page_tags = page.tags -%}
 {%- assign page_entries_layout = page.entries_layout -%}

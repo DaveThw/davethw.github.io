@@ -1,0 +1,59 @@
+{% if include.show %}
+  {% assign feature_shows = site.shows | where: "slug", include.show %}
+{% else %}
+  {% assign feature_shows = "" | split: "" %}
+  {% for show in page.feature_shows %}
+    {% assign feature_show = site.shows | where: "slug", show %}
+    {% assign feature_shows = feature_shows | concat: feature_show %}
+  {% endfor %}
+{% endif %}
+
+
+
+<div class="feature__wrapper">
+
+  {% for show in feature_shows %}
+    <div class="feature__item{% if include.type %}--{{ include.type }}{% endif %}">
+      <div class="archive__item">
+        {% assign image_path = show.header.teaser | default: show.feature.image_path %}
+        {% assign image_alt = show.feature.image_alt %}
+        {% assign image_caption = show.header.caption | default: show.feature.image_caption %}
+        {% if image_path %}
+          <div class="archive__item-teaser">
+            <img src="{{ image_path | relative_url }}"
+                 alt="{% if image_alt %}{{ image_alt }}{% endif %}">
+            {% if image_caption %}
+              <span class="archive__item-caption">{{ image_caption | markdownify | remove: "<p>" | remove: "</p>" }}</span>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        <div class="archive__item-body">
+          {% if show.title %}
+            <h2 class="archive__item-title" id="{{ show.title | slugify }}">{{ show.title }}</h2>
+          {% endif %}
+
+            <div class="archive__item-excerpt">
+            {% include get_show_data show=show max_role_len=100 remove_ordinals=false abbreviate_year=false %}
+            {% if excerpt == "" %}
+              <ul>
+                <li>{{ company }}</li>
+                <li>{{ dates }}</li>
+                <li>{{ role }}</li>
+                {%- if summary != "" %}
+                <li>{{ summary }}</li>{% endif %}
+              </ul>
+            {% else %}
+              {{ excerpt | truncate: 160 | newline_to_br | markdownify | remove: "<p>" | remove: "</p>" }}
+            {% endif %}
+            </div>
+
+          {% if show.url %}
+            <p><a href="{{ show.url | relative_url }}" class="btn {{ show.btn_class | default: "btn--primary" }}">{{ show.feature.btn_label | default: "More Details" }}</a></p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+
+</div>
