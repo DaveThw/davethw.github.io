@@ -52,14 +52,35 @@
 
 {%- if doc.role -%}
   {%- if doc.role[0] -%}
-    {%- assign role = doc.role | join: " / " -%}
-    {%- if include.max_role_len and role.size > include.max_role_len -%}
-      {%- assign role = doc.role[0] | append: " / etc..." -%}
+    {%- assign role_list = doc.role -%}
+  {%- else -%}
+    {%- assign role_list = doc.role | split: " / " -%}
+  {%- endif -%}
+{%- elsif doc.tagline -%}
+  {%- assign role_list = doc.tagline | split: " / " -%}
+{%- endif -%}
+
+{%- if role_list -%}
+  {%- if include.max_role_len -%}
+    {%- if role_list.size == 1 -%}
+      {%- assign role = role_list[0] | truncate: include.max_role_len -%}
+    {%- else -%}
+      {%- for i in role_list -%}
+        {%- assign role = role_list | join: " / " -%}
+        {%- unless forloop.first -%}
+          {%- assign role = role | append: " / etc..." -%}
+        {%- endunless -%}
+        {%- if role.size < include.max_role_len -%}
+          {%- break -%}
+        {%- endif -%}
+        {%- assign role_list = role_list | pop -%}
+      {%- endfor -%}
     {%- endif -%}
   {%- else -%}
-    {%- assign role = doc.role -%}
+    {%- assign role = role_list | join: " / " -%}
   {%- endif -%}
 {%- endif -%}
+{%- assign role = role | xml_escape -%}
 
 {%- if doc.summary -%}
   {%- assign summary = doc.summary | markdownify | remove: "<p>" | remove: "</p>" | strip -%}

@@ -31,7 +31,7 @@ venues:
   - venue: Pegasus Theatre @ The Burton Taylor
     location: Oxford
     dates: 7-8 Dec 2009
-role: Lighting Designer
+#role: Lighting Designer
 
 production_team:
   Director: Jonathan Heron

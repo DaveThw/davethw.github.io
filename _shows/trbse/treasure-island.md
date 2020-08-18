@@ -18,9 +18,9 @@ venue:
   name: Theatre Royal, Bury St Edmunds
   url: https://www.theatreroyal.org/
 
-role:
- - Technical & Production Manager
- - Lighting Designer
+#role:
+# - Technical & Production Manager
+# - Lighting Designer
 
 header:
   overlay_image: "/assets/images/theatreroyal/auditorium-header.jpg"

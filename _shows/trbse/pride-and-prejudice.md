@@ -17,10 +17,10 @@ company:
   url: https://www.theatreroyal.org/
 venue: Theatre Royal, Bury St Edmunds
 
-role:
- - Co-Production Manager
- - Lighting Designer
- - Lead Carpenter
+#role:
+# - Co-Production Manager
+# - Lighting Designer
+# - Lead Carpenter
 
 header:
   overlay_image: "/assets/images/prideandprejudice/header.jpg"

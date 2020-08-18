@@ -18,10 +18,10 @@ company:
   url: https://www.theatreroyal.org/
 venue: Theatre Royal, Bury St Edmunds
 
-role:
- - Technical Manager
- - Lighting Programmer
- - Lighting Operator
+#role:
+# - Technical Manager
+# - Lighting Programmer
+# - Lighting Operator
 
 header:
   overlay_image: "/assets/images/theatreroyal/auditorium-header.jpg"
