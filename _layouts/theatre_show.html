@@ -83,6 +83,28 @@ layout: default   #  based on minimal-mistakes/_layouts/single.html
       {% endfor %}
     {% endif %}
 
+    {% if page.people %}
+      {%- for team in page.people %}
+        <h3 id="{{ team[0] | slugify }}">{{ team[0] | replace: "_", " " }}</h3>
+        <ul>
+        {%- for people in team[1] %}
+          <li>
+            {{ people[0] | replace: "_", " " }}:
+            {% if people[1][0] %}
+              <ul>
+              {%- for person in people[1] %}
+                <li>{{ person }}</li>
+              {%- endfor -%}
+              </ul>
+            {% else %}
+              {{ people[1] }}
+            {% endif %}
+          </li>
+        {%- endfor %}
+        </ul>
+      {%- endfor %}
+    {% endif %}
+
       {% if page.production_team %}
         <h3 id="production-team">Production Team</h3>
         <ul>

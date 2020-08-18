@@ -22,7 +22,6 @@ role:
  - Technical Manager
  - Lighting Programmer
  - Lighting Operator
- - Swing Techncial Cover
 
 header:
   overlay_image: "/assets/images/theatreroyal/auditorium-header.jpg"
@@ -30,7 +29,7 @@ header:
   teaser: /assets/images/theatreroyal/auditorium-th.jpg
 
 # if we have an header.overlay_image, then we can also use tagline to highlight my production role(s).  Note: can use MarkDown...:
-tagline: "Technical Manager / Lighting Programmer / Lighting Operator / Swing Techncial Cover"
+tagline: "Technical Manager / Lighting Programmer / Lighting Operator"
 
 #photos:
 #  - heading: Production Photos
@@ -48,41 +47,49 @@ tagline: "Technical Manager / Lighting Programmer / Lighting Operator / Swing Te
 #    alt: "Rough for Theatre II: 'Switch on'"
 #    title: "Rough for Theatre II: 'Switch on'"
 
-production_team:
-  Director: Marcus Romer
-  Designer: Dawn Allsopp
-  Production Manager: Andy Stubbs
-  Writer: Chris Hannon
-  Musical Director: Ward Baker
-  Lighting Designer: John Slevin
-  Sound Designer: Drew Baumohl
-  Choreographer: Jess Ellen
-  Musician: Luke Pettit
-  Technical Manager: Dave Thwaites
-  Sound Op: Chris Last
-  Deputy Stage Manager: Anna Jordahl
-  Wardrobe Supervisor: Heidi McEvoy-Swift
-  Production Administrator: Natalie Sinnadurai
-  Assistant Stage Manager: Alice Loizel
-  Wardrobe Assistant: Kim Broadhurst
-  Running Wardrobe Assistant: Fiona Terrington
-  Wardrobe and Design Assistant: Nuria Mila Molist
-
-#crew:
-#  DSM: DSM Name
-#  LX Op: LX Op Name
-
-cast:
-  Tinkerbell: Anna Campkin
-  Tiger Lily: Chris Clarkson
-  Peter Pan: Lauren Chinery
-  Wendy: Jasmine Hackett
-  Slightly / Male Understudy: Samuel Howe-Barrett
-  Smee: Oliver Mawdsley
-  Dad / Captain Hook: Alan Mehdizadeh
-  Mad Maud / Miranda: Joanne Sandi
-  Female Understudy: Katie Wright
+people:
+  Creative Team:
+    Writer: Chris Hannon
+    Director: Marcus Romer
+    Musical Director: Ward Baker
+    Designer: Dawn Allsopp
+    Choreographer: Jess Ellen
+    Lighting Designer: John Slevin
+    Sound Designer: Drew Baumohl
+    Wardrobe Supervisor: Heidi McEvoy-Swift
+  Production Team:
+    Production Manager: Andy Stubbs
+    Technical Manager / Lighting Programmer: Dave Thwaites
+    Deputy Stage Manager: Anna Jordahl
+    Assistant Stage Manager: Alice Loizel
+    Scenery Built by: Scenic Production Ltd
+    Producer: Adrian Grady
+  Crew:
+    Stage Crew:
+      - Mike Ackland-Lang
+      - Kate 'Sky' Skylar
+    Sound Operator: Chris Last
+    Followspot Operators:
+      - Elliott Harling
+      - Caitilin Pegley
+    Lighting Operators:
+      - Dave Thwaites
+      - Alex Ray
+      - Abigail Cameron-Laker
+    Swing Technical Cover: Dave Thwaites
+  Musicians:
+    Keyboard: Ward Baker
+    Drums and Percussion: Luke Pettit
+  Cast:
+    Tinkerbell: Anna Campkin
+    Peter Pan: Lauren Chinery
+    Tiger Lily: Chris Clarkson
+    Wendy: Jasmine Hackett
+    Slightly / Male Understudy: Samuel Howe-Barrett
+    Smee: Oliver Mawdsley
+    Dad / Captain Hook: Alan Mehdizadeh
+    Mad Maud / Miranda: Joanne Sandi
+    Female Understudy: Katie Wright
 
 summary: ""
 ---
-My fifth panto at the Theatre Royal.
