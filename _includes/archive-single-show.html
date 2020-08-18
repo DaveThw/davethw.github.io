@@ -27,17 +27,20 @@
       {% endif %}
     </h2>
     {% include post__meta.html type=include.type %}
-    <p class="archive__item-excerpt" itemprop="description">
-    {% include get_show_data max_role_len=55 remove_ordinals=true abbreviate_year=false %}
-    {% if excerpt == "" %}
-      {{ company }}<br />
-      {{ dates }}<br />
-      {{ role }}
-      {%- if summary != "" -%}<br />
-      {{ summary }}{%- endif %}
-    {% else %}
+    <div class="archive__item-excerpt" itemprop="description">
+    {%- include get_show_data max_role_len=55 remove_ordinals=true abbreviate_year=false %}
+    {%- if excerpt == "" %}
+      <ul>
+        <li class="show-company">{{ company }}</li>
+        <li class="show-dates">{{ dates }}</li>
+        <li class="show-role">{{ role }}</li>
+      </ul>
+      {%- if summary != "" %}
+      <p class="show-summary">{{ summary }}</p>
+      {%- endif %}
+    {%- else %}
       {{ excerpt | truncate: 160 | newline_to_br | markdownify | remove: "<p>" | remove: "</p>" }}
-    {% endif %}
-    </p>
+    {%- endif %}
+    </div>
   </article>
 </div>
