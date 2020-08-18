@@ -87,8 +87,41 @@
       max-height: 120px;
     }
   }
+
+  .archive__item-excerpt ul {
+    padding-inline-start: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .archive__item-excerpt li {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .archive__item-excerpt p.show-summary {
+    margin-top: 0.25em;
+    margin-bottom: 0;
+  }
 }
 
+.show-subtitle {
+  font-weight: bold;
+  font-style: italic;
+}
+.show-company {
+  font-weight: bold;
+}
+.show-venue {
+  font-style: italic;
+}
+.show-dates {
+  font-style: italic;
+}
+.show-role {
+}
+.show-summary {
+}
 
 @media print {
 
