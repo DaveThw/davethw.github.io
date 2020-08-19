@@ -105,6 +105,22 @@
   }
 }
 
+
+.layout--theatre_show {
+  ul.show-details {
+    list-style: none;
+    padding-inline-start: 0px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  ul.show-details li {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+
 .show-subtitle {
   font-weight: bold;
   font-style: italic;

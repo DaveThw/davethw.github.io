@@ -41,37 +41,37 @@ layout: default   #  based on minimal-mistakes/_layouts/single.html
           </aside>
         {% endif %}
 
-        <p>
         {% include get_show_data max_role_len=30 %}
-        {% if sub_title %}<strong><em>{{ sub_title }}</em></strong><br />{% endif %}
+        {% if sub_title %}<div class="show-subtitle">{{ sub_title }}</div>{% endif %}
+        <ul class="show-details">
         {% if company -%}
-          <strong>
+          <li class="show-company">
           {%- if company_url %}<a href="{{ company_url }}">{% endif -%}
           {{ company }}
           {%- if company_url %}</a>{% endif -%}
           {%- if company_show_url %} - <a href="{{ company_show_url }}">Show page</a>{% endif -%}
-          </strong><br />
+          </li>
         {%- endif %}
         {% if venue or dates -%}
-          <em>
+          <li>
           {%- if venue and venue != company -%}
-            {%- if venue_url %}<a href="{{ venue_url }}">{% endif -%}
+            {%- if venue_url %}<a href="{{ venue_url }}"{% else %}<span{% endif %} class="show-venue">
             {{- venue -}}
-            {%- if venue_url %}</a>{% endif -%}
+            {%- if venue_url %}</a>{% else %}</span>{% endif -%}
             {%- if dates %}, {% endif -%}
           {%- endif -%}
           {%- if dates -%}
-            {%- if venue_show_url %}<a href="{{ venue_show_url }}">{% endif -%}
+            {%- if venue_show_url %}<a href="{{ venue_show_url }}"{% else %}<span{% endif %} class="show-venue">
             {{- dates -}}
-            {%- if venue_show_url %}</a>{% endif -%}
+            {%- if venue_show_url %}</a>{% else %}</span>{% endif -%}
           {%- endif -%}
-          </em>
+          </li>
         {%- endif -%}
         {%- unless page.tagline and page.header.overlay_color or page.header.overlay_image -%}
-          {%- if role %}<br />
-          {{ role }}{% endif -%}
+          {%- if role %}
+          <li class="show-role">{{ role }}</li>{% endif -%}
         {%- endunless %}
-        </p>
+        </ul>
 
         {{ content }}
 
