@@ -36,7 +36,7 @@
             <div class="archive__item-excerpt">
             {% include get_show_data show=show max_role_len=100 remove_ordinals=false abbreviate_year=false %}
             {% if excerpt == "" %}
-              <ul>
+              <ul class="show-details">
                 <li class="show-company">{{ company }}</li>
                 <li class="show-dates">{{ dates }}</li>
                 <li class="show-role">{{ role }}</li>
