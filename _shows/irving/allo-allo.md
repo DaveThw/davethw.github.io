@@ -66,7 +66,7 @@ people:
     Backstage Manager: Patrick Yardy
     Props: Darian Vomund
   Cast:
-    Rene Artois: Colin Musgrove
+    Ren&eacute; Artois: Colin Musgrove
     Edith Artois: Mandy Morrish
     Helga Geerhart: Jenny Dines
     Mimi Le'Blonq: Christine Glancy
