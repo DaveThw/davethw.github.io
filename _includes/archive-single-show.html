@@ -26,7 +26,7 @@
         <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
       {% endif %}
     </h2>
-    {% include post__meta.html type=include.type %}
+    {% include page__meta.html type=include.type %}
     <div class="archive__item-excerpt" itemprop="description">
     {%- include get_show_data max_role_len=55 remove_ordinals=true abbreviate_year=false %}
     {%- if excerpt == "" %}

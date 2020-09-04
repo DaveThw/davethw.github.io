@@ -11,19 +11,9 @@ layout: archive
   <h3 id=other-shows>Other Shows</h3>
 {%- endif -%}
 
-{%- assign page_categories = page.categories -%}
-{%- assign page_tags = page.tags -%}
-{%- assign page_entries_layout = page.entries_layout -%}
-{%- assign page_feature_shows = page.feature_shows -%}
-{%- comment %}<!--
-So... minimal-mistakes/_includes/post__meta.html, which gets used by
-minimal-mistakes/_includes/archive-single.html, which we use below, re-assigns
-page with {% assign page = post | default: page %}, so we can't refer to
-page.{something} within the loop below, or weird things start to happen...
-Therefore, we capture all the page attributes that we want in the variables above!
--->{% endcomment -%}
+{%- assign page_entries_layout = page.entries_layout | default: 'list' -%}
 {%- assign collections = page.collections | default: "posts" -%}
-<div class="entries-{{ page.entries_layout | default: 'list' }}">
+<div class="entries-{{ page_entries_layout }}">
   {%- for collection in collections -%}
     {%- assign this_collection = site[collection] | sort: "sort_date" | reverse -%}
     {%- for post in this_collection -%}
@@ -31,17 +21,17 @@ Therefore, we capture all the page attributes that we want in the variables abov
         {%- assign do = false -%}
       {%- else -%}
         {%- assign do = true -%}{%- assign i = 0 -%}
-        {%- for category in page_categories -%}
+        {%- for category in page.categories -%}
           {%- if category != post.categories[i] %}{% assign do = false %}{% endif -%}
           {%- assign i = i | plus: 1 -%}
         {%- endfor -%}
         {%- assign post_tags = post.tags | join: '><' | prepend: '<' | append: '>' -%}
-        {%- for tag in page_tags -%}
+        {%- for tag in page.tags -%}
           {%- assign tag2 = tag | prepend: '<' | append: '>' -%}
           {%- assign tags = post_tags | remove: tag2 -%}
           {%- if tags == post_tags %}{% assign do = false %}{% endif -%}
         {%- endfor -%}
-        {%- for show in page_feature_shows -%}
+        {%- for show in page.feature_shows -%}
           {%- if show == post.slug %}{% assign do = false %}{% endif -%}
         {%- endfor -%}
       {% endif -%}
