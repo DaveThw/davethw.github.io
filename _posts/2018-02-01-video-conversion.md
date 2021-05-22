@@ -9,6 +9,7 @@ modified:
  - 2021-05-22 20:25
 last_modified_at: 2021-05-22 20:25
 toc: true
+toc_sticky: true
 ---
 
 Our video camera records as MPEG-2 Program Stream files, which are a little bulky and are capped at just under 2GB (about 49mins long) - longer recordings are therefore split into multiple files.  Fortunately, according to the [ffmpeg faq](http://www.ffmpeg.org/faq.html#Concatenating-using-the-concat-protocol-_0028file-level_0029), MPEG-2 PS files can just be concatenated together using the humble `copy` command!..
