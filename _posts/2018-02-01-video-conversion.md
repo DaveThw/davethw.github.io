@@ -24,6 +24,7 @@ First, if not yet done, download ffmpeg from one of the sites listed on the [ffm
  - ~~[zeranoe.com](https://ffmpeg.zeranoe.com/builds/) - I went for the latest Release Build (3.4.1), Windows 64-bit, Static.~~
  - [gyan.dev](https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-github) - I downloaded the `...essentials_build.zip` version
  - [BtbN](https://github.com/BtbN/FFmpeg-Builds/releases)
+
 Once the zip files has downloaded, extract the contents somewhere (Downloads folder works) - note the zip folder contains a directory, which contains everything else, so it's less confusing if you extract directly into Downloads, rather than the subdirectory that the extractor will suggest!..
 
 
