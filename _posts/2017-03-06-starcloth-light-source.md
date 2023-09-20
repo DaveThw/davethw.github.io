@@ -6,12 +6,15 @@ excerpt: DMX Control details for our LED Starcloth Light Sources
 read_time: false
 modified:
  - 2017-04-05
-last_modified_at: 2017-04-29
+ - 2017-04-29
+ - 2023-09-20
+last_modified_at: 2023-09-20
 ---
 
-Model: LEE-1001DMX  
+Model: Wiedamark LEE-1001DMX  
 Description: 10W LED DMX Illuminator / LED Light Engine  
-Manual: [http://www.wiedamark.com/10wattDMX.pdf](http://www.wiedamark.com/10wattDMX.pdf)
+Webpage: [wiedamark.com/product/10dmx/](https://www.wiedamark.com/product/10dmx/)  
+Manual: ~~wiedamark.com/10wattDMX.pdf~~ [wiedamark.com/.../10wattDMX.pdf](https://www.wiedamark.com/wp-content/uploads/archive/10wattDMX.pdf)
 
 ## Dip Switches
 
@@ -44,7 +47,7 @@ Address can be set to DMX 1-255 via dip switches 1-8 - doesn't work with a base 
 
 ### ch. 2
 
-Does nothing..?? - May be Colour Fine..??
+May be Colour Speed..??
 
 ### ch. 3
 
